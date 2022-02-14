@@ -11,7 +11,7 @@
 ## Integrantes:
 
 <a href="https://www.linkedin.com/in/ariel-movadab-33018b226">Ariel Mavadab</a>,
-<a href="https://github.com/FelipeSantosInteli">Felipe Gomes Rodrigues dos Santos</a>, <a href="https://www.linkedin.com/in/gustavo-monteiro-1a499919a">Gustavo Monteiro</a>, <a href="https://github.com/Kilzera02">Kil Matheus</a>, <a href="https://github.com/marcelofeitoza">Marcelo Feitoza</a>, <a href="https://github.com/Rafaluftglas">Rafael Luftglas</a>, <a href="https://www.linkedin.com/in/tomas-alessi-502883211/">Tomas Alessi</a>,
+<a href="https://github.com/FelipeSantosInteli">Felipe Gomes Rodrigues dos Santos</a>, <a href="https://www.linkedin.com/in/gustavo-monteiro-1a499919a">Gustavo Monteiro</a>, <a href="https://github.com/Kilzera02">Kil Matheus</a>, <a href="https://github.com/marcelofeitoza">Marcelo Feitoza</a>, <a href="https://github.com/Rafaluftglas">Rafael Luftglas</a>, <a href="https://www.linkedin.com/in/tomas-alessi-502883211/">Tomas Alessi</a>
 
 ## Descrição
 
