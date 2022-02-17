@@ -1,11 +1,23 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://barra inferior aberta.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/barra_inferior_aberta.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/fundo_app.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/barra_inferior_fechada.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/barra_superior.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/barra_superior_conceito.png" type="Texture" id=5]
 [ext_resource path="res://barra inferior fechada.gd" type="Script" id=6]
+[ext_resource path="res://Sprites/card1.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/seta_sim.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/seta_não.png" type="Texture" id=9]
+[ext_resource path="res://card1.gd" type="Script" id=10]
+[ext_resource path="res://Sprites/card2.png" type="Texture" id=11]
+[ext_resource path="res://card2.gd" type="Script" id=12]
+[ext_resource path="res://card3.gd" type="Script" id=13]
+[ext_resource path="res://Sprites/card3.png" type="Texture" id=14]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+[sub_resource type="RectangleShape2D" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -17,6 +29,48 @@
 position = Vector2( 360, 642 )
 scale = Vector2( 0.665741, 0.66875 )
 texture = ExtResource( 3 )
+
+[node name="seta não" type="Sprite" parent="."]
+position = Vector2( 72, 680 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 9 )
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="seta não"]
+scale = Vector2( 20, 30 )
+shape = SubResource( 3 )
+shape_centered = false
+action = "seta_não"
+
+[node name="seta sim" type="Sprite" parent="."]
+position = Vector2( 640, 672 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 8 )
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="seta sim"]
+scale = Vector2( 20, 30 )
+shape = SubResource( 4 )
+shape_centered = false
+action = "seta_sim"
+
+[node name="card3" type="Sprite" parent="."]
+visible = false
+position = Vector2( 356, 704 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 14 )
+script = ExtResource( 13 )
+
+[node name="card2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 356, 704 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 11 )
+script = ExtResource( 12 )
+
+[node name="card1" type="Sprite" parent="."]
+position = Vector2( 356, 704 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 7 )
+script = ExtResource( 10 )
 
 [node name="barra inferior fechada" type="Sprite" parent="."]
 position = Vector2( 360, 1169 )
@@ -32,7 +86,6 @@ shape_centered = false
 action = "abrir_barra"
 
 [node name="barra inferior aberta" type="Sprite" parent="."]
-visible = false
 position = Vector2( 359.25, 1090 )
 scale = Vector2( 0.688426, 0.703636 )
 texture = ExtResource( 2 )
@@ -45,7 +98,7 @@ shape = SubResource( 2 )
 shape_centered = false
 action = "fechar_barra"
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 359.5, 166.5 )
+[node name="barra superior" type="Sprite" parent="."]
+position = Vector2( 359, 128 )
 scale = Vector2( 0.667593, 0.65444 )
 texture = ExtResource( 5 )
