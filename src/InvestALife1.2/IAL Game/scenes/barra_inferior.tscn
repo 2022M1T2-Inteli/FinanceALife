@@ -74,18 +74,14 @@ data = {
 extents = Vector2( 500, 50 )
 
 [node name="barra_inferior" type="TextureRect"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -510.0
-margin_top = -446.0
-margin_right = 510.0
-margin_bottom = 0.00292969
+margin_left = 30.0
+margin_top = 1474.0
+margin_right = 1050.0
+margin_bottom = 1920.0
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -110,9 +106,16 @@ normal = ExtResource( 4 )
 pressed = ExtResource( 3 )
 shape_centered = false
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+[node name="SubirBarra" type="TouchScreenButton" parent="."]
 position = Vector2( 514, 56 )
 bitmask = SubResource( 4 )
 shape = SubResource( 5 )
 shape_centered = false
-action = "botao_barra"
+action = "subir_barra"
+
+[node name="DescerBarra" type="TouchScreenButton" parent="."]
+position = Vector2( 514, 56 )
+bitmask = SubResource( 4 )
+shape = SubResource( 5 )
+shape_centered = false
+action = "descer_barra"
