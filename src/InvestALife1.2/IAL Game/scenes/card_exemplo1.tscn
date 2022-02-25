@@ -64,10 +64,10 @@ __meta__ = {
 }
 
 [node name="img_card" type="TextureRect" parent="card_exemplo1"]
-margin_left = 48.0
-margin_top = 48.0
-margin_right = 710.0
-margin_bottom = 610.0
+margin_left = 53.0
+margin_top = 76.0
+margin_right = 715.0
+margin_bottom = 638.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -99,6 +99,7 @@ text = "Hendrerit gravida rutrum quisque non tellus. Donec ultrices tincidunt ar
 align = 1
 valign = 1
 autowrap = true
+clip_text = true
 percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
