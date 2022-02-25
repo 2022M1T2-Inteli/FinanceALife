@@ -8,25 +8,30 @@
 [sub_resource type="Environment" id=1]
 
 [node name="UIdoGame" type="Control"]
-margin_right = 1080.0
-margin_bottom = 1920.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 14.0
+rect_scale = Vector2( 0.997073, 0.992727 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Node2D" parent="." instance=ExtResource( 4 )]
-margin_left = 160.0
-margin_top = 480.0
-margin_right = 930.0
-margin_bottom = 1640.0
+[node name="CARD" parent="." instance=ExtResource( 4 )]
+rect_scale = Vector2( 1, 1.01369 )
 
 [node name="barra_inferior" parent="." instance=ExtResource( 1 )]
-margin_bottom = 1937.0
+margin_left = -510.0
+margin_top = -134.0
+margin_right = 510.0
+margin_bottom = 312.0
 
 [node name="barra_superior" parent="." instance=ExtResource( 3 )]
-margin_left = 10.0
-margin_right = 1070.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -530.0
+margin_right = 530.0
+margin_bottom = 390.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )

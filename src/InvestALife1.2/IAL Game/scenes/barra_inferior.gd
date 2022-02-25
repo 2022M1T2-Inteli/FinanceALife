@@ -1,7 +1,7 @@
 extends TextureRect
 
 func _ready() -> void:
-	self.set_position(Vector2(30, 1792))
+#	self.set_position(Vector2(30, 1792))
 	$SubirBarra.visible = true
 	$DescerBarra.visible = false
 

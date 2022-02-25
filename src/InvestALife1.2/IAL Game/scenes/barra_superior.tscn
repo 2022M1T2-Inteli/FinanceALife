@@ -12,7 +12,14 @@ bg_color = Color( 0.752941, 0.729412, 0.286275, 1 )
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.854902, 0.247059, 0.247059, 1 )
 
-[node name="barra_superior" type="TextureRect"]
+[node name="GridContainer" type="GridContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="barra_superior" type="TextureRect" parent="."]
 margin_right = 1060.0
 margin_bottom = 390.0
 texture = ExtResource( 1 )
@@ -21,7 +28,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="nv_dinheiro" type="ProgressBar" parent="."]
+[node name="nv_dinheiro" type="ProgressBar" parent="barra_superior"]
 show_behind_parent = true
 margin_left = 54.0
 margin_top = 344.0
@@ -36,7 +43,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="nv_energia" type="ProgressBar" parent="."]
+[node name="nv_energia" type="ProgressBar" parent="barra_superior"]
 show_behind_parent = true
 margin_left = 294.0
 margin_top = 344.0
@@ -51,7 +58,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="nv_felicidade" type="ProgressBar" parent="."]
+[node name="nv_felicidade" type="ProgressBar" parent="barra_superior"]
 show_behind_parent = true
 margin_left = 550.0
 margin_top = 344.0
@@ -66,7 +73,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="nv_divida" type="ProgressBar" parent="."]
+[node name="nv_divida" type="ProgressBar" parent="barra_superior"]
 show_behind_parent = true
 margin_left = 790.0
 margin_top = 344.0

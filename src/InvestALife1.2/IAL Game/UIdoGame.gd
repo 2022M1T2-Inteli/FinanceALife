@@ -1,5 +1,7 @@
 extends Control
-
-func _process(delta: float) -> void:
-	self.rect_size = OS.window_size
-
+ 
+	
+func _ready():
+	ProjectSettings.get_setting("display/window/size/width")
+	ProjectSettings.get_setting("display/window/size/height")
+	
