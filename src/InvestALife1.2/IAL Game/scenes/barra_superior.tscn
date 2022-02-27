@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/sprites/barra_superior.png" type="Texture" id=1]
-[ext_resource path="res://scenes/barra_superior.gd" type="Script" id=2]
+[ext_resource path="res://assets/sprites/UI/barra_superior.png" type="Texture" id=1]
+[ext_resource path="res://scenes/scripts/barra_superior.gd" type="Script" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.454902, 0.854902, 0.247059, 1 )

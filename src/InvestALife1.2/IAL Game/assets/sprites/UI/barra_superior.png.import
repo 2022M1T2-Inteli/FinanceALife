@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/barra_superior.png-e77118fc3faff1c53c3756208e5f1983.stex"
+path="res://.import/barra_superior.png-469d67e52a73cbdfd8a687b8190bf091.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/barra_superior.png"
-dest_files=[ "res://.import/barra_superior.png-e77118fc3faff1c53c3756208e5f1983.stex" ]
+source_file="res://assets/sprites/UI/barra_superior.png"
+dest_files=[ "res://.import/barra_superior.png-469d67e52a73cbdfd8a687b8190bf091.stex" ]
 
 [params]
 

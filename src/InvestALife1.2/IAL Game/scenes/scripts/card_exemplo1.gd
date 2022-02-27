@@ -23,8 +23,10 @@ func _ready() -> void:
 	
 	self.texture = fundo[sorteio]
 	$img_card.texture = icon[sorteio]
-
 	
+	var anim = get_node("AnimationPlayer")
+	if anim.connect("animation_finished"):
+		$card_exemplo1/textbox_card/text_card/AnimationPlayer.play("anim_text")
 	
 
 

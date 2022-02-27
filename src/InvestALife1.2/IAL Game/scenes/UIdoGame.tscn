@@ -1,9 +1,63 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/barra_inferior.tscn" type="PackedScene" id=1]
-[ext_resource path="res://UIdoGame.gd" type="Script" id=2]
+[ext_resource path="res://scenes/scripts/UIdoGame.gd" type="Script" id=2]
 [ext_resource path="res://scenes/barra_superior.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/card_exemplo1.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:margin_right")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 385.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -385.0 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "entrar_card"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:margin_right")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -612.466, 406.517, 382.446, 398.493, 385.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:margin_left")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -1382.47, -363.483, -387.554, -371.507, -385.0 ]
+}
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -62,30 +116,85 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=3]
 resource_name = "subir barra"
-length = 0.2
+length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:margin_bottom")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.200701, 0.302705, 0.398864 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 326.0, 0.0, 16.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:margin_top")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.200785, 0.302705, 0.399505 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -120.0, -446.0, -430.0, -446.0 ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:margin_top")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 326.0, 0.0 ]
+"values": [ 0.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:margin_top")
+tracks/1/path = NodePath(".:margin_bottom")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -120.0, -446.0 ]
+"values": [ 390.0 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "aparecer"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:margin_top")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.298864, 0.400702, 0.500495 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -443.0, 0.0, -48.0, -24.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:margin_bottom")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.298864, 0.400702, 0.500495 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -53.0, 390.0, 342.0, 366.0 ]
 }
 
 [sub_resource type="Environment" id=1]
@@ -101,7 +210,19 @@ __meta__ = {
 }
 
 [node name="CARD" parent="." instance=ExtResource( 4 )]
+margin_left = -1382.47
+margin_top = -580.187
+margin_right = -612.466
+margin_bottom = 579.813
 rect_scale = Vector2( 1, 1.01369 )
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="CARD"]
+
+[node name="Entrar Carta" type="AnimationPlayer" parent="CARD"]
+autoplay = "entrar_card"
+reset_on_save = false
+anims/RESET = SubResource( 5 )
+anims/entrar_card = SubResource( 6 )
 
 [node name="barra_inferior" parent="." instance=ExtResource( 1 )]
 margin_top = -446.0
@@ -119,6 +240,11 @@ anchor_right = 0.5
 margin_left = -530.0
 margin_right = 530.0
 margin_bottom = 390.0
+
+[node name="aparecer" type="AnimationPlayer" parent="barra_superior"]
+autoplay = "aparecer"
+anims/RESET = SubResource( 7 )
+anims/aparecer = SubResource( 8 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )

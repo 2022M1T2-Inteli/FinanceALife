@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/img_card_exemplo3.png-ac96522fa04c4566eaff40516f0e4097.stex"
+path="res://.import/caixa_texto_card.png-998ab6d300bcea9ceb5167297abb2ef9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/img_card_exemplo3.png"
-dest_files=[ "res://.import/img_card_exemplo3.png-ac96522fa04c4566eaff40516f0e4097.stex" ]
+source_file="res://assets/sprites/UI/caixa_texto_card.png"
+dest_files=[ "res://.import/caixa_texto_card.png-998ab6d300bcea9ceb5167297abb2ef9.stex" ]
 
 [params]
 

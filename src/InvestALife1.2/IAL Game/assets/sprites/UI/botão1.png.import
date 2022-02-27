@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fundo_app.png-8fd679eae8d56e24aa658d8f8d7833a8.stex"
+path="res://.import/botão1.png-651f32610c9f8484816eff9a064ecd46.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/fundo_app.png"
-dest_files=[ "res://.import/fundo_app.png-8fd679eae8d56e24aa658d8f8d7833a8.stex" ]
+source_file="res://assets/sprites/UI/botão1.png"
+dest_files=[ "res://.import/botão1.png-651f32610c9f8484816eff9a064ecd46.stex" ]
 
 [params]
 
