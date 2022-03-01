@@ -41,6 +41,26 @@ botao_barra={
 "deadzone": 0.5,
 "events": [  ]
 }
+clicar_card={
+"deadzone": 0.5,
+"events": [  ]
+}
+escolha1={
+"deadzone": 0.5,
+"events": [  ]
+}
+escolha2={
+"deadzone": 0.5,
+"events": [  ]
+}
+escolha3={
+"deadzone": 0.5,
+"events": [  ]
+}
+fechar={
+"deadzone": 0.5,
+"events": [  ]
+}
 
 [input_devices]
 
