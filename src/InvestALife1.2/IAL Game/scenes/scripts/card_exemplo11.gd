@@ -22,7 +22,6 @@ var text_file = [
 	
 func _ready() -> void:
 	
-	
 	var sortear = RandomNumberGenerator.new()
 	sortear.randomize();
 	var sorteio = sortear.randi_range(0, 2);
@@ -38,6 +37,7 @@ func load_file(file_path):
 	file.open(file_path, file.READ)
 	var text = file.get_as_text()
 	return text
+	
 #func _process(delta: float) -> void:
 #	var anim = get_node("AnimationPlayer")
 #	anim.emit_signal("animation_finished")
