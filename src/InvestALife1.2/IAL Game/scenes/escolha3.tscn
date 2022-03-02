@@ -13,7 +13,9 @@ font_data = ExtResource( 4 )
 
 [node name="escolha3" type="TextureRect"]
 show_behind_parent = true
-rect_pivot_offset = Vector2( -1764, 1264 )
+margin_right = 770.0
+margin_bottom = 1160.0
+rect_pivot_offset = Vector2( -1, 0 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
