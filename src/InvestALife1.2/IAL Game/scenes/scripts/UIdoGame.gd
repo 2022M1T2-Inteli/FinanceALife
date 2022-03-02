@@ -12,6 +12,9 @@ func _ready():
 	$escolha1/fechar.hide()
 	$escolha2/fechar.hide()
 	$escolha3/fechar.hide()
+	$escolha1/select.hide()
+	$escolha2/select.hide()
+	$escolha3/select.hide()
 	
 func _process(delta):
 
@@ -64,12 +67,52 @@ func _process(delta):
 		$escolha1/botao1.hide()
 		$"CARD/Entrar Carta".play_backwards("entrar_card")
 		$escolha1/fechar.show()
+		$escolha1/select.show()
 	
 	if Input.is_action_just_released("fechar") && $escolha1.margin_top <= -500:
 		$AnimationPlayer.play_backwards("escolheu1")
 		$escolha1/botao1.show()
 		$"CARD/Entrar Carta".play("entrar_card")
 		$escolha1/fechar.hide()
+		$escolha1/select.hide()
+		
+		if $barra_inferior/SubirBarra.visible == false && $barra_inferior/DescerBarra.visible == true:
+			$barra_inferior/AnimationPlayer.play("descer barra")
+			$barra_inferior/DescerBarra.visible = false
+			$barra_inferior/SubirBarra.visible = true
+			
+	if Input.is_action_just_released("escolha2"):
+		$AnimationPlayer.play("escolheu2")
+		$escolha2/botao2.hide()
+		$"CARD/Entrar Carta".play_backwards("entrar_card")
+		$escolha2/fechar.show()
+		$escolha2/select.show()
+	
+	if Input.is_action_just_released("fechar") && $escolha2.margin_top <= -500:
+		$AnimationPlayer.play_backwards("escolheu2")
+		$escolha2/botao2.show()
+		$"CARD/Entrar Carta".play("entrar_card")
+		$escolha2/fechar.hide()
+		$escolha2/select.hide()
+		
+		if $barra_inferior/SubirBarra.visible == false && $barra_inferior/DescerBarra.visible == true:
+			$barra_inferior/AnimationPlayer.play("descer barra")
+			$barra_inferior/DescerBarra.visible = false
+			$barra_inferior/SubirBarra.visible = true
+			
+	if Input.is_action_just_released("escolha3"):
+		$AnimationPlayer.play("escolheu3")
+		$escolha3/botao3.hide()
+		$"CARD/Entrar Carta".play_backwards("entrar_card")
+		$escolha3/fechar.show()
+		$escolha3/select.show()
+	
+	if Input.is_action_just_released("fechar") && $escolha3.margin_top <= -500:
+		$AnimationPlayer.play_backwards("escolheu3")
+		$escolha3/botao3.show()
+		$"CARD/Entrar Carta".play("entrar_card")
+		$escolha3/fechar.hide()
+		$escolha3/select.hide()
 		
 		if $barra_inferior/SubirBarra.visible == false && $barra_inferior/DescerBarra.visible == true:
 			$barra_inferior/AnimationPlayer.play("descer barra")

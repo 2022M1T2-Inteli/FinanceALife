@@ -61,6 +61,18 @@ fechar={
 "deadzone": 0.5,
 "events": [  ]
 }
+select1={
+"deadzone": 0.5,
+"events": [  ]
+}
+select2={
+"deadzone": 0.5,
+"events": [  ]
+}
+select3={
+"deadzone": 0.5,
+"events": [  ]
+}
 
 [input_devices]
 
