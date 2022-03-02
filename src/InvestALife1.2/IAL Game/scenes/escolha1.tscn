@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://assets/sprites/fundos_cards/fundo_card2.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/fundos_cards/card_escolha.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/fundos_cards/card_apertado.png" type="Texture" id=2]
 [ext_resource path="res://assets/sprites/fundos_cards/card_n_apertado.png" type="Texture" id=3]
 [ext_resource path="res://assets/fonts/conthrax/conthrax-sb.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/sprites/UI/close.png" type="Texture" id=5]
-[ext_resource path="res://assets/sprites/UI/select.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/fundos_cards/botao_escolher.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/fundos_cards/botao_escolher_apertado.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/UI/close_apertado.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -29,9 +31,9 @@ action = "escolha1"
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -360.0
+margin_left = -353.0
 margin_top = 50.0
-margin_right = 360.0
+margin_right = 351.0
 margin_bottom = 850.0
 custom_fonts/font = SubResource( 1 )
 align = 1
@@ -43,13 +45,14 @@ __meta__ = {
 }
 
 [node name="fechar" type="TouchScreenButton" parent="."]
-position = Vector2( 704, 0 )
-scale = Vector2( 0.0715707, 0.0610687 )
+position = Vector2( 690, 0 )
 normal = ExtResource( 5 )
+pressed = ExtResource( 8 )
 action = "fechar"
 
 [node name="select" type="TouchScreenButton" parent="."]
-position = Vector2( 96, 896 )
-scale = Vector2( 0.419519, 0.448336 )
+position = Vector2( 128, 960 )
+scale = Vector2( 0.967925, 1.06667 )
 normal = ExtResource( 6 )
+pressed = ExtResource( 7 )
 action = "select1"
