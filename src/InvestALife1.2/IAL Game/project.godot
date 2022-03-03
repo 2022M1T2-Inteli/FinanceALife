@@ -12,7 +12,6 @@ config_version=4
 
 config/name="Ial Game"
 run/main_scene="res://scenes/UIdoGame.tscn"
-boot_splash/image="res://scenes/GodotLoadScreen-main/GodotLoadScreen-main/GodotLoadScreenFinal/GodotBootSplash.png"
 config/icon="res://icon.png"
 
 [display]

@@ -36,8 +36,9 @@ margin_right = 222.0
 margin_bottom = 560.0
 rect_rotation = 270.0
 custom_styles/fg = SubResource( 1 )
+max_value = 1000.0
 step = 1.0
-value = 50.0
+value = 800.0
 percent_visible = false
 __meta__ = {
 "_edit_use_anchors_": false

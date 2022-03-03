@@ -50,6 +50,7 @@ position = Vector2( 514, 56 )
 bitmask = SubResource( 4 )
 shape = SubResource( 5 )
 shape_centered = false
+passby_press = true
 action = "subir_barra"
 
 [node name="DescerBarra" type="TouchScreenButton" parent="."]
@@ -57,4 +58,5 @@ position = Vector2( 514, 56 )
 bitmask = SubResource( 4 )
 shape = SubResource( 5 )
 shape_centered = false
+passby_press = true
 action = "descer_barra"

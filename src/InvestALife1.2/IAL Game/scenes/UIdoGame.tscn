@@ -1866,6 +1866,7 @@ mouse_default_cursor_shape = 2
 [node name="Clicar_card" type="TouchScreenButton" parent="CARD"]
 normal = ExtResource( 7 )
 pressed = ExtResource( 6 )
+passby_press = true
 action = "clicar_card"
 visibility_mode = 1
 
