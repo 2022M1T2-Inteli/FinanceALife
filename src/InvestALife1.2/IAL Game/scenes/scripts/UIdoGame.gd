@@ -145,3 +145,6 @@ func _process(delta):
 			$barra_inferior/AnimationPlayer.play("descer barra")
 			$barra_inferior/DescerBarra.visible = false
 			$barra_inferior/SubirBarra.visible = true
+
+
+
