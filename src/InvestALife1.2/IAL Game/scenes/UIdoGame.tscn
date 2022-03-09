@@ -4,13 +4,12 @@
 [ext_resource path="res://scenes/scripts/UIdoGame.gd" type="Script" id=2]
 [ext_resource path="res://scenes/barra_superior.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/card_exemplo1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://default_env.tres" type="Environment" id=5]
 [ext_resource path="res://assets/sprites/fundos_cards/card_apertado.png" type="Texture" id=6]
 [ext_resource path="res://assets/sprites/fundos_cards/card_n_apertado.png" type="Texture" id=7]
 [ext_resource path="res://scenes/escolha3.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/escolha2.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/escolha1.tscn" type="PackedScene" id=10]
-
-[sub_resource type="Environment" id=1]
 
 [sub_resource type="Animation" id=5]
 length = 0.001
@@ -1854,16 +1853,18 @@ __meta__ = {
 }
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 1 )
+environment = ExtResource( 5 )
 
 [node name="CARD" parent="." instance=ExtResource( 4 )]
 show_behind_parent = true
-margin_top = -604.363
-margin_bottom = 555.637
+light_mask = 4
+margin_top = -540.0
+margin_bottom = 620.0
 rect_scale = Vector2( 1, 1.01369 )
 mouse_default_cursor_shape = 2
 
 [node name="Clicar_card" type="TouchScreenButton" parent="CARD"]
+light_mask = 4
 normal = ExtResource( 7 )
 pressed = ExtResource( 6 )
 passby_press = true
@@ -1877,6 +1878,7 @@ anims/RESET = SubResource( 5 )
 anims/entrar_card = SubResource( 6 )
 
 [node name="barra_inferior" parent="." instance=ExtResource( 1 )]
+light_mask = 2
 margin_top = -446.0
 margin_bottom = 317.0
 
@@ -1887,6 +1889,7 @@ anims/RESET = SubResource( 2 )
 "anims/subir barra" = SubResource( 3 )
 
 [node name="barra_superior" parent="." instance=ExtResource( 3 )]
+light_mask = 2
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -530.0
@@ -1899,6 +1902,7 @@ anims/RESET = SubResource( 7 )
 anims/aparecer = SubResource( 8 )
 
 [node name="escolha1" parent="." instance=ExtResource( 10 )]
+light_mask = 8
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -1910,6 +1914,7 @@ margin_bottom = 1828.93
 rect_scale = Vector2( 0.439, 0.439 )
 
 [node name="escolha2" parent="." instance=ExtResource( 9 )]
+light_mask = 8
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -1921,6 +1926,7 @@ margin_bottom = 1828.93
 rect_scale = Vector2( 0.439, 0.439 )
 
 [node name="escolha3" parent="." instance=ExtResource( 8 )]
+light_mask = 8
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5

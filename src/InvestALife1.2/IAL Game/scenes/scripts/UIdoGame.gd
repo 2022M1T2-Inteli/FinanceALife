@@ -68,7 +68,7 @@ func _process(delta):
 
 	if $escolha1.margin_top >= 1090 && Input.is_action_just_released("clicar_card"):
 		$AnimationPlayer.play("escolhas")
-		$CARD/Clicar_card.scale.y = 0.869
+#		$CARD/Clicar_card.scale.y = 0.869
 
 		if $barra_inferior/SubirBarra.visible == false && $barra_inferior/DescerBarra.visible == true:
 			$barra_inferior/AnimationPlayer.play("descer barra")

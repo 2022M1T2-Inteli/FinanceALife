@@ -76,11 +76,18 @@ select3={
 
 pointing/emulate_touch_from_mouse=true
 
+[layer_names]
+
+2d_render/layer_1="."
+2d_render/layer_2="ui"
+2d_render/layer_3="card"
+2d_render/layer_4="escolhas"
+
 [physics]
 
 common/enable_pause_aware_picking=true
 
 [rendering]
 
-environment/default_clear_color=Color( 0.0862745, 0.0784314, 0.0784314, 1 )
+environment/default_clear_color=Color( 0.572549, 0.572549, 0.572549, 1 )
 environment/default_environment="res://default_env.tres"
