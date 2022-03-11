@@ -53,7 +53,7 @@ func _process(delta):
 		if $escolha1.margin_top <= 1090 && $escolha1.margin_top <= -500 && $escolha1.rect_scale < Vector2(1, 1) && $escolha2.rect_scale < Vector2(1, 1) && $escolha3.rect_scale < Vector2(1, 1):
 			$AnimationPlayer.play_backwards("escolheu1")
 			$AnimationPlayer.play_backwards("escolhas")
-			$CARD/Clicar_card.scale.y = 1
+			$CARD/Clicar_card.scale.y = 0.902
 		
 
 	elif $barra_inferior/SubirBarra.visible == false && $barra_inferior/DescerBarra.visible == true && Input.is_action_just_released("descer_barra"):
@@ -68,7 +68,7 @@ func _process(delta):
 
 	if $escolha1.margin_top >= 1090 && Input.is_action_just_released("clicar_card"):
 		$AnimationPlayer.play("escolhas")
-#		$CARD/Clicar_card.scale.y = 0.869
+		$CARD/Clicar_card.scale.y = 0.814
 
 		if $barra_inferior/SubirBarra.visible == false && $barra_inferior/DescerBarra.visible == true:
 			$barra_inferior/AnimationPlayer.play("descer barra")
