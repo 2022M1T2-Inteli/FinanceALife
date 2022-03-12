@@ -56,8 +56,8 @@ __meta__ = {
 }
 
 [node name="card_exemplo1" type="TextureRect" parent="."]
-margin_right = 770.0
-margin_bottom = 1160.0
+margin_right = 771.0
+margin_bottom = 1161.0
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
