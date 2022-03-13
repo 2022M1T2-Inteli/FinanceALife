@@ -92,6 +92,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [ -446.0 ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CARD/Clicar_card:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0.902151 ) ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "descer barra"
@@ -120,6 +132,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [ -446.0, -120.0 ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CARD/Clicar_card:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "subir barra"
@@ -147,6 +171,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ -120.0, -446.0, -430.0, -446.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CARD/Clicar_card:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0.902151 ) ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -529,6 +565,18 @@ tracks/26/keys = {
 "update": 0,
 "values": [ Vector2( 0.439, 0.439 ) ]
 }
+tracks/27/type = "value"
+tracks/27/path = NodePath("CARD/Clicar_card:scale")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=10]
 resource_name = "escolhas"
@@ -856,6 +904,18 @@ tracks/26/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ 942.084, 942.084, 942.0 ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("CARD/Clicar_card:scale")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 0.813915 ) ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -1858,9 +1918,7 @@ environment = ExtResource( 5 )
 [node name="CARD" parent="." instance=ExtResource( 4 )]
 show_behind_parent = true
 light_mask = 4
-margin_left = -1382.47
 margin_top = -540.0
-margin_right = -614.239
 margin_bottom = 620.0
 rect_scale = Vector2( 1, 1.01369 )
 mouse_default_cursor_shape = 2
@@ -1946,4 +2004,9 @@ anims/escolheu1 = SubResource( 11 )
 anims/escolheu2 = SubResource( 12 )
 anims/escolheu3 = SubResource( 13 )
 
+[node name="Timer" type="Timer" parent="."]
+process_mode = 0
+wait_time = 0.18
+
 [connection signal="animation_finished" from="CARD/Entrar Carta" to="." method="_on_Entrar_Carta_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
