@@ -1,0 +1,95 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+[application]
+
+config/name="Ial Game"
+run/main_scene="res://scenes/inicializador.tscn"
+boot_splash/image="res://assets/LoadingScreen.png"
+boot_splash/bg_color=Color( 0.176471, 0.176471, 0.176471, 1 )
+config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1080
+window/size/height=1920
+window/size/test_width=1080
+window/size/test_height=1280
+window/handheld/orientation="portrait"
+window/stretch/mode="2d"
+window/stretch/aspect="keep_width"
+
+[input]
+
+subir_barra={
+"deadzone": 0.5,
+"events": [  ]
+}
+descer_barra={
+"deadzone": 0.5,
+"events": [  ]
+}
+botao_barra={
+"deadzone": 0.5,
+"events": [  ]
+}
+clicar_card={
+"deadzone": 0.5,
+"events": [  ]
+}
+escolha1={
+"deadzone": 0.5,
+"events": [  ]
+}
+escolha2={
+"deadzone": 0.5,
+"events": [  ]
+}
+escolha3={
+"deadzone": 0.5,
+"events": [  ]
+}
+fechar={
+"deadzone": 0.5,
+"events": [  ]
+}
+select1={
+"deadzone": 0.5,
+"events": [  ]
+}
+select2={
+"deadzone": 0.5,
+"events": [  ]
+}
+select3={
+"deadzone": 0.5,
+"events": [  ]
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[layer_names]
+
+2d_render/layer_1="."
+2d_render/layer_2="ui"
+2d_render/layer_3="card"
+2d_render/layer_4="escolhas"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/filters/anisotropic_filter_level=16
+environment/default_clear_color=Color( 0.176471, 0.176471, 0.176471, 1 )
+environment/default_environment="res://default_env.tres"

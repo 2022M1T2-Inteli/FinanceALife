@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/sprites/fundos_cards/card_escolha.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/fundos_cards/card_apertado.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/fundos_cards/card_n_apertado.png" type="Texture" id=3]
+[ext_resource path="res://assets/fonts/Fredoka/Fredoka-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/sprites/UI/close.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/fundos_cards/botao_escolher.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/fundos_cards/botao_escolher_apertado.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/UI/close_apertado.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 45
+font_data = ExtResource( 4 )
+
+[node name="escolha1" type="TextureRect"]
+show_behind_parent = true
+margin_right = 770.0
+margin_bottom = 1160.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="botao1" type="TouchScreenButton" parent="."]
+scale = Vector2( 1, 0.852 )
+normal = ExtResource( 3 )
+pressed = ExtResource( 2 )
+action = "escolha1"
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -353.0
+margin_top = 50.0
+margin_right = 351.0
+margin_bottom = 850.0
+custom_fonts/font = SubResource( 1 )
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fechar" type="TouchScreenButton" parent="."]
+visible = false
+position = Vector2( 690, 0 )
+normal = ExtResource( 5 )
+pressed = ExtResource( 8 )
+action = "fechar"
+
+[node name="select" type="TouchScreenButton" parent="."]
+visible = false
+position = Vector2( 128, 960 )
+scale = Vector2( 0.967925, 1.06667 )
+normal = ExtResource( 6 )
+pressed = ExtResource( 7 )
+action = "select1"
