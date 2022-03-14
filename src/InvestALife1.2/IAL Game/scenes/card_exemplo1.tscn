@@ -81,9 +81,6 @@ margin_left = -385.0
 margin_top = -540.0
 margin_right = 385.0
 texture = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="text_card" type="Label" parent="card_exemplo1/textbox_card"]
 anchor_left = 0.5
@@ -100,9 +97,6 @@ valign = 1
 autowrap = true
 clip_text = true
 percent_visible = 0.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="card_exemplo1/textbox_card/text_card"]
 anims/RESET = SubResource( 2 )

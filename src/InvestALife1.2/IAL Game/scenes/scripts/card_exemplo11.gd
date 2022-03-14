@@ -25,7 +25,7 @@ func _ready() -> void:
 	var sortear = RandomNumberGenerator.new()
 	sortear.randomize();
 	var sorteio = sortear.randi_range(0, 2);
-	print(sorteio)
+	# print(sorteio)
 	
 	$card_exemplo1.texture = fundo[sorteio]
 	$card_exemplo1/img_card.texture = icon[sorteio]

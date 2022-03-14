@@ -13,6 +13,8 @@ func load_file(file_path):
 	return text
 
 func _ready():
+	print('chegou')
+	
 	ProjectSettings.get_setting("display/window/size/width")
 	ProjectSettings.get_setting("display/window/size/height")
 	

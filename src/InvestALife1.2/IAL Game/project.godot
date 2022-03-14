@@ -12,13 +12,13 @@ config_version=4
 
 config/name="Ial Game"
 run/main_scene="res://scenes/UIdoGame.tscn"
+boot_splash/image="res://assets/LoadingScreen.png"
 config/icon="res://icon.png"
 
 [display]
 
 window/size/width=1080
 window/size/height=1920
-window/size/always_on_top=true
 window/size/test_width=1080
 window/size/test_height=1920
 window/handheld/orientation="portrait"
