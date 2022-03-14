@@ -33,7 +33,8 @@ margin_right = 559.521
 margin_bottom = 980.843
 script = ExtResource( 3 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_use_anchors_": false
 }
 
 [node name="iniciar" type="VBoxContainer" parent="."]

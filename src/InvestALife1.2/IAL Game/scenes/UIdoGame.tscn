@@ -197,7 +197,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ -443.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:margin_bottom")
@@ -209,7 +209,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 390.0 ]
+"values": [ -53.0 ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -538,7 +538,7 @@ tracks/24/enabled = true
 tracks/24/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
+"update": 0,
 "values": [ 174.09 ]
 }
 tracks/25/type = "value"
@@ -550,7 +550,7 @@ tracks/25/enabled = true
 tracks/25/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
+"update": 0,
 "values": [ 944.09 ]
 }
 tracks/26/type = "value"
@@ -1915,7 +1915,9 @@ environment = ExtResource( 5 )
 [node name="CARD" parent="." instance=ExtResource( 4 )]
 show_behind_parent = true
 light_mask = 4
+margin_left = -1457.94
 margin_top = -540.0
+margin_right = -687.721
 margin_bottom = 620.0
 rect_scale = Vector2( 1, 1.01369 )
 mouse_default_cursor_shape = 2
@@ -1950,8 +1952,9 @@ light_mask = 2
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -530.0
+margin_top = -443.0
 margin_right = 530.0
-margin_bottom = 390.0
+margin_bottom = -53.0
 
 [node name="aparecer" type="AnimationPlayer" parent="barra_superior"]
 autoplay = "aparecer"
