@@ -1,0 +1,109 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/sprites/fundos_cards/fundo_card1.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/UI/caixa_texto_card.png" type="Texture" id=2]
+[ext_resource path="res://scenes/scripts/card_exemplo11.gd" type="Script" id=3]
+[ext_resource path="res://assets/fonts/Fredoka/Fredoka-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 45
+outline_color = Color( 0.952941, 0.952941, 0.917647, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "anim_text"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[node name="GridContainer" type="GridContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -385.0
+margin_top = -580.0
+margin_right = 385.0
+margin_bottom = 580.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="card_exemplo1" type="TextureRect" parent="."]
+margin_right = 770.0
+margin_bottom = 1161.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="img_card" type="TextureRect" parent="card_exemplo1"]
+margin_left = 53.0
+margin_top = 76.0
+margin_right = 715.0
+margin_bottom = 638.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="textbox_card" type="TextureRect" parent="card_exemplo1"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -385.0
+margin_top = -540.0
+margin_right = 385.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text_card" type="Label" parent="card_exemplo1/textbox_card"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -342.0
+margin_top = -235.0
+margin_right = 342.0
+margin_bottom = 235.0
+custom_fonts/font = SubResource( 1 )
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="card_exemplo1/textbox_card/text_card"]
+anims/RESET = SubResource( 2 )
+anims/anim_text = SubResource( 3 )

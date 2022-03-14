@@ -1,0 +1,89 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/sprites/UI/barra_superior.png" type="Texture" id=1]
+[ext_resource path="res://scenes/scripts/barra_superior.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.454902, 0.854902, 0.247059, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.752941, 0.729412, 0.286275, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.854902, 0.247059, 0.247059, 1 )
+
+[node name="GridContainer" type="GridContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="barra_superior" type="TextureRect" parent="."]
+margin_right = 1060.0
+margin_bottom = 390.0
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nv_dinheiro" type="ProgressBar" parent="barra_superior"]
+show_behind_parent = true
+margin_left = 54.0
+margin_top = 344.0
+margin_right = 222.0
+margin_bottom = 560.0
+rect_rotation = 270.0
+custom_styles/fg = SubResource( 1 )
+step = 1.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nv_energia" type="ProgressBar" parent="barra_superior"]
+show_behind_parent = true
+margin_left = 294.0
+margin_top = 344.0
+margin_right = 462.0
+margin_bottom = 560.0
+rect_rotation = 270.0
+custom_styles/fg = SubResource( 3 )
+step = 1.0
+value = 67.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Nv_felicidade" type="ProgressBar" parent="barra_superior"]
+show_behind_parent = true
+margin_left = 550.0
+margin_top = 344.0
+margin_right = 718.0
+margin_bottom = 560.0
+rect_rotation = 270.0
+custom_styles/fg = SubResource( 1 )
+step = 1.0
+value = 28.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nv_divida" type="ProgressBar" parent="barra_superior"]
+show_behind_parent = true
+margin_left = 790.0
+margin_top = 344.0
+margin_right = 958.0
+margin_bottom = 560.0
+rect_rotation = 270.0
+custom_styles/fg = SubResource( 2 )
+max_value = 1000.0
+step = 1.0
+value = 40.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
