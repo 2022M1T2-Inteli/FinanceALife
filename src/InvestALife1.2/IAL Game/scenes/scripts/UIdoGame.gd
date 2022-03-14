@@ -41,7 +41,13 @@ func load_file(file_path):
 var fundo = [
 	load("res://assets/sprites/fundos_cards/fundo_card1.png"), 
 	load("res://assets/sprites/fundos_cards/fundo_card2.png"), 
-	load("res://assets/sprites/fundos_cards/fundo_card3.png")
+	load("res://assets/sprites/fundos_cards/fundo_card3.png"),
+	load("res://assets/sprites/fundos_cards/fundo_card4.png"),
+	load("res://assets/sprites/fundos_cards/fundo_card5.png"),
+	load("res://assets/sprites/fundos_cards/fundo_card6.png"),
+	load("res://assets/sprites/fundos_cards/fundo_card7.png"),
+	load("res://assets/sprites/fundos_cards/fundo_card8.png"),
+	load("res://assets/sprites/fundos_cards/fundo_card9.png")
 	]
 
 #load icones para card de exemblo

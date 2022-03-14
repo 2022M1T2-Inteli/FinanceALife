@@ -72,6 +72,10 @@ select3={
 "deadzone": 0.5,
 "events": [  ]
 }
+prox_card={
+"deadzone": 0.5,
+"events": [  ]
+}
 
 [input_devices]
 

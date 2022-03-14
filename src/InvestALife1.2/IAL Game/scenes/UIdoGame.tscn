@@ -10,6 +10,7 @@
 [ext_resource path="res://scenes/escolha3.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/escolha2.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/escolha1.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/scenesentrar_card.tres" type="Animation" id=11]
 
 [sub_resource type="Animation" id=5]
 length = 0.001
@@ -37,33 +38,65 @@ tracks/1/keys = {
 "update": 0,
 "values": [ -385.0 ]
 }
-
-[sub_resource type="Animation" id=6]
-resource_name = "entrar_card"
-length = 1.2
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:margin_right")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( -0.0194289, 0.29976, 0.697065, 0.998452, 1.09845, 1.19706 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -612.466, -612.466, 406.517, 382.446, 398.493, 385.0 ]
+"values": [ Vector2( -842.47, 427 ) ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:margin_left")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.298372, 0.697065, 0.997065, 1.09845, 1.19706 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:anchor_left")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -1382.47, -1382.47, -363.483, -387.554, -371.507, -385.0 ]
+"values": [ 0.5 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:anchor_top")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.5 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath(".:anchor_right")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.5 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath(".:anchor_bottom")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.5 ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -1908,6 +1941,9 @@ anchor_bottom = 1.0
 margin_bottom = 14.0
 rect_scale = Vector2( 0.997073, 0.992727 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 5 )
@@ -1915,10 +1951,10 @@ environment = ExtResource( 5 )
 [node name="CARD" parent="." instance=ExtResource( 4 )]
 show_behind_parent = true
 light_mask = 4
-margin_left = -1457.94
+margin_left = -1382.47
 margin_top = -540.0
-margin_right = -687.721
-margin_bottom = 620.0
+margin_right = -612.47
+margin_bottom = 621.0
 rect_scale = Vector2( 1, 1.01369 )
 mouse_default_cursor_shape = 2
 
@@ -1934,7 +1970,7 @@ visibility_mode = 1
 autoplay = "entrar_card"
 reset_on_save = false
 anims/RESET = SubResource( 5 )
-anims/entrar_card = SubResource( 6 )
+anims/entrar_card = ExtResource( 11 )
 
 [node name="barra_inferior" parent="." instance=ExtResource( 1 )]
 light_mask = 2
