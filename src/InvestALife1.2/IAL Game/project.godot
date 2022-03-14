@@ -11,8 +11,8 @@ config_version=4
 [application]
 
 config/name="Ial Game"
-run/main_scene="res://scenes/UIdoGame.tscn"
-boot_splash/image="res://assets/LoadingScreen.png"
+run/main_scene="res://scenes/inicializador.tscn"
+boot_splash/bg_color=Color( 0.176471, 0.176471, 0.176471, 1 )
 config/icon="res://icon.png"
 
 [display]
@@ -89,5 +89,6 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+quality/filters/anisotropic_filter_level=16
 environment/default_clear_color=Color( 0.176471, 0.176471, 0.176471, 1 )
 environment/default_environment="res://default_env.tres"

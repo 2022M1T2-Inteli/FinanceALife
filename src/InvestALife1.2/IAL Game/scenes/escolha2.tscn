@@ -48,13 +48,15 @@ __meta__ = {
 }
 
 [node name="fechar" type="TouchScreenButton" parent="."]
+visible = false
 position = Vector2( 690, 0 )
 normal = ExtResource( 5 )
 pressed = ExtResource( 8 )
 action = "fechar"
 
 [node name="select" type="TouchScreenButton" parent="."]
-position = Vector2( 128, 960 )
+visible = false
+position = Vector2( 122, 960 )
 scale = Vector2( 0.968, 1.067 )
 normal = ExtResource( 6 )
 pressed = ExtResource( 7 )

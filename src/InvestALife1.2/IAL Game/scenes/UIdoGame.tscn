@@ -92,6 +92,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [ -446.0 ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CARD/Clicar_card:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0.902151 ) ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "descer barra"
@@ -119,6 +131,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ -446.0, -120.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CARD/Clicar_card:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -148,6 +172,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [ -120.0, -446.0, -430.0, -446.0 ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CARD/Clicar_card:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0.902151 ) ]
+}
 
 [sub_resource type="Animation" id=7]
 length = 0.001
@@ -161,7 +197,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ -443.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:margin_bottom")
@@ -173,7 +209,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 390.0 ]
+"values": [ -53.0 ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -215,7 +251,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 668.931 ]
+"values": [ 1096.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("escolha1:margin_bottom")
@@ -227,7 +263,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 1828.93 ]
+"values": [ 2257.0 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("escolha2:margin_top")
@@ -239,7 +275,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 668.931 ]
+"values": [ 1096.0 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("escolha2:margin_bottom")
@@ -251,7 +287,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 1828.93 ]
+"values": [ 2257.0 ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("escolha3:margin_top")
@@ -263,7 +299,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 668.931 ]
+"values": [ 1096.0 ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("escolha3:margin_bottom")
@@ -275,7 +311,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 1829.01 ]
+"values": [ 2257.0 ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("escolha1:margin_left")
@@ -419,7 +455,7 @@ tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -168.914 ]
+"values": [ -167.911 ]
 }
 tracks/18/type = "value"
 tracks/18/path = NodePath("escolha2:margin_right")
@@ -431,7 +467,7 @@ tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 601.086 ]
+"values": [ 602.089 ]
 }
 tracks/19/type = "value"
 tracks/19/path = NodePath("escolha2:rect_scale")
@@ -502,7 +538,7 @@ tracks/24/enabled = true
 tracks/24/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
+"update": 0,
 "values": [ 174.09 ]
 }
 tracks/25/type = "value"
@@ -514,7 +550,7 @@ tracks/25/enabled = true
 tracks/25/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
+"update": 0,
 "values": [ 944.09 ]
 }
 tracks/26/type = "value"
@@ -528,6 +564,18 @@ tracks/26/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0.439, 0.439 ) ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("CARD/Clicar_card:scale")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -856,6 +904,18 @@ tracks/26/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ 942.084, 942.084, 942.0 ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("CARD/Clicar_card:scale")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 0.813915 ) ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -1848,9 +1908,6 @@ anchor_bottom = 1.0
 margin_bottom = 14.0
 rect_scale = Vector2( 0.997073, 0.992727 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 5 )
@@ -1858,7 +1915,9 @@ environment = ExtResource( 5 )
 [node name="CARD" parent="." instance=ExtResource( 4 )]
 show_behind_parent = true
 light_mask = 4
+margin_left = -1457.94
 margin_top = -540.0
+margin_right = -687.721
 margin_bottom = 620.0
 rect_scale = Vector2( 1, 1.01369 )
 mouse_default_cursor_shape = 2
@@ -1893,8 +1952,9 @@ light_mask = 2
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -530.0
+margin_top = -443.0
 margin_right = 530.0
-margin_bottom = 390.0
+margin_bottom = -53.0
 
 [node name="aparecer" type="AnimationPlayer" parent="barra_superior"]
 autoplay = "aparecer"
@@ -1908,9 +1968,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -509.912
-margin_top = 668.931
+margin_top = 1096.0
 margin_right = 260.088
-margin_bottom = 1828.93
+margin_bottom = 2257.0
 rect_scale = Vector2( 0.439, 0.439 )
 
 [node name="escolha2" parent="." instance=ExtResource( 9 )]
@@ -1919,10 +1979,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -168.914
-margin_top = 668.931
-margin_right = 601.086
-margin_bottom = 1828.93
+margin_left = -167.911
+margin_top = 1096.0
+margin_right = 602.089
+margin_bottom = 2257.0
 rect_scale = Vector2( 0.439, 0.439 )
 
 [node name="escolha3" parent="." instance=ExtResource( 8 )]
@@ -1932,9 +1992,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = 174.09
-margin_top = 668.931
+margin_top = 1096.0
 margin_right = 944.09
-margin_bottom = 1829.01
+margin_bottom = 2257.0
 rect_scale = Vector2( 0.439, 0.439 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -1943,3 +2003,10 @@ anims/escolhas = SubResource( 10 )
 anims/escolheu1 = SubResource( 11 )
 anims/escolheu2 = SubResource( 12 )
 anims/escolheu3 = SubResource( 13 )
+
+[node name="Timer" type="Timer" parent="."]
+process_mode = 0
+wait_time = 0.18
+
+[connection signal="animation_finished" from="CARD/Entrar Carta" to="." method="_on_Entrar_Carta_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

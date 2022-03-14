@@ -1,18 +1,16 @@
 extends TextureRect
 
-var max_dinheiro = 2000
-var dinheiro = 900
-#var nv_dinheiro = dinheiro*max_dinheiro
-var nv_energia = 0
-var nv_felicidade = 0
-var nv_divida = 0
-
-func _ready():
-	$nv_dinheiro.max_value = max_dinheiro
-	$nv_dinheiro.value = dinheiro
-	$nv_energia.value = nv_energia
-	$nv_felicidade.value = nv_felicidade
-	$nv_divida.value = nv_divida
-	
-
-
+##níveis da barra superior de status
+#onready var max_dinheiro = 1000.00
+#onready var nv_dinheiro = 700.00
+#onready var nv_energia = 70
+#onready var nv_felicidade = 60
+#onready var nv_divida =800.00
+#
+##conecta cada variável com o nó da barra de status correspondente
+#func _process(delta: float) -> void:
+#	$Nv_dinheiro.max_value = max_dinheiro
+#	$Nv_dinheiro.value = nv_dinheiro
+#	$Nv_energia.value = nv_energia
+#	$Nv_felicidade.value = nv_felicidade
+#	$Nv_divida.value = nv_divida
