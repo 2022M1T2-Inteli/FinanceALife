@@ -16,6 +16,14 @@ func random_card():
 func prox_carta():
 	textCard = textCard + 1
 
+func prox_esco():
+	set_Esc(numEsc)
+	$escolha2/Label2.show()
+	$AnimationPlayer3.play("entrar_esc")
+	$escolha2/botao2.show()
+	$CARD/clicar_card.hide()
+	$escolha2/botao2.scale.y =1
+
 var text_file_Cards = [
 	"res://assets/text/Introducao/Cards/card1.tres",
 	"res://assets/text/Introducao/Cards/card2.tres",
@@ -29,6 +37,7 @@ var text_file_Cards = [
 	"res://assets/text/Introducao/Cards/card10.tres",
 	"res://assets/text/Introducao/Cards/card11.tres",
 	"res://assets/text/Introducao/Cards/card12.tres",
+	"res://assets/text/Introducao/Cards/card13.tres",
 	"res://assets/text/Introducao/Cards/card13.tres"
 ]
 
@@ -52,7 +61,7 @@ var fundo = [
 	load("res://assets/sprites/fundos_cards/fundo_card8.png"),
 	load("res://assets/sprites/fundos_cards/fundo_card9.png")
 ]
-
+onready var numEsc = 0
 onready var sorteio
 onready var text_esc
 onready var text_card
@@ -69,53 +78,68 @@ func set_Esc(numEsc):
 	$escolha2/Label2.text = load_file(text_esc)
 
 func _ready() -> void:
+	$AnimationPlayer.play("entrar_carta")
 	$CARD/clicar_card.hide()
 	set_Card(random_card(), textCard)
-	
+	$AnimationPlayer3.play("RESET")
 
 func _process(delta: float) -> void:
 	
 	
-	if $escolha2.rect_scale.x == 0.5 && Input.is_action_just_released("escolha2"):
+	
+	if $escolha2.rect_scale.x == 0.5 && Input.is_action_just_pressed("escolha2"):
 		$AnimationPlayer.play_backwards("entrar_carta")
 		$AnimationPlayer4.play("foco_esc")
-		$escolha2.hide()
 		$escolha2/botao2.hide()
 		$escolha2/select.show()
+		numEsc = numEsc + 1
 	
+	
+	if Input.is_action_just_released("prox_card"):
+		if textCard == 4:
+			prox_esco()
+		elif textCard == 5:
+			prox_esco()
+		elif textCard == 6:
+			prox_esco()
+		elif textCard == 7:
+			prox_esco()
+		elif textCard == 9:
+			prox_esco()
+		elif textCard == 11:
+			prox_esco()
+		elif textCard == 12:
+			get_tree().change_scene("res://scenes/UIdoGame.tscn")
+		elif $CARD/card_exemplo1/textbox_card/text_card.percent_visible != 1 && Input.is_action_just_released("prox_card"):
+			$CARD/card_exemplo1/textbox_card/text_card/AnimationPlayer.stop()
+			$CARD/card_exemplo1/textbox_card/text_card.percent_visible = 1
+		elif $CARD/card_exemplo1/textbox_card/text_card.percent_visible == 1 && textCard != 4 && Input.is_action_just_released("prox_card"):
+			$AnimationPlayer2.play("sair_card")
+			$CARD/clicar_card.hide()
+			
 	if Input.is_action_just_released("select2"):
+		$escolha2/Label2.hide()
 		$escolha2/select.hide()
 		$AnimationPlayer4.play("prox_esc")
-	
-	if textCard == 2 && Input.is_action_just_released("prox_card"):
-		set_Esc(0)
-		$AnimationPlayer3.play("entrar_esc")
-		$escolha2/botao2.show()
-		$CARD/clicar_card.hide()
-		$escolha2/botao2.scale.y =1
-	
-		
-	elif $CARD/card_exemplo1/textbox_card/text_card.percent_visible != 1 && textCard !=2  && Input.is_action_just_released("prox_card"):
-		$CARD/card_exemplo1/textbox_card/text_card/AnimationPlayer.stop()
-		$CARD/card_exemplo1/textbox_card/text_card.percent_visible = 1
-	
-	elif $CARD/card_exemplo1/textbox_card/text_card.percent_visible == 1 && textCard != 2 && Input.is_action_just_released("prox_card"):
 		$AnimationPlayer2.play("sair_card")
-		$CARD/clicar_card.hide()
+		
 	
+	
+	
+	
+	if $escolha2.rect_scale.x >= 5:
+		$CARD/card_exemplo1/textbox_card/text_card.percent_visible = 0
 	
 		
 func _on_AnimationPlayer_animation_finished(entrar_card) -> void:
 	$CARD/card_exemplo1/textbox_card/text_card/AnimationPlayer.play("anim_text")
 	$CARD/clicar_card.show()
 		
-func _on_AnimationPlayer_animation_started(sair_card) -> void:
-	$CARD/clicar_card.hide()
 
 
 func _on_AnimationPlayer2_animation_finished(sair_card) -> void:
 	$CARD/card_exemplo1/textbox_card/text_card.percent_visible = 0
-	textCard = textCard + 1
+	prox_carta()
 	$CARD/clicar_card.hide()
 	set_Card(random_card(), textCard)
 	$AnimationPlayer.play("entrar_carta")
@@ -123,7 +147,6 @@ func _on_AnimationPlayer2_animation_finished(sair_card) -> void:
 
 func _on_AnimationPlayer4_animation_finished(prox_esc) -> void:
 	$CARD/card_exemplo1/textbox_card/text_card.percent_visible = 0
-	textCard = textCard + 1
 	$CARD/clicar_card.hide()
-	set_Card(random_card(), textCard)
+	set_Card(random_card(), textCard + 1)
 	$AnimationPlayer.play("entrar_carta")
