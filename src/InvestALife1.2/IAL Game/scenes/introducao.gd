@@ -13,7 +13,7 @@ func random_card():
 	sorteio = sortear.randi_range(0, 8);
 	return sorteio
 
-func prox_card():
+func prox_carta():
 	textCard = textCard + 1
 
 var text_file_Cards = [
@@ -74,16 +74,20 @@ func _ready() -> void:
 	
 
 func _process(delta: float) -> void:
+	
+	
 	if $escolha2.rect_scale.x == 0.5 && Input.is_action_just_released("escolha2"):
 		$AnimationPlayer.play_backwards("entrar_carta")
 		$AnimationPlayer4.play("foco_esc")
+		$escolha2.hide()
 		$escolha2/botao2.hide()
 		$escolha2/select.show()
-		if Input.is_action_just_released("select2"):
-			$escolha2/select.hide()
-			$AnimationPlayer4.play("prox_esc")
 	
-	if textCard == 4 && Input.is_action_just_released("prox_card"):
+	if Input.is_action_just_released("select2"):
+		$escolha2/select.hide()
+		$AnimationPlayer4.play("prox_esc")
+	
+	if textCard == 2 && Input.is_action_just_released("prox_card"):
 		set_Esc(0)
 		$AnimationPlayer3.play("entrar_esc")
 		$escolha2/botao2.show()
@@ -91,23 +95,20 @@ func _process(delta: float) -> void:
 		$escolha2/botao2.scale.y =1
 	
 		
-	elif $CARD/card_exemplo1/textbox_card/text_card.percent_visible != 1 && Input.is_action_just_released("prox_card"):
+	elif $CARD/card_exemplo1/textbox_card/text_card.percent_visible != 1 && textCard !=2  && Input.is_action_just_released("prox_card"):
 		$CARD/card_exemplo1/textbox_card/text_card/AnimationPlayer.stop()
 		$CARD/card_exemplo1/textbox_card/text_card.percent_visible = 1
 	
-	elif $CARD/card_exemplo1/textbox_card/text_card.percent_visible == 1 && Input.is_action_just_released("prox_card"):
+	elif $CARD/card_exemplo1/textbox_card/text_card.percent_visible == 1 && textCard != 2 && Input.is_action_just_released("prox_card"):
 		$AnimationPlayer2.play("sair_card")
 		$CARD/clicar_card.hide()
-		
+	
 	
 		
-		
-	
 func _on_AnimationPlayer_animation_finished(entrar_card) -> void:
 	$CARD/card_exemplo1/textbox_card/text_card/AnimationPlayer.play("anim_text")
 	$CARD/clicar_card.show()
-
-
+		
 func _on_AnimationPlayer_animation_started(sair_card) -> void:
 	$CARD/clicar_card.hide()
 

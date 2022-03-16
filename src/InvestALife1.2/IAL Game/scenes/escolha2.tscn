@@ -55,7 +55,6 @@ pressed = ExtResource( 8 )
 action = "fechar"
 
 [node name="select" type="TouchScreenButton" parent="."]
-visible = false
 position = Vector2( 122, 960 )
 scale = Vector2( 0.968, 1.067 )
 normal = ExtResource( 6 )
