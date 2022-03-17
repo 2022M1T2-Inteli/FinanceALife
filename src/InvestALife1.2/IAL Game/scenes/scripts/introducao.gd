@@ -28,6 +28,7 @@ func prox_esco():
 		$CARD/clicar_card.hide()
 		$escolha2/botao2.scale.y =1
 
+
 var text_file_Cards = [
 	"res://assets/text/Introducao/Cards/card1.tres",
 	"res://assets/text/Introducao/Cards/card2.tres",
@@ -71,6 +72,16 @@ onready var sorteio
 onready var text_esc
 onready var text_card
 onready var textCard = 0
+onready var dinheiro = 0
+onready var energia = 0 
+onready var felicidde = 0
+onready var divida = 0
+
+func def_status(Din, Ene, Fel, Div):
+	dinheiro = dinheiro + Din
+	energia = energia + Ene
+	felicidde = felicidde + Fel
+	divida = divida + Div
 
 func set_Card(numFundo, numText):
 	$CARD/card_exemplo1.texture = fundo[numFundo]
@@ -83,12 +94,17 @@ func set_Esc(numEsc):
 	$escolha2/Label2.text = load_file(text_esc)
 
 func _ready() -> void:
-#	$AnimationPlayer.play("entrar_carta")
+	$AnimationPlayer.play("entrar_carta")
 	$CARD/clicar_card.hide()
 	set_Card(random_card(), textCard)
-	$AnimationPlayer3.play("RESET")
+	def_status(0, 100, 100, 0)
 
 func _process(delta: float) -> void:
+	
+	$barra_superior/barra_superior/Nv_dinheiro.value = dinheiro
+	$barra_superior/barra_superior/Nv_energia.value = energia
+	$barra_superior/barra_superior/Nv_felicidade.value = felicidde
+	$barra_superior/barra_superior/Nv_divida.value = divida
 	
 	if $escolha2.rect_scale == Vector2(1,1) && $escolha2.margin_left <= 550:
 		$CARD/clicar_card.hide()
@@ -130,16 +146,27 @@ func _process(delta: float) -> void:
 		elif $CARD/card_exemplo1/textbox_card/text_card.percent_visible == 1 && Input.is_action_just_released("prox_card") && $escolha2.rect_scale != Vector2(1,1) || $escolha2.margin_left >= 550:
 			$AnimationPlayer2.play("sair_card")
 			$CARD/clicar_card.hide()
+			if textCard == 2:
+				def_status(2000, 0, 0 , 2000)
 			
 	if Input.is_action_just_released("select2"):
 		$escolha2/Label2.hide()
 		$escolha2/select.hide()
 		$AnimationPlayer4.play("prox_esc")
 		$AnimationPlayer2.play("sair_card")
-		
-	
-	
-	
+		def_status(0, 0, 0, 0)
+		if textCard == 4:
+			def_status(0, -10, -10, 0)
+		elif textCard == 5:
+			def_status(0, -10, -10, 0)
+		elif textCard == 6:
+			def_status(0, -10, -10, 0)
+		elif textCard == 7:
+			def_status(-100, 0, -20, 0)
+		elif textCard == 9:
+			def_status(-50, 10, 0, 0)
+		elif textCard == 11:
+			def_status(-200, -20, 20, 200)
 	
 	if $escolha2.rect_scale.x >= 5:
 		$CARD/card_exemplo1/textbox_card/text_card.percent_visible = 0

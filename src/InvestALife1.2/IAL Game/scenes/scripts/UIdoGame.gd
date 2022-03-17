@@ -80,12 +80,12 @@ func random_card():
 
 onready var text_card
 onready var sorteio
-onready var max_divida = 1000.00
-onready var max_dinheiro = 1000.00
-onready var nv_dinheiro = 700.00
-onready var nv_energia = 70
-onready var nv_felicidade = 60
-onready var nv_divida = 800.00
+onready var max_divida = 5000.00
+onready var max_dinheiro = 2000.00
+onready var nv_dinheiro = 1650.00
+onready var nv_energia = 60
+onready var nv_felicidade = 70
+onready var nv_divida = 2200.00
 
 func escolheu1():
 	if Input.is_action_just_released("escolha1"):

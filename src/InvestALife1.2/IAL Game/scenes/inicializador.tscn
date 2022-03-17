@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/fonts/Fredoka/Fredoka-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://assets/sprites/email2.png" type="Texture" id=2]
-[ext_resource path="res://scenes/inicializador.gd" type="Script" id=3]
+[ext_resource path="res://assets/sprites/new_mail.png" type="Texture" id=2]
+[ext_resource path="res://scenes/scripts/inicializador.gd" type="Script" id=3]
 
 [sub_resource type="StyleBoxFlat" id=14]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
@@ -41,7 +41,7 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -600.0
-margin_top = -489.0
+margin_top = -535.0
 margin_right = 600.0
 margin_bottom = 1024.0
 __meta__ = {
@@ -50,7 +50,7 @@ __meta__ = {
 
 [node name="Sprite" type="TextureRect" parent="iniciar"]
 margin_right = 1200.0
-margin_bottom = 648.0
+margin_bottom = 421.0
 texture = ExtResource( 2 )
 stretch_mode = 4
 __meta__ = {
@@ -67,6 +67,9 @@ margin_top = -541.0
 margin_right = 600.0
 margin_bottom = -215.0
 alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="start" type="Button" parent="HBoxContainer"]
 margin_right = 1200.0

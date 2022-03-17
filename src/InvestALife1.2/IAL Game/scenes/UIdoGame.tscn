@@ -230,7 +230,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -443.0 ]
+"values": [ -123.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:margin_bottom")
@@ -242,7 +242,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -53.0 ]
+"values": [ 267.0 ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -257,7 +257,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0.2, 0.700508, 0.853026, 0.99655 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ -443.0, 0.0, -48.0, -24.0 ]
+"values": [ -123.0, 0.0, -48.0, -24.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:margin_bottom")
@@ -269,7 +269,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.2, 0.700508, 0.855802, 0.997191 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ -53.0, 390.0, 342.0, 366.0 ]
+"values": [ 267.0, 390.0, 342.0, 366.0 ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -1988,9 +1988,9 @@ light_mask = 2
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -530.0
-margin_top = -443.0
+margin_top = -123.0
 margin_right = 530.0
-margin_bottom = -53.0
+margin_bottom = 267.0
 
 [node name="aparecer" type="AnimationPlayer" parent="barra_superior"]
 autoplay = "aparecer"
