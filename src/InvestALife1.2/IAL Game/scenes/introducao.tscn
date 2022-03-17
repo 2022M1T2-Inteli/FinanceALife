@@ -656,7 +656,7 @@ __meta__ = {
 }
 
 [node name="CARD" parent="." instance=ExtResource( 1 )]
-margin_left = -1528.0
+margin_left = -1529.0
 margin_right = -759.0
 margin_bottom = 581.0
 
@@ -666,6 +666,7 @@ pressed = ExtResource( 2 )
 action = "prox_card"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "entrar_carta"
 reset_on_save = false
 anims/RESET = SubResource( 1 )
 anims/entrar_carta = SubResource( 2 )
@@ -678,14 +679,13 @@ anims/sair_card = ExtResource( 5 )
 [node name="escolha2" parent="." instance=ExtResource( 6 )]
 show_behind_parent = false
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -192.0
-margin_top = -582.0
-margin_right = 578.0
-margin_bottom = 578.0
-rect_scale = Vector2( 0.5, 0.5 )
+anchor_bottom = 0.5
+margin_left = -385.0
+margin_top = -580.0
+margin_right = 385.0
+margin_bottom = 580.0
 rect_clip_content = true
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
