@@ -708,6 +708,8 @@ __meta__ = {
 }
 
 [node name="CARD" parent="." instance=ExtResource( 1 )]
+margin_left = -1528.0
+margin_right = -759.0
 margin_bottom = 581.0
 
 [node name="clicar_card" type="TouchScreenButton" parent="CARD"]
@@ -728,14 +730,13 @@ anims/sair_card = ExtResource( 5 )
 [node name="escolha2" parent="." instance=ExtResource( 6 )]
 show_behind_parent = false
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -192.0
-margin_top = 243.0
-margin_right = 578.0
-margin_bottom = 1403.0
-rect_scale = Vector2( 0.5, 0.5 )
+anchor_bottom = 0.5
+margin_left = -385.0
+margin_top = -580.0
+margin_right = 385.0
+margin_bottom = 580.0
 rect_clip_content = true
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
@@ -758,12 +759,12 @@ wait_time = 2.0
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -530.0
-margin_top = -448.149
+margin_top = -456.0
 margin_right = 530.0
-margin_bottom = -58.1493
+margin_bottom = -66.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer2" to="." method="_on_AnimationPlayer2_animation_finished"]
-[connection signal="animation_finished" from="AnimationPlayer4" to="." method="_on_AnimationPlayer4_animation_finished"]
+[connection signal="animation_started" from="AnimationPlayer2" to="." method="_on_AnimationPlayer2_animation_started"]
 [connection signal="animation_started" from="AnimationPlayer4" to="." method="_on_AnimationPlayer4_animation_started"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

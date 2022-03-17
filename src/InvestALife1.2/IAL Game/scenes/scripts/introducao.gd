@@ -95,6 +95,7 @@ func set_Esc(numEsc):
 
 func _ready() -> void:
 	$AnimationPlayer.play("entrar_carta")
+	$AnimationPlayer4.play("RESET")
 	$CARD/clicar_card.hide()
 	set_Card(random_card(), textCard)
 	def_status(0, 100, 100, 0)
@@ -170,14 +171,11 @@ func _process(delta: float) -> void:
 	
 	if $escolha2.rect_scale.x >= 5:
 		$CARD/card_exemplo1/textbox_card/text_card.percent_visible = 0
-	
-		
+
 func _on_AnimationPlayer_animation_finished(entrar_card) -> void:
 	$CARD/card_exemplo1/textbox_card/text_card/AnimationPlayer.play("anim_text")
 	$CARD/clicar_card.show()
-		
-
-
+	
 func _on_AnimationPlayer2_animation_finished(sair_card) -> void:
 	$CARD/card_exemplo1/textbox_card/text_card.percent_visible = 0
 	prox_carta()
@@ -185,9 +183,8 @@ func _on_AnimationPlayer2_animation_finished(sair_card) -> void:
 	set_Card(random_card(), textCard)
 	$AnimationPlayer.play("entrar_carta")
 
-
-func _on_AnimationPlayer4_animation_finished(prox_esc) -> void:
-#	$CARD/card_exemplo1/textbox_card/text_card.percent_visible = 0
+func _on_AnimationPlayer2_animation_started(sair_card) -> void:
 	$CARD/clicar_card.hide()
-#	set_Card(sorteio, textCard + 1)
-	$CARD/clicar_card.show()
+
+func _on_AnimationPlayer4_animation_started(prox_esc) -> void:
+	$CARD/clicar_card.hide()

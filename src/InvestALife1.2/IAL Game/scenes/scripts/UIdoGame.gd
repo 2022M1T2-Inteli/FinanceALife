@@ -327,4 +327,3 @@ func _on_Timer_timeout() -> void:
 			$AnimationPlayer.play_backwards("escolhas")
 			$CARD/Clicar_card.scale.y = 1
 			$Timer.stop()
-		
