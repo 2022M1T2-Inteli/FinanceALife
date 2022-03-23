@@ -1,10 +1,12 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/scripts/new_mail.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/new_mail.png" type="Texture" id=2]
 [ext_resource path="res://assets/sprites/mensagem_email.png" type="Texture" id=3]
 [ext_resource path="res://assets/fonts/Fredoka/Fredoka-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/sprites/prosseguir.png" type="Texture" id=5]
+[ext_resource path="res://scenes/Seta.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/sprites/prosseguir2.png" type="Texture" id=7]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -595,9 +597,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -284.5
+margin_left = 255.5
 margin_top = -210.5
-margin_right = 284.5
+margin_right = 824.5
 margin_bottom = 210.5
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 2 )
@@ -665,6 +667,7 @@ rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 256.5, 64 )
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -674,6 +677,10 @@ anims/RESET = SubResource( 5 )
 anims/anim_text = SubResource( 8 )
 anims/mensagem = SubResource( 6 )
 anims/prosseguir = SubResource( 9 )
+
+[node name="Seta" parent="." instance=ExtResource( 6 )]
+margin_top = 1102.0
+margin_bottom = 1382.0
 
 [connection signal="pressed" from="email" to="." method="_on_email_pressed"]
 [connection signal="animation_finished" from="set_mail" to="." method="_on_AnimationPlayer_animation_finished"]

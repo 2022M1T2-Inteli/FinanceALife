@@ -5,12 +5,12 @@
 [ext_resource path="res://assets/sprites/fundos_cards/card_n_apertado.png" type="Texture" id=3]
 [ext_resource path="res://assets/fonts/Fredoka/Fredoka-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/sprites/UI/close.png" type="Texture" id=5]
-[ext_resource path="res://assets/sprites/fundos_cards/botao_escolher.png" type="Texture" id=6]
-[ext_resource path="res://assets/sprites/fundos_cards/botao_escolher_apertado.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/prosseguir2.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/prosseguir.png" type="Texture" id=7]
 [ext_resource path="res://assets/sprites/UI/close_apertado.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=3]
-size = 45
+size = 60
 font_data = ExtResource( 4 )
 
 [node name="escolha3" type="TextureRect"]
@@ -19,6 +19,9 @@ margin_right = 770.0
 margin_bottom = 1160.0
 rect_pivot_offset = Vector2( -1, 0 )
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="botao3" type="TouchScreenButton" parent="."]
 position = Vector2( -1.46783, 0 )
@@ -51,9 +54,8 @@ pressed = ExtResource( 8 )
 action = "fechar"
 
 [node name="select" type="TouchScreenButton" parent="."]
-visible = false
 position = Vector2( 128, 960 )
 scale = Vector2( 0.968, 1.067 )
-normal = ExtResource( 6 )
-pressed = ExtResource( 7 )
+normal = ExtResource( 7 )
+pressed = ExtResource( 6 )
 action = "select3"

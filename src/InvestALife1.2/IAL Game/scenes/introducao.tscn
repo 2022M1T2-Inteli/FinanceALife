@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scenes/card_exemplo1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/sprites/fundos_cards/card_apertado.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://assets/sair_card.tres" type="Animation" id=5]
 [ext_resource path="res://scenes/escolha2.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/barra_superior.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Seta.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/sprites/UI/seta.png" type="Texture" id=9]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -223,6 +225,30 @@ tracks/10/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ -66.0 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Seta2:margin_left")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -562.0 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Seta2:margin_right")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -217.0 ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -699,6 +725,61 @@ tracks/8/keys = {
 "values": [ 580.0, 580.0 ]
 }
 
+[sub_resource type="Animation" id=12]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:margin_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -672.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:margin_right")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 143.0 ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "seta"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:margin_left")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -202.0, -253.0, -202.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:margin_right")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 143.0, 92.0, 143.0 ]
+}
+
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -730,13 +811,14 @@ anims/sair_card = ExtResource( 5 )
 [node name="escolha2" parent="." instance=ExtResource( 6 )]
 show_behind_parent = false
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -385.0
-margin_top = -580.0
-margin_right = 385.0
-margin_bottom = 580.0
+anchor_bottom = 1.0
+margin_left = -192.0
+margin_top = 243.0
+margin_right = 578.0
+margin_bottom = 1403.0
+rect_scale = Vector2( 0.5, 0.5 )
 rect_clip_content = true
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
@@ -763,8 +845,34 @@ margin_top = -456.0
 margin_right = 530.0
 margin_bottom = -66.0
 
+[node name="Seta" parent="." instance=ExtResource( 8 )]
+margin_left = -172.0
+margin_top = 1102.0
+margin_right = 173.0
+margin_bottom = 1382.0
+
+[node name="Seta2" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -672.0
+margin_top = -411.0
+margin_right = 143.0
+margin_bottom = -131.0
+rect_rotation = 90.0
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Seta2"]
+anims/RESET = SubResource( 12 )
+anims/seta = SubResource( 13 )
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer2" to="." method="_on_AnimationPlayer2_animation_finished"]
 [connection signal="animation_started" from="AnimationPlayer2" to="." method="_on_AnimationPlayer2_animation_started"]
+[connection signal="animation_started" from="AnimationPlayer3" to="." method="_on_AnimationPlayer3_animation_started"]
 [connection signal="animation_started" from="AnimationPlayer4" to="." method="_on_AnimationPlayer4_animation_started"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

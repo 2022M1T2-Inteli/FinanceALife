@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/sprites/fundos_cards/sombra_card.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
-size = 45
+size = 60
 outline_color = Color( 0.952941, 0.952941, 0.917647, 1 )
 font_data = ExtResource( 4 )
 
@@ -80,15 +80,18 @@ margin_left = -385.0
 margin_top = -540.0
 margin_right = 385.0
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="text_card" type="Label" parent="card_exemplo1/textbox_card"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -364.0
+margin_left = -362.0
 margin_top = -235.0
-margin_right = 372.0
+margin_right = 362.0
 margin_bottom = 235.0
 custom_fonts/font = SubResource( 1 )
 align = 1

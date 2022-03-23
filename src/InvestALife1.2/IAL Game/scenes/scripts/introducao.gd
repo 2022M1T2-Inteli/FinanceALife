@@ -99,6 +99,9 @@ func _ready() -> void:
 	$CARD/clicar_card.hide()
 	set_Card(random_card(), textCard)
 	def_status(0, 100, 100, 0)
+	$Seta.show()
+	$Seta2/AnimationPlayer.play("RESET")
+	
 
 func _process(delta: float) -> void:
 	
@@ -119,6 +122,7 @@ func _process(delta: float) -> void:
 		$AnimationPlayer4.play("foco_esc")
 		$escolha2/botao2.hide()
 		$escolha2/select.show()
+		$Seta2.hide()
 		numEsc = numEsc + 1
 	
 	
@@ -175,6 +179,7 @@ func _process(delta: float) -> void:
 func _on_AnimationPlayer_animation_finished(entrar_card) -> void:
 	$CARD/card_exemplo1/textbox_card/text_card/AnimationPlayer.play("anim_text")
 	$CARD/clicar_card.show()
+	$Seta/seta.play("seta")
 	
 func _on_AnimationPlayer2_animation_finished(sair_card) -> void:
 	$CARD/card_exemplo1/textbox_card/text_card.percent_visible = 0
@@ -185,6 +190,12 @@ func _on_AnimationPlayer2_animation_finished(sair_card) -> void:
 
 func _on_AnimationPlayer2_animation_started(sair_card) -> void:
 	$CARD/clicar_card.hide()
+	$Seta.hide()
 
 func _on_AnimationPlayer4_animation_started(prox_esc) -> void:
 	$CARD/clicar_card.hide()
+
+
+
+func _on_AnimationPlayer3_animation_started(entrar_esc) -> void:
+	$Seta2/AnimationPlayer.play("seta")

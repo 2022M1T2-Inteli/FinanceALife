@@ -1960,6 +1960,7 @@ mouse_default_cursor_shape = 2
 
 [node name="Clicar_card" type="TouchScreenButton" parent="CARD"]
 light_mask = 4
+scale = Vector2( 1, 0.902151 )
 normal = ExtResource( 7 )
 pressed = ExtResource( 6 )
 passby_press = true
