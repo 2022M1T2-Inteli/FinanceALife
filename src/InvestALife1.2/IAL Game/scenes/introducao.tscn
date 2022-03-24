@@ -6,7 +6,7 @@
 [ext_resource path="res://scenes/scripts/introducao.gd" type="Script" id=4]
 [ext_resource path="res://assets/sair_card.tres" type="Animation" id=5]
 [ext_resource path="res://scenes/escolha2.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/barra_superior.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/barra_superior.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Seta.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/sprites/UI/seta.png" type="Texture" id=9]
 

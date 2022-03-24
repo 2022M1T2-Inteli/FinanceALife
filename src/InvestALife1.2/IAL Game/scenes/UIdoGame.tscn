@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/barra_inferior.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/scripts/UIdoGame.gd" type="Script" id=2]
-[ext_resource path="res://scenes/barra_superior.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/barra_superior.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/card_exemplo1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://default_env.tres" type="Environment" id=5]
 [ext_resource path="res://assets/sprites/fundos_cards/card_apertado.png" type="Texture" id=6]
@@ -1960,7 +1960,6 @@ mouse_default_cursor_shape = 2
 
 [node name="Clicar_card" type="TouchScreenButton" parent="CARD"]
 light_mask = 4
-scale = Vector2( 1, 0.902151 )
 normal = ExtResource( 7 )
 pressed = ExtResource( 6 )
 passby_press = true

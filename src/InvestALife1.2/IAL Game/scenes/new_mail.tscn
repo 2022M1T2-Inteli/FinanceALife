@@ -401,6 +401,54 @@ tracks/12/keys = {
 "update": 0,
 "values": [ 1.0 ]
 }
+tracks/13/type = "value"
+tracks/13/path = NodePath("Seta:anchor_left")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.5 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Seta:anchor_top")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Seta:anchor_right")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.5 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Seta:anchor_bottom")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
 
 [sub_resource type="Animation" id=8]
 resource_name = "anim_text"
@@ -597,9 +645,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 255.5
+margin_left = -284.5
 margin_top = -210.5
-margin_right = 824.5
+margin_right = 284.5
 margin_bottom = 210.5
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 2 )
@@ -679,6 +727,8 @@ anims/mensagem = SubResource( 6 )
 anims/prosseguir = SubResource( 9 )
 
 [node name="Seta" parent="." instance=ExtResource( 6 )]
+anchor_top = 1.0
+anchor_bottom = 1.0
 margin_top = 1102.0
 margin_bottom = 1382.0
 

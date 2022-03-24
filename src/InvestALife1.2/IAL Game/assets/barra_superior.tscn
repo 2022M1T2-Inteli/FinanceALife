@@ -1,0 +1,263 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://scenes/scripts/barra_superior.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/fundos_cards/sombra_card.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/UI/bt_status.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/UI/barra_superior2.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/aba1.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/UI/bt_status_pressed.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/aba2.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/aba3.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/aba4.png" type="Texture" id=9]
+[ext_resource path="res://assets/fonts/Fredoka/Fredoka-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=10]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.454902, 0.854902, 0.247059, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.752941, 0.729412, 0.286275, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.854902, 0.247059, 0.247059, 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 100
+font_data = ExtResource( 10 )
+
+[node name="GridContainer" type="Control"]
+margin_right = 1080.0
+margin_bottom = 1920.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="barra_superior" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -530.0
+margin_right = 530.0
+margin_bottom = 390.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="barra_superior"]
+show_behind_parent = true
+margin_left = -85.0
+margin_top = -1420.0
+margin_right = 542.0
+margin_bottom = -476.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nv_dinheiro" type="ProgressBar" parent="barra_superior"]
+show_behind_parent = true
+margin_left = 54.0
+margin_top = 344.0
+margin_right = 222.0
+margin_bottom = 560.0
+rect_rotation = 270.0
+custom_styles/fg = SubResource( 1 )
+max_value = 2000.0
+step = 1.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bt_din" type="TouchScreenButton" parent="barra_superior/Nv_dinheiro"]
+position = Vector2( 165.828, 5.29289 )
+rotation = 1.5708
+scale = Vector2( 1.01061, 1.02652 )
+normal = ExtResource( 3 )
+pressed = ExtResource( 6 )
+action = "bt_din"
+
+[node name="Nv_energia" type="ProgressBar" parent="barra_superior"]
+show_behind_parent = true
+margin_left = 294.0
+margin_top = 344.0
+margin_right = 462.0
+margin_bottom = 560.0
+rect_rotation = 270.0
+custom_styles/fg = SubResource( 3 )
+step = 1.0
+value = 67.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="bt_ene" type="TouchScreenButton" parent="barra_superior/Nv_energia"]
+position = Vector2( 166.96, 4.52481 )
+rotation = 1.5708
+scale = Vector2( 1.01124, 1.03094 )
+normal = ExtResource( 3 )
+pressed = ExtResource( 6 )
+action = "bt_ene"
+
+[node name="Nv_felicidade" type="ProgressBar" parent="barra_superior"]
+show_behind_parent = true
+margin_left = 550.0
+margin_top = 344.0
+margin_right = 718.0
+margin_bottom = 560.0
+rect_rotation = 270.0
+custom_styles/fg = SubResource( 1 )
+step = 1.0
+value = 28.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bt_fel" type="TouchScreenButton" parent="barra_superior/Nv_felicidade"]
+position = Vector2( 166.403, 7.87708 )
+rotation = 1.5708
+scale = Vector2( 1.01124, 1.02652 )
+normal = ExtResource( 3 )
+pressed = ExtResource( 6 )
+action = "bt_fel"
+
+[node name="Nv_divida" type="ProgressBar" parent="barra_superior"]
+show_behind_parent = true
+margin_left = 790.0
+margin_top = 344.0
+margin_right = 958.0
+margin_bottom = 560.0
+rect_rotation = 270.0
+custom_styles/fg = SubResource( 2 )
+max_value = 5000.0
+step = 1.0
+value = 40.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bt_div" type="TouchScreenButton" parent="barra_superior/Nv_divida"]
+position = Vector2( 166.132, 8.67596 )
+rotation = 1.5708
+scale = Vector2( 1.01124, 1.03536 )
+normal = ExtResource( 3 )
+pressed = ExtResource( 6 )
+action = "bt_div"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="barra_superior"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -540.0
+margin_right = 540.0
+margin_bottom = 160.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="barra_superior/HBoxContainer"]
+margin_left = 335.0
+margin_top = 19.0
+margin_right = 745.0
+margin_bottom = 141.0
+custom_fonts/font = SubResource( 4 )
+text = "R$100,00"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="aba_din" type="TextureRect" parent="."]
+visible = false
+margin_top = 398.0
+margin_right = 1080.0
+margin_bottom = 1342.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="aba_din"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -448.0
+margin_top = -355.0
+margin_right = 448.0
+margin_bottom = 397.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="aba_ene" type="TextureRect" parent="."]
+visible = false
+margin_top = 398.0
+margin_right = 1080.0
+margin_bottom = 1342.0
+texture = ExtResource( 7 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="aba_ene"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -448.0
+margin_top = -355.0
+margin_right = 448.0
+margin_bottom = 397.0
+
+[node name="aba_fel" type="TextureRect" parent="."]
+visible = false
+margin_top = 398.0
+margin_right = 1080.0
+margin_bottom = 1342.0
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="aba_fel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -448.0
+margin_top = -355.0
+margin_right = 448.0
+margin_bottom = 397.0
+
+[node name="aba_div" type="TextureRect" parent="."]
+visible = false
+margin_top = 398.0
+margin_right = 1080.0
+margin_bottom = 1342.0
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="aba_div"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -448.0
+margin_top = -355.0
+margin_right = 448.0
+margin_bottom = 397.0

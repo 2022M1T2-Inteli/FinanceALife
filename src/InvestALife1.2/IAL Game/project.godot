@@ -20,7 +20,6 @@ config/icon="res://icon.png"
 
 window/size/width=1080
 window/size/height=1920
-window/size/fullscreen=true
 window/size/test_width=1080
 window/size/test_height=1280
 window/handheld/orientation="portrait"
@@ -74,6 +73,22 @@ select3={
 "events": [  ]
 }
 prox_card={
+"deadzone": 0.5,
+"events": [  ]
+}
+bt_din={
+"deadzone": 0.5,
+"events": [  ]
+}
+bt_ene={
+"deadzone": 0.5,
+"events": [  ]
+}
+bt_fel={
+"deadzone": 0.5,
+"events": [  ]
+}
+bt_div={
 "deadzone": 0.5,
 "events": [  ]
 }

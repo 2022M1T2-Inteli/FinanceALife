@@ -1,16 +1,55 @@
-extends TextureRect
+extends Control
 
-##níveis da barra superior de status
-#onready var max_dinheiro = 1000.00
-#onready var nv_dinheiro = 700.00
-#onready var nv_energia = 70
-#onready var nv_felicidade = 60
-#onready var nv_divida =800.00
-#
-##conecta cada variável com o nó da barra de status correspondente
-#func _process(delta: float) -> void:
-#	$Nv_dinheiro.max_value = max_dinheiro
-#	$Nv_dinheiro.value = nv_dinheiro
-#	$Nv_energia.value = nv_energia
-#	$Nv_felicidade.value = nv_felicidade
-#	$Nv_divida.value = nv_divida
+func  aba_din():
+	$aba_din.show()
+	$aba_ene.hide()
+	$aba_fel.hide()
+	$aba_div.hide()
+
+func aba_ene():
+	$aba_din.hide()
+	$aba_ene.show()
+	$aba_fel.hide()
+	$aba_div.hide()
+
+func aba_fel():
+	$aba_din.hide()
+	$aba_ene.hide()
+	$aba_fel.show()
+	$aba_div.hide()
+
+func aba_div():
+	$aba_din.hide()
+	$aba_ene.hide()
+	$aba_fel.hide()
+	$aba_div.show()
+
+func hide_all():
+	$aba_din.hide()
+	$aba_ene.hide()
+	$aba_fel.hide()
+	$aba_div.hide()
+
+func _ready() -> void:
+	hide_all()
+	
+func _process(delta: float) -> void:
+	if Input.is_action_just_released("bt_din") && $aba_din.visible == false:
+		aba_din()
+	elif Input.is_action_just_released("bt_din") && $aba_din.visible == true:
+		hide_all()
+
+	if Input.is_action_just_released("bt_ene") && $aba_ene.visible == false:
+		aba_ene()
+	elif Input.is_action_just_released("bt_ene") && $aba_ene.visible == true:
+		hide_all()
+
+	if Input.is_action_just_released("bt_fel") && $aba_fel.visible == false:
+		aba_fel()
+	elif Input.is_action_just_released("bt_fel") && $aba_fel.visible == true:
+		hide_all()
+
+	if Input.is_action_just_released("bt_div") && $aba_div.visible == false:
+		aba_div()
+	elif Input.is_action_just_released("bt_div") && $aba_div.visible == true:
+		hide_all()
