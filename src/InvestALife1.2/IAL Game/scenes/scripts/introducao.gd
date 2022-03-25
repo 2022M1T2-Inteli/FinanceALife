@@ -1,5 +1,6 @@
 extends Control
 
+	
 func load_file(file_path):
 	var file = File.new()
 	file.open(file_path, file.READ)
@@ -67,6 +68,7 @@ var fundo = [
 	load("res://assets/sprites/fundos_cards/fundo_card9.png")
 ]
 
+onready var hideAll
 onready var numEsc = 0
 onready var sorteio
 onready var text_esc
@@ -102,6 +104,7 @@ func _ready() -> void:
 	$Seta.show()
 	$Seta2/AnimationPlayer.play("RESET")
 	
+	
 
 func _process(delta: float) -> void:
 	
@@ -110,6 +113,9 @@ func _process(delta: float) -> void:
 	$barra_superior/barra_superior/Nv_felicidade.value = felicidde
 	$barra_superior/barra_superior/Nv_divida.value = divida
 	
+	if $barra_superior/aba_din.visible == true || $barra_superior/aba_ene.visible == true || $barra_superior/aba_fel.visible == true || $barra_superior/aba_div.visible == true:
+		$CARD/clicar_card.hide()
+
 	if $escolha2.rect_scale == Vector2(1,1) && $escolha2.margin_left <= 550:
 		$CARD/clicar_card.hide()
 #		$AnimationPlayer.stop()
@@ -118,6 +124,8 @@ func _process(delta: float) -> void:
 		numEsc = 5
 	
 	if $escolha2.rect_scale.x != 1 && Input.is_action_just_pressed("escolha2"):
+		$barra_superior.hide_all()
+		$escolha2/VBoxContainer/AnimationPlayer.play("abas")
 #		$AnimationPlayer.stop()
 		$AnimationPlayer4.play("foco_esc")
 		$escolha2/botao2.hide()
@@ -155,6 +163,7 @@ func _process(delta: float) -> void:
 				def_status(2000, 0, 0 , 2000)
 			
 	if Input.is_action_just_released("select2"):
+		$barra_superior.hide_all()
 		$escolha2/Label2.hide()
 		$escolha2/select.hide()
 		$AnimationPlayer4.play("prox_esc")
@@ -195,7 +204,8 @@ func _on_AnimationPlayer2_animation_started(sair_card) -> void:
 func _on_AnimationPlayer4_animation_started(prox_esc) -> void:
 	$CARD/clicar_card.hide()
 
-
-
 func _on_AnimationPlayer3_animation_started(entrar_esc) -> void:
 	$Seta2/AnimationPlayer.play("seta")
+
+func _on_barra_superior_hide_all() -> void:
+	$CARD/clicar_card.show()

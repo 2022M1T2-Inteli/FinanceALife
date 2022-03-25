@@ -6,7 +6,7 @@
 [ext_resource path="res://scenes/scripts/introducao.gd" type="Script" id=4]
 [ext_resource path="res://assets/sair_card.tres" type="Animation" id=5]
 [ext_resource path="res://scenes/escolha2.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/barra_superior.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/barra_superior.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Seta.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/sprites/UI/seta.png" type="Texture" id=9]
 
@@ -789,7 +789,7 @@ __meta__ = {
 }
 
 [node name="CARD" parent="." instance=ExtResource( 1 )]
-margin_left = -1528.0
+margin_left = -1529.0
 margin_right = -759.0
 margin_bottom = 581.0
 
@@ -847,9 +847,7 @@ margin_bottom = -66.0
 
 [node name="Seta" parent="." instance=ExtResource( 8 )]
 margin_left = -172.0
-margin_top = 1102.0
 margin_right = 173.0
-margin_bottom = 1382.0
 
 [node name="Seta2" type="TextureRect" parent="."]
 anchor_left = 0.5
@@ -876,3 +874,4 @@ anims/seta = SubResource( 13 )
 [connection signal="animation_started" from="AnimationPlayer3" to="." method="_on_AnimationPlayer3_animation_started"]
 [connection signal="animation_started" from="AnimationPlayer4" to="." method="_on_AnimationPlayer4_animation_started"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="hide_all" from="barra_superior" to="." method="_on_barra_superior_hide_all"]

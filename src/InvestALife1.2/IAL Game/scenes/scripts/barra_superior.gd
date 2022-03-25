@@ -1,5 +1,7 @@
 extends Control
 
+signal hide_all
+
 func  aba_din():
 	$aba_din.show()
 	$aba_ene.hide()
@@ -29,6 +31,7 @@ func hide_all():
 	$aba_ene.hide()
 	$aba_fel.hide()
 	$aba_div.hide()
+	emit_signal("hide_all")
 
 func _ready() -> void:
 	hide_all()

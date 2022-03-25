@@ -89,6 +89,7 @@ onready var nv_divida = 2200.00
 
 func escolheu1():
 	if Input.is_action_just_released("escolha1"):
+		$escolha1/VBoxContainer/AnimationPlayer.play("abas")
 		$AnimationPlayer.play("escolheu1")
 		$escolha1/botao1.hide()
 		$CARD/Clicar_card.hide()
@@ -97,6 +98,7 @@ func escolheu1():
 		$escolha1/select.show()
 
 func fechou1():
+	$escolha1/VBoxContainer/AnimationPlayer.play_backwards("abas")
 	$AnimationPlayer.play_backwards("escolheu1")
 	$escolha1/botao1.show()
 	$CARD/Clicar_card.show()
@@ -108,6 +110,7 @@ func fechou1():
 
 func escolheu2():
 	if Input.is_action_just_released("escolha2"):
+		$escolha2/VBoxContainer/AnimationPlayer.play("abas")
 		$AnimationPlayer.play("escolheu2")
 		$escolha2/botao2.hide()
 		$CARD/Clicar_card.hide()
@@ -116,6 +119,7 @@ func escolheu2():
 		$escolha2/select.show()
 
 func fechou2():
+	$escolha2/VBoxContainer/AnimationPlayer.play_backwards("abas")
 	$AnimationPlayer.play_backwards("escolheu2")
 	$escolha2/botao2.show()
 	$CARD/Clicar_card.show()
@@ -129,6 +133,7 @@ func fechou2():
 
 func escolheu3():
 	if Input.is_action_just_released("escolha3"):
+		$escolha3/VBoxContainer/AnimationPlayer.play("abas")
 		$AnimationPlayer.play("escolheu3")
 		$escolha3/botao3.hide()
 		$CARD/Clicar_card.hide()
@@ -137,6 +142,7 @@ func escolheu3():
 		$escolha3/select.show()
 
 func fechou3():
+	$escolha3/VBoxContainer/AnimationPlayer.play_backwards("abas")
 	$AnimationPlayer.play_backwards("escolheu3")
 	$escolha3/botao3.show()
 	$CARD/Clicar_card.show()
