@@ -80,12 +80,12 @@ func random_card():
 
 onready var text_card
 onready var sorteio
-onready var max_divida = 5000.00
-onready var max_dinheiro = 2000.00
-onready var nv_dinheiro = 1650.00
-onready var nv_energia = 60
-onready var nv_felicidade = 70
-onready var nv_divida = 2200.00
+#onready var max_divida = 5000.00
+#onready var max_dinheiro = 2000.00
+#onready var nv_dinheiro = 1650.00
+#onready var nv_energia = 60
+#onready var nv_felicidade = 70
+#onready var nv_divida = 2200.00
 
 func escolheu1():
 	if Input.is_action_just_released("escolha1"):
@@ -156,10 +156,10 @@ func fechou3():
 
 func select_card1(text, dinheiro, energia, felicidade, divida):
 	if text_card == text && Input.is_action_just_released("select1"):
-		nv_dinheiro = nv_dinheiro + dinheiro
-		nv_energia = nv_energia + energia
-		nv_felicidade = nv_felicidade + felicidade
-		nv_divida = nv_divida + divida
+		Global.money += dinheiro
+		Global.energy += energia
+		Global.hapiness += felicidade
+		Global.debt += divida
 		fechou1()
 		$Timer.start()
 		if sorteio == 0:
@@ -171,10 +171,10 @@ func select_card1(text, dinheiro, energia, felicidade, divida):
 
 func select_card2(text, dinheiro, energia, felicidade, divida):
 	if text_card == text && Input.is_action_just_released("select2"):
-		nv_dinheiro = nv_dinheiro + dinheiro
-		nv_energia = nv_energia + energia
-		nv_felicidade = nv_felicidade + felicidade
-		nv_divida = nv_divida + divida
+		Global.money += dinheiro
+		Global.energy += energia
+		Global.hapiness += felicidade
+		Global.debt += divida
 		fechou2()
 		$Timer.start()
 		if sorteio == 0:
@@ -186,10 +186,10 @@ func select_card2(text, dinheiro, energia, felicidade, divida):
 
 func select_card3(text, dinheiro, energia, felicidade, divida):
 	if text_card == text && Input.is_action_just_released("select3"):
-		nv_dinheiro = nv_dinheiro + dinheiro
-		nv_energia = nv_energia + energia
-		nv_felicidade = nv_felicidade + felicidade
-		nv_divida = nv_divida + divida
+		Global.money += dinheiro
+		Global.energy += energia
+		Global.hapiness += felicidade
+		Global.debt += divida
 		fechou3()
 		$Timer.start()
 		if sorteio == 0:
@@ -241,29 +241,8 @@ func _process(delta):
 	text_card = text_file[sorteio]
 	$CARD/card_exemplo1/textbox_card/text_card.text = load_file(text_card)
 	
-	$barra_superior/barra_superior/Nv_divida.max_value = max_divida
-	$barra_superior/barra_superior/Nv_dinheiro.max_value = max_dinheiro
-	$barra_superior/barra_superior/Nv_dinheiro.value = nv_dinheiro
-	$barra_superior/barra_superior/Nv_energia.value = nv_energia
-	$barra_superior/barra_superior/Nv_felicidade.value = nv_felicidade
-	$barra_superior/barra_superior/Nv_divida.value = nv_divida
 	
-	if nv_dinheiro >= max_dinheiro:
-		nv_dinheiro = max_dinheiro
-	if nv_divida >= max_divida:
-		nv_divida = max_divida
-	if nv_energia >= 100:
-		nv_energia = 100
-	if nv_felicidade >= 100:
-		nv_felicidade = 100
-	if nv_dinheiro <= 0:
-		nv_dinheiro = 0
-	if nv_divida <= 0:
-		nv_divida = 0
-	if nv_energia <= 0:
-		nv_energia = 0
-	if nv_felicidade <= 0:
-		nv_felicidade = 0
+
 	
 	#abrir a barra inferior
 	if $barra_inferior/SubirBarra.visible == true && $barra_inferior/DescerBarra.visible == false && Input.is_action_just_released("subir_barra"):
@@ -329,7 +308,7 @@ func _process(delta):
 	select_card2("res://assets/text/text_card3.tres", -500, 70, -30, 30)
 	select_card3("res://assets/text/text_card3.tres", 170, 30, -10, 100)
 
-func _on_Timer_timeout() -> void:
-			$AnimationPlayer.play_backwards("escolhas")
-			$CARD/Clicar_card.scale.y = 1
-			$Timer.stop()
+#func _on_Timer_timeout() -> void:
+#			$AnimationPlayer.play_backwards("escolhas")
+#			$CARD/Clicar_card.scale.y = 1
+#			$Timer.stop()

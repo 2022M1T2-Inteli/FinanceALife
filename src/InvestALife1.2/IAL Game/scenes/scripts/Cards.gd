@@ -1,14 +1,14 @@
 extends Node
 
-var money := 1000
+var money := 0.00
 var energy := 100
 var hapiness := 100
-var debt := 1000
+var debt := 0.00
 
 var totalSpent = 0
 
-var maxMoney := 2000
-var maxDebt := 5000
+var maxMoney := 2000.00
+var maxDebt := 5000.00
 
 
 const socialIcon = "res://assets/sprites/imgs_cards/img_card_exemplo1.png"
@@ -759,8 +759,8 @@ var cardsArray = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-#	for i in range(0, len(firstMonthIntroCards)):
-#		cardsArray.append(firstMonthIntroCards[i])
+	for i in range(0, len(firstMonthIntroCards)):
+		cardsArray.append(firstMonthIntroCards[i])
 	
 	pass
 	

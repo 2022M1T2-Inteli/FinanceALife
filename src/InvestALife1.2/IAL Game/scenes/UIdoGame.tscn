@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scenes/barra_inferior.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/scripts/UIdoGame.gd" type="Script" id=2]
 [ext_resource path="res://scenes/barra_superior.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/card_exemplo1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/Card celular.svg" type="Texture" id=5]
 [ext_resource path="res://assets/sprites/fundos_cards/card_apertado.png" type="Texture" id=6]
 [ext_resource path="res://assets/sprites/fundos_cards/card_n_apertado.png" type="Texture" id=7]
 [ext_resource path="res://scenes/escolha3.tscn" type="PackedScene" id=8]
@@ -2039,6 +2040,16 @@ anims/escolheu3 = SubResource( 13 )
 [node name="Timer" type="Timer" parent="."]
 process_mode = 0
 wait_time = 0.18
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 1447.24
+margin_top = 162.18
+margin_right = 2217.24
+margin_bottom = 1323.18
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="animation_finished" from="CARD/Entrar Carta" to="." method="_on_Entrar_Carta_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
