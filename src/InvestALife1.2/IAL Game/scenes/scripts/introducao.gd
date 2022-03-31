@@ -1,8 +1,8 @@
 extends Control
 
 func onClickChoice():
-	def_status(Global.cardsArray[numEsc]['choices'][1]['money'],Global.cardsArray[numEsc+1]['choices'][1]['energy'], Global.cardsArray[numEsc][1]['choiceText']['hapiness'], Global.cardsArray[numEsc][1]['choiceText']['debt'])
-	   
+	def_status(Global.cardsArray[numEsc]['choices'][1]['money'],Global.cardsArray[numEsc]['choices'][1]['energy'], Global.cardsArray[numEsc]['choices'][1]['hapiness'], Global.cardsArray[numEsc]['choices'][1]['debt'])
+	
 	
 func load_file(file_path):
 	var file = File.new()
@@ -36,7 +36,7 @@ func clickOnCard():
 	$CARD/card_exemplo1/textbox_card/text_card.text = Global.cardsArray[numEsc]['cardText']
 	
 	if Global.cardsArray[numEsc]['choices'][1]['exists'] == true and Global.cardsArray[numEsc]['choices'][0]['exists'] == false and Global.cardsArray[numEsc]['choices'][2]['exists'] == false:
-		print(Global.cardsArray[numEsc]['choices'])
+		print(Global.cardsArray[numEsc]['choices'][1]['choiceText'])
 		$escolha2/Label2.text = Global.cardsArray[numEsc]['choices'][1]['choiceText']
 		prox_esco()
 		
@@ -108,6 +108,7 @@ func set_Card(numFundo, numText):
 #	$escolha2/Label2.text = load_file(text_esc)
 
 func _ready() -> void:
+#	def_status(0, 100, 100, 0)
 	$AnimationPlayer.play("entrar_carta")
 	$AnimationPlayer4.play("RESET")
 	$CARD/clicar_card.hide()
@@ -121,6 +122,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	print(numEsc)
+	if numEsc >= 13:
+		numEsc = 13
 #	$barra_superior/barra_superior/Nv_dinheiro.value = dinheiro
 #	$barra_superior/barra_superior/Nv_energia.value = energia
 #	$barra_superior/barra_superior/Nv_felicidade.value = felicidde
@@ -188,7 +191,6 @@ func _process(delta: float) -> void:
 			
 	if Input.is_action_just_released("select2"):
 		onClickChoice()
-		clickOnCard()
 		$barra_superior.hide_all()
 		$escolha2/Label2.hide()
 		$escolha2/select.hide()
@@ -210,6 +212,9 @@ func _process(delta: float) -> void:
 	
 	if $escolha2.rect_scale.x >= 5:
 		$CARD/card_exemplo1/textbox_card/text_card.percent_visible = 0
+		
+	if numEsc == 13:
+		get_tree().change_scene("res://scenes/UIdoGame.tscn")
 
 func _on_AnimationPlayer_animation_finished(entrar_card) -> void:
 	$CARD/card_exemplo1/textbox_card/text_card/AnimationPlayer.play("anim_text")
@@ -217,9 +222,9 @@ func _on_AnimationPlayer_animation_finished(entrar_card) -> void:
 	$Seta/seta.play("seta")
 	
 func _on_AnimationPlayer2_animation_finished(sair_card) -> void:
+	clickOnCard()
 	$CARD/card_exemplo1/textbox_card/text_card.percent_visible = 0
 	$CARD/clicar_card.hide()
-	clickOnCard()
 	$AnimationPlayer.play("entrar_carta")
 
 func _on_AnimationPlayer2_animation_started(sair_card) -> void:

@@ -1,11 +1,11 @@
 extends Node
 
-var money := 0.00
-var energy := 100
-var hapiness := 100
-var debt := 0.00
+var money = 0.00
+var energy = 100
+var hapiness = 100 
+var debt = 0.00
 
-var totalSpent = 0
+var totalSpent = 0.00
 
 var maxMoney := 2000.00
 var maxDebt := 5000.00
@@ -15,21 +15,7 @@ const socialIcon = "res://assets/sprites/imgs_cards/img_card_exemplo1.png"
 const graphIcon = "res://assets/sprites/imgs_cards/img_card_exemplo2.png"
 const walletIcon = "res://assets/sprites/imgs_cards/img_card_exemplo3.png"
 
-var extrato = {
-	"cardText": (
-		"Você gastou R$"
-		+ str(totalSpent)
-		+ "!\nVocê tem R$"
-		+ str(money)
-		+ " de dinheiro.\nVocê tem "
-		+ str(energy)
-		+ " de energia.\nVocê tem "
-		+ str(hapiness)
-		+ " de felicidade.\nVocê tem R$"
-		+ str(debt)
-		+ " de dívida.\nVocê tem R$."
-	)
-}
+var extrato = "Você gastou R$" + str(totalSpent) + "!\nVocê tem R$"+ str(money) + " de dinheiro.\nVocê tem " + str(energy) + " de energia.\nVocê tem " + str(hapiness) + " de felicidade.\nVocê tem R$" + str(debt) + " de dívida.\nVocê tem R$" + str(money)
 
 var firstMonthIntroCards = [
 	{
@@ -172,7 +158,7 @@ var firstMonthIntroCards = [
 		[
 			{"exists": false},
 			{
-				"choiceText": extrato,
+				"choiceText": str(extrato),
 				"money": -50,
 				"energy": -10,
 				"hapiness": +15,
@@ -763,7 +749,14 @@ func _ready():
 		cardsArray.append(firstMonthIntroCards[i])
 	
 	pass
-	
+
+func _process(delta):
+	money = money
+	energy = energy
+	hapiness = hapiness 
+	debt = debt
+
+	totalSpent = totalSpent
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
