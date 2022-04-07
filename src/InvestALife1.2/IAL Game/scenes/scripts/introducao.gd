@@ -1,7 +1,9 @@
 extends Control
 
+var mes1 = Global.cardsArray1
+
 func onClickChoice():
-	def_status(Global.cardsArray[numEsc]['choices'][1]['money'],Global.cardsArray[numEsc]['choices'][1]['energy'], Global.cardsArray[numEsc]['choices'][1]['hapiness'], Global.cardsArray[numEsc]['choices'][1]['debt'])
+	def_status(mes1[numEsc]['choices'][1]['money'],mes1[numEsc]['choices'][1]['energy'], mes1[numEsc]['choices'][1]['hapiness'], mes1[numEsc]['choices'][1]['debt'])
 	
 	
 func load_file(file_path):
@@ -20,11 +22,11 @@ func random_card():
 #func prox_carta():
 #	textCard = textCard + 1
 
-func prox_esco():
-	if $CARD/card_exemplo1/textbox_card/text_card.percent_visible != 1 && Input.is_action_just_released("prox_card"):
+func clicar_card():
+	if $CARD/card_exemplo1/textbox_card/text_card.percent_visible != 1 && Input.is_action_just_released("clicar_card"):
 		$CARD/card_exemplo1/textbox_card/text_card/AnimationPlayer.stop()
 		$CARD/card_exemplo1/textbox_card/text_card.percent_visible = 1
-	elif $CARD/card_exemplo1/textbox_card/text_card.percent_visible == 1 && Input.is_action_just_released("prox_card"):
+	elif $CARD/card_exemplo1/textbox_card/text_card.percent_visible == 1 && Input.is_action_just_released("clicar_card"):
 #		clickOnCard()
 		$escolha2/Label2.show()
 		$AnimationPlayer3.play("entrar_esc")
@@ -33,12 +35,12 @@ func prox_esco():
 		$escolha2/botao2.scale.y =1
 		
 func clickOnCard():
-	$CARD/card_exemplo1/textbox_card/text_card.text = Global.cardsArray[numEsc]['cardText']
+	$CARD/card_exemplo1/textbox_card/text_card.text = mes1[numEsc]['cardText']
 	
-	if Global.cardsArray[numEsc]['choices'][1]['exists'] == true and Global.cardsArray[numEsc]['choices'][0]['exists'] == false and Global.cardsArray[numEsc]['choices'][2]['exists'] == false:
-		print(Global.cardsArray[numEsc]['choices'][1]['choiceText'])
-		$escolha2/Label2.text = Global.cardsArray[numEsc]['choices'][1]['choiceText']
-		prox_esco()
+	if mes1[numEsc]['choices'][1]['exists'] == true and mes1[numEsc]['choices'][0]['exists'] == false and mes1[numEsc]['choices'][2]['exists'] == false:
+		print(mes1[numEsc]['choices'][1]['choiceText'])
+		$escolha2/Label2.text = mes1[numEsc]['choices'][1]['choiceText']
+		clicar_card()
 		
 
 
@@ -81,7 +83,7 @@ var fundo = [
 ]
 
 onready var hideAll
-onready var numEsc = 0
+onready var numEsc = Global.numEsc
 onready var sorteio
 onready var text_esc
 onready var text_card
@@ -155,7 +157,7 @@ func _process(delta: float) -> void:
 #		numEsc = numEsc + 1
 	
 	
-	if Input.is_action_just_released("prox_card"):
+	if Input.is_action_just_released("clicar_card"):
 #		if textCard == 4: 
 #			prox_esco()
 #		elif textCard == 5:
@@ -174,20 +176,20 @@ func _process(delta: float) -> void:
 #				$CARD/card_exemplo1/textbox_card/text_card.percent_visible = 1
 #			elif $CARD/card_exemplo1/textbox_card/text_card.percent_visible == 1 && Input.is_action_just_released("prox_card"):
 #				get_tree().change_scene("res://scenes/UIdoGame.tscn")
-		if $CARD/card_exemplo1/textbox_card/text_card.percent_visible != 1 && Input.is_action_just_released("prox_card"):
+		if $CARD/card_exemplo1/textbox_card/text_card.percent_visible != 1 && Input.is_action_just_released("clicar_card"):
 			$CARD/card_exemplo1/textbox_card/text_card/AnimationPlayer.stop()
 			$CARD/card_exemplo1/textbox_card/text_card.percent_visible = 1
-		elif Global.cardsArray[numEsc]['choices'][1]['exists'] == true and Global.cardsArray[numEsc]['choices'][0]['exists'] == false and Global.cardsArray[numEsc]['choices'][2]['exists'] == false:
-			print(Global.cardsArray[numEsc]['choices'])
-			$escolha2/Label2.text = Global.cardsArray[numEsc]['choices'][1]['choiceText']
-			prox_esco()
+		elif mes1[numEsc]['choices'][1]['exists'] == true and mes1[numEsc]['choices'][0]['exists'] == false and mes1[numEsc]['choices'][2]['exists'] == false:
+			print(mes1[numEsc]['choices'])
+			$escolha2/Label2.text = mes1[numEsc]['choices'][1]['choiceText']
+			clicar_card()
 	
-		elif $CARD/card_exemplo1/textbox_card/text_card.percent_visible == 1 && Input.is_action_just_released("prox_card") && $escolha2.rect_scale != Vector2(1,1) || $escolha2.margin_left >= 550:
+		elif $CARD/card_exemplo1/textbox_card/text_card.percent_visible == 1 && Input.is_action_just_released("clicar_card") && $escolha2.rect_scale != Vector2(1,1) || $escolha2.margin_left >= 550:
 			$AnimationPlayer2.play("sair_card")
 			$CARD/clicar_card.hide()
 			numEsc += 1
 			if numEsc == 3:
-				def_status(2000, 0, 0 , 2000)
+				def_status(1000, 0, 0 , 1000)
 			
 	if Input.is_action_just_released("select2"):
 		onClickChoice()

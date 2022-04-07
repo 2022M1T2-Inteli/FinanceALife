@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scenes/barra_inferior.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/scripts/UIdoGame.gd" type="Script" id=2]
@@ -97,6 +97,61 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.5 ]
+}
+
+[sub_resource type="Animation" id=14]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:margin_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -385.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:margin_right")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 385.0 ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "sair_card2"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:margin_left")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -385.0, -332.0, -453.0, 712.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:margin_right")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 385.0, 442.0, 317.0, 1482.0 ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -943,7 +998,7 @@ tracks/27/path = NodePath("CARD/Clicar_card:scale")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/imported = false
-tracks/27/enabled = true
+tracks/27/enabled = false
 tracks/27/keys = {
 "times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1948,15 +2003,13 @@ __meta__ = {
 [node name="CARD" parent="." instance=ExtResource( 4 )]
 show_behind_parent = true
 light_mask = 4
-margin_left = -1382.47
-margin_top = -540.0
-margin_right = -612.47
-margin_bottom = 621.0
+margin_bottom = 581.0
 rect_scale = Vector2( 1, 1.01369 )
 mouse_default_cursor_shape = 2
 
 [node name="Clicar_card" type="TouchScreenButton" parent="CARD"]
 light_mask = 4
+scale = Vector2( 1, 0.902151 )
 normal = ExtResource( 7 )
 pressed = ExtResource( 6 )
 passby_press = true
@@ -1968,6 +2021,11 @@ autoplay = "entrar_card"
 reset_on_save = false
 anims/RESET = SubResource( 5 )
 anims/entrar_card = ExtResource( 11 )
+
+[node name="SairCard" type="AnimationPlayer" parent="CARD"]
+reset_on_save = false
+anims/RESET = SubResource( 14 )
+anims/sair_card2 = SubResource( 15 )
 
 [node name="barra_inferior" parent="." instance=ExtResource( 1 )]
 light_mask = 2
@@ -2037,19 +2095,20 @@ anims/escolheu1 = SubResource( 11 )
 anims/escolheu2 = SubResource( 12 )
 anims/escolheu3 = SubResource( 13 )
 
-[node name="Timer" type="Timer" parent="."]
-process_mode = 0
-wait_time = 0.18
-
-[node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 1447.24
-margin_top = 162.18
-margin_right = 2217.24
-margin_bottom = 1323.18
+[node name="phone" type="TextureRect" parent="."]
+margin_left = 2339.85
+margin_top = 218.59
+margin_right = 3109.85
+margin_bottom = 1379.59
 texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="animation_finished" from="CARD/Entrar Carta" to="." method="_on_Entrar_Carta_animation_finished"]
+[connection signal="animation_started" from="CARD/Entrar Carta" to="." method="_on_Entrar_Carta_animation_started"]
+[connection signal="animation_finished" from="CARD/SairCard" to="." method="_on_SairCard_animation_finished"]
+[connection signal="animation_started" from="CARD/SairCard" to="." method="_on_SairCard_animation_started"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

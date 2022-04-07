@@ -783,20 +783,20 @@ tracks/1/keys = {
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -385.0
+margin_right = 385.0
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CARD" parent="." instance=ExtResource( 1 )]
-margin_left = -1529.0
-margin_right = -759.0
 margin_bottom = 581.0
 
 [node name="clicar_card" type="TouchScreenButton" parent="CARD"]
 normal = ExtResource( 3 )
 pressed = ExtResource( 2 )
-action = "prox_card"
+action = "clicar_card"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false

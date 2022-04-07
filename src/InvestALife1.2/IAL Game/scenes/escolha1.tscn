@@ -156,5 +156,6 @@ margin_bottom = 656.0
 texture = ExtResource( 10 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer"]
+autoplay = "abas"
 anims/RESET = SubResource( 2 )
 anims/abas = SubResource( 3 )

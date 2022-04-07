@@ -1,5 +1,7 @@
 extends Node
 
+var numEsc = 0
+
 var money = 0.00
 var energy = 100
 var hapiness = 100 
@@ -51,7 +53,7 @@ var firstMonthIntroCards = [
 			{
 				"choiceText": "Esperar Onibus que demora pra passar.",
 				"money": 0,
-				"energy": -2.5,
+				"energy": -5,
 				"hapiness": -5,
 				"debt": 0,
 				"exists": true
@@ -120,8 +122,8 @@ var firstMonthIntroCards = [
 			{"exists": false},
 			{
 				"choiceText": "Pão de queijo da faculdade",
-				"money": -10,
-				"energy": +10,
+				"money": -600,
+				"energy": 0,
 				"hapiness": 0,
 				"debt": 0,
 				"exists": true
@@ -137,7 +139,7 @@ var firstMonthIntroCards = [
 			{"exists": false},
 			{
 				"choiceText": "Ir para as festas da faculdade.",
-				"money": -50,
+				"money": -250,
 				"energy": -10,
 				"hapiness": +15,
 				"debt": 0,
@@ -226,6 +228,7 @@ var secondMonthCards = [
 				"energy": -30,
 				"hapiness": -5,
 				"debt": 0,
+				"exists": true
 			},
 			{
 				"choiceText": "Vou procurar um restaurante perto da faculdade.",
@@ -233,6 +236,7 @@ var secondMonthCards = [
 				"energy": +10,
 				"hapiness": +5,
 				"debt": 0,
+				"exists": true
 			},
 			{
 				"choiceText": "Comer? Pra que?",
@@ -240,6 +244,7 @@ var secondMonthCards = [
 				"energy": -20,
 				"hapiness": -20,
 				"debt": 0,
+				"exists": true
 			}
 		]
 	},
@@ -258,6 +263,7 @@ var secondMonthCards = [
 				"energy": 20,
 				"hapiness": 0,
 				"debt": 0,
+				"exists": true
 			},
 			{
 				"choiceText": "A vida é muito curta... Quero é aproveitar!",
@@ -265,6 +271,7 @@ var secondMonthCards = [
 				"energy": -20,
 				"hapiness": +10,
 				"debt": 0,
+				"exists": true
 			},
 			{
 				"choiceText": "Acho vida social desnecessária.",
@@ -272,6 +279,7 @@ var secondMonthCards = [
 				"energy": 0,
 				"hapiness": -30,
 				"debt": 0,
+				"exists": true
 			}
 		]
 	},
@@ -308,7 +316,7 @@ var thirdMonthCards = [
 		[
 			{
 				"choiceText": "Pacote de 1kg - R$5,80",
-				"money": -75,
+				"money": -80,
 				"energy": 0,
 				"hapiness": 0,
 				"debt": 0,
@@ -316,7 +324,7 @@ var thirdMonthCards = [
 			},
 			{
 				"choiceText": "Pacote de 5kg - R$25,00",
-				"money": -50,
+				"money": -75,
 				"energy": 0,
 				"hapiness": 0,
 				"debt": 0,
@@ -324,7 +332,7 @@ var thirdMonthCards = [
 			},
 			{
 				"choiceText": "Pacote de 500gr - R$3,50",
-				"money": -100,
+				"money": -75,
 				"energy": 0,
 				"hapiness": 0,
 				"debt": 0,
@@ -339,7 +347,7 @@ var thirdMonthCards = [
 		[
 			{
 				"choiceText": "Pacote de 1kg - R$9,50",
-				"money": -50,
+				"money": -85,
 				"energy": 0,
 				"hapiness": 0,
 				"debt": 0,
@@ -355,7 +363,7 @@ var thirdMonthCards = [
 			},
 			{
 				"choiceText": "Pacote de 500gr - R$5,00",
-				"money": -75,
+				"money": -90,
 				"energy": 0,
 				"hapiness": 0,
 				"debt": 0,
@@ -741,14 +749,32 @@ var sixthMonthCards = [
 
 # add all other arrays to the main array
 #var cardsArray
-var cardsArray = []
+var cardsArray1 = []
+var cardsArray2 = []
+var cardsArray3 = []
+var cardsArray4 = []
+var cardsArray5 = []
+var cardsArray6 = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for i in range(0, len(firstMonthIntroCards)):
-		cardsArray.append(firstMonthIntroCards[i])
+		cardsArray1.append(firstMonthIntroCards[i])
 	
-	pass
+	for i in range(0, len(secondMonthCards)):
+		cardsArray2.append(secondMonthCards[i])
+	
+	for i in range(0, len(thirdMonthCards)):
+		cardsArray3.append(thirdMonthCards[i])
+	
+	for i in range(0, len(fourthMonthCards)):
+		cardsArray4.append(fourthMonthCards[i])
+	
+	for i in range(0, len(fifthMonthCards)):
+		cardsArray5.append(fifthMonthCards[i])
+	
+	for i in range(0, len(sixthMonthCards)):
+		cardsArray6.append(sixthMonthCards[i])
 
 func _process(delta):
 	money = money

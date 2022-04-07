@@ -358,6 +358,7 @@ align = 1
 valign = 1
 
 [node name="aba_div" type="TextureRect" parent="."]
+visible = false
 margin_top = 398.0
 margin_right = 1080.0
 margin_bottom = 1342.0

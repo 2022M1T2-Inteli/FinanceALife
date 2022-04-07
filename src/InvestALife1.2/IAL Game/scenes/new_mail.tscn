@@ -727,10 +727,6 @@ anims/mensagem = SubResource( 6 )
 anims/prosseguir = SubResource( 9 )
 
 [node name="Seta" parent="." instance=ExtResource( 6 )]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_top = 1102.0
-margin_bottom = 1382.0
 
 [connection signal="pressed" from="email" to="." method="_on_email_pressed"]
 [connection signal="animation_finished" from="set_mail" to="." method="_on_AnimationPlayer_animation_finished"]

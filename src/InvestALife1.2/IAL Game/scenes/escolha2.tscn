@@ -86,6 +86,7 @@ pressed = ExtResource( 8 )
 action = "fechar"
 
 [node name="select" type="TouchScreenButton" parent="."]
+visible = false
 position = Vector2( 122, 960 )
 scale = Vector2( 0.968, 1.067 )
 normal = ExtResource( 7 )
@@ -98,7 +99,7 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 180.0
+margin_left = -47.0
 margin_top = -517.0
 margin_right = 332.0
 margin_bottom = 139.0

@@ -1,12 +1,154 @@
 extends Control
 
 #define os arquivos de texto das cards de escolha
-var texto = false
-var escolhas_txt = [
-	"res://assets/text/text_escolhas/escolha1.tres",
-	"res://assets/text/text_escolhas/escolha2.tres",
-	"res://assets/text/text_escolhas/escolha3.tres"
-]
+var mes = Global.cardsArray2
+var numEsc = Global.numEsc
+
+func mesVerify():
+	if Input.is_action_just_released("clicar_card"):
+		if mes == Global.cardsArray2:
+			if numEsc >= 6:
+				mes = Global.cardsArray3
+				numEsc = 0
+		elif mes == Global.cardsArray3:
+			if numEsc >= 5:
+				mes =  Global.cardsArray4
+				numEsc = 0
+		elif mes == Global.cardsArray4:
+			if numEsc >= 6:
+				mes = Global.cardsArray5
+				numEsc = 0
+		elif mes == Global.cardsArray5:
+			if numEsc >= 4:
+				mes = Global.cardsArray6
+				numEsc = 0
+		elif mes == Global.cardsArray6:
+			if numEsc >= 2:
+				numEsc = 0
+				get_tree().change_scene("res://scenes/GameOver.tscn")
+
+func abasEsc1():
+	if mes[numEsc]['choices'][0]['exists'] == true:
+		if mes[numEsc]['choices'][0]['money'] == 0:
+			$escolha1/VBoxContainer/abaDin.hide()
+		else:
+			$escolha1/VBoxContainer/abaDin.show()
+
+		if mes[numEsc]['choices'][0]['energy'] == 0:
+			$escolha1/VBoxContainer/abaEne.hide()
+		else:
+			$escolha1/VBoxContainer/abaEne.show()
+
+		if mes[numEsc]['choices'][0]['hapiness'] == 0:
+			$escolha1/VBoxContainer/abaFel.hide()
+		else:
+			$escolha1/VBoxContainer/abaFel.show()
+
+		if mes[numEsc]['choices'][0]['debt'] == 0:
+			$escolha1/VBoxContainer/abaDiv.hide()
+		else:
+			$escolha1/VBoxContainer/abaDiv.show()
+
+func abasEsc2():
+	if mes[numEsc]['choices'][1]['exists'] == true:
+		if mes[numEsc]['choices'][1]['money'] == 0:
+			$escolha2/VBoxContainer/abaDin.hide()
+		else:
+			$escolha2/VBoxContainer/abaDin.show()
+
+		if mes[numEsc]['choices'][1]['energy'] == 0:
+			$escolha2/VBoxContainer/abaEne.hide()
+		else:
+			$escolha2/VBoxContainer/abaEne.show()
+
+		if mes[numEsc]['choices'][1]['hapiness'] == 0:
+			$escolha2/VBoxContainer/abaFel.hide()
+		else:
+			$escolha2/VBoxContainer/abaFel.show()
+
+		if mes[numEsc]['choices'][1]['debt'] == 0:
+			$escolha2/VBoxContainer/abaDiv.hide()
+		else:
+			$escolha2/VBoxContainer/abaDiv.show()
+
+func abasEsc3():
+	if mes[numEsc]['choices'][2]['exists'] == true:
+		if mes[numEsc]['choices'][2]['money'] == 0:
+			$escolha3/VBoxContainer/abaDin.hide()
+		else:
+			$escolha3/VBoxContainer/abaDin.show()
+
+		if mes[numEsc]['choices'][2]['energy'] == 0:
+			$escolha3/VBoxContainer/abaEne.hide()
+		else:
+			$escolha3/VBoxContainer/abaEne.show()
+
+		if mes[numEsc]['choices'][2]['hapiness'] == 0:
+			$escolha3/VBoxContainer/abaFel.hide()
+		else:
+			$escolha3/VBoxContainer/abaFel.show()
+
+		if mes[numEsc]['choices'][2]['debt'] == 0:
+			$escolha3/VBoxContainer/abaDiv.hide()
+		else:
+			$escolha3/VBoxContainer/abaDiv.show()
+
+func def_status(Din, Ene, Fel, Div):
+	Global.money += Din
+	Global.energy += Ene
+	Global.hapiness += Fel
+	Global.debt += Div
+
+func onClickChoice(Esc):
+	def_status(mes[numEsc]['choices'][Esc]['money'],mes[numEsc]['choices'][Esc]['energy'], mes[numEsc]['choices'][Esc]['hapiness'], mes[numEsc]['choices'][Esc]['debt'])
+	
+func clickOnCard():
+	$CARD/card_exemplo1/textbox_card/text_card.text = mes[numEsc]['cardText']
+	print(numEsc)
+	
+	if mes[numEsc]['choices'][0]['exists'] == true:
+		$escolha1/Label.text = mes[numEsc]['choices'][0]['choiceText']
+	if mes[numEsc]['choices'][1]['exists'] == true:
+		$escolha2/Label2.text = mes[numEsc]['choices'][1]['choiceText']
+	if mes[numEsc]['choices'][2]['exists'] == true:
+		$escolha3/Label3.text = mes[numEsc]['choices'][2]['choiceText']
+
+#func clicar_card():
+#	if $CARD/card_exemplo1/textbox_card/text_card.percent_visible != 1 && Input.is_action_just_released("clicar_card"):
+#		$CARD/card_exemplo1/textbox_card/text_card/AnimationPlayer.stop()
+#		$CARD/card_exemplo1/textbox_card/text_card.percent_visible = 1
+#	elif $CARD/card_exemplo1/textbox_card/text_card.percent_visible == 1 && Input.is_action_just_released("clicar_card"):
+#		clickOnCard()
+#		$AnimationPlayer3.play("entrar_esc")
+
+func showEsc():
+	$escolha1/Label.show()
+	$escolha1/fechar.show()
+	$escolha1/select.show()
+	$escolha1/botao1.hide()
+	$escolha2/Label2.show()
+	$escolha2/fechar.show()
+	$escolha2/select.show()
+	$escolha2/botao2.hide()
+	$escolha3/Label3.show()
+	$escolha3/fechar.show()
+	$escolha3/select.show()
+	$escolha3/botao3.hide()
+	$CARD/Clicar_card.hide()
+
+func hideEsc():
+	$escolha1/Label.hide()
+	$escolha1/fechar.hide()
+	$escolha1/select.hide()
+	$escolha1/botao1.show()
+	$escolha2/Label2.hide()
+	$escolha2/fechar.hide()
+	$escolha2/select.hide()
+	$escolha2/botao2.show()
+	$escolha3/Label3.hide()
+	$escolha3/fechar.hide()
+	$escolha3/select.hide()
+	$escolha3/botao3.show()
 
 func abrir_barra():
 	$barra_inferior/AnimationPlayer.play("subir barra")
@@ -38,73 +180,33 @@ func load_file(file_path):
 	var text = file.get_as_text()
 	return text
 
-var fundo = [
-	load("res://assets/sprites/fundos_cards/fundo_card1.png"), 
-	load("res://assets/sprites/fundos_cards/fundo_card2.png"), 
-	load("res://assets/sprites/fundos_cards/fundo_card3.png"),
-	load("res://assets/sprites/fundos_cards/fundo_card4.png"),
-	load("res://assets/sprites/fundos_cards/fundo_card5.png"),
-	load("res://assets/sprites/fundos_cards/fundo_card6.png"),
-	load("res://assets/sprites/fundos_cards/fundo_card7.png"),
-	load("res://assets/sprites/fundos_cards/fundo_card8.png"),
-	load("res://assets/sprites/fundos_cards/fundo_card9.png")
-	]
-
-#load icones para card de exemblo
-var icon = [
-	load("res://assets/sprites/imgs_cards/img_card_exemplo1.png"),
-	load("res://assets/sprites/imgs_cards/img_card_exemplo2.png"),
-	load("res://assets/sprites/imgs_cards/img_card_exemplo3.png")
-	]
-
-#load textos para card de exemplo
-var text_file = [
-	("res://assets/text/text_card1.tres"),
-	("res://assets/text/text_card2.tres"),
-	("res://assets/text/text_card3.tres")
-]
-
 #função para randomizar o card
-func random_card():
-	#seleciona um nº de 0 a 2
-	var sortear = RandomNumberGenerator.new()
-	sortear.randomize();
-	sorteio = sortear.randi_range(0, 2);
-	print(sorteio)
+#func random_card():
+#	#seleciona um nº de 0 a 2
+#	var sortear = RandomNumberGenerator.new()
+#	sortear.randomize();
+#	sorteio = sortear.randi_range(0, 2);
+#	print(sorteio)
 
 	#set fundo, icone e texto sorteado no card
-	$CARD/card_exemplo1.texture = fundo[sorteio]
-	$CARD/card_exemplo1/img_card.texture = icon[sorteio]
-	text_card = text_file[sorteio]
-	$CARD/card_exemplo1/textbox_card/text_card.text = load_file(text_card)
+#	$CARD/card_exemplo1.texture = fundo[sorteio]
+#	$CARD/card_exemplo1/img_card.texture = icon[sorteio]
+#	text_card = text_file[sorteio]
+#	$CARD/card_exemplo1/textbox_card/text_card.text = load_file(text_card)
 
-onready var text_card
-onready var sorteio
-#onready var max_divida = 5000.00
-#onready var max_dinheiro = 2000.00
-#onready var nv_dinheiro = 1650.00
-#onready var nv_energia = 60
-#onready var nv_felicidade = 70
-#onready var nv_divida = 2200.00
 
 func escolheu1():
 	if Input.is_action_just_released("escolha1"):
 		$escolha1/VBoxContainer/AnimationPlayer.play("abas")
 		$AnimationPlayer.play("escolheu1")
-		$escolha1/botao1.hide()
-		$CARD/Clicar_card.hide()
 		$"CARD/Entrar Carta".play_backwards("entrar_card")
-		$escolha1/fechar.show()
-		$escolha1/select.show()
+		showEsc()
 
 func fechou1():
 	$escolha1/VBoxContainer/AnimationPlayer.play_backwards("abas")
 	$AnimationPlayer.play_backwards("escolheu1")
-	$escolha1/botao1.show()
-	$CARD/Clicar_card.show()
 	$"CARD/Entrar Carta".play("entrar_card")
-	$escolha1/fechar.hide()
-	$escolha1/select.hide()
+	hideEsc()
 	if $barra_inferior/SubirBarra.visible == false && $barra_inferior/DescerBarra.visible == true:
 		fechar_barra()
 
@@ -112,21 +214,16 @@ func escolheu2():
 	if Input.is_action_just_released("escolha2"):
 		$escolha2/VBoxContainer/AnimationPlayer.play("abas")
 		$AnimationPlayer.play("escolheu2")
-		$escolha2/botao2.hide()
-		$CARD/Clicar_card.hide()
 		$"CARD/Entrar Carta".play_backwards("entrar_card")
-		$escolha2/fechar.show()
-		$escolha2/select.show()
+		showEsc()
+
 
 func fechou2():
 	$escolha2/VBoxContainer/AnimationPlayer.play_backwards("abas")
 	$AnimationPlayer.play_backwards("escolheu2")
-	$escolha2/botao2.show()
-	$CARD/Clicar_card.show()
 	$"CARD/Entrar Carta".play("entrar_card")
-	$escolha2/fechar.hide()
-	$escolha2/select.hide()
-		
+	hideEsc()
+
 	#desce a barra inferior caso esteja aberta durante o comando anterior
 	if $barra_inferior/SubirBarra.visible == false && $barra_inferior/DescerBarra.visible == true:
 		fechar_barra()
@@ -135,73 +232,36 @@ func escolheu3():
 	if Input.is_action_just_released("escolha3"):
 		$escolha3/VBoxContainer/AnimationPlayer.play("abas")
 		$AnimationPlayer.play("escolheu3")
-		$escolha3/botao3.hide()
-		$CARD/Clicar_card.hide()
 		$"CARD/Entrar Carta".play_backwards("entrar_card")
-		$escolha3/fechar.show()
-		$escolha3/select.show()
+		showEsc()
 
 func fechou3():
 	$escolha3/VBoxContainer/AnimationPlayer.play_backwards("abas")
 	$AnimationPlayer.play_backwards("escolheu3")
-	$escolha3/botao3.show()
-	$CARD/Clicar_card.show()
 	$"CARD/Entrar Carta".play("entrar_card")
-	$escolha3/fechar.hide()
-	$escolha3/select.hide()
+	hideEsc()
 		
 	#desce a barra inferior caso esteja aberta durante o comando anterior
 	if $barra_inferior/SubirBarra.visible == false && $barra_inferior/DescerBarra.visible == true:
 		fechar_barra()
 
-func select_card1(text, dinheiro, energia, felicidade, divida):
-	if text_card == text && Input.is_action_just_released("select1"):
-		Global.money += dinheiro
-		Global.energy += energia
-		Global.hapiness += felicidade
-		Global.debt += divida
-		fechou1()
-		$Timer.start()
-		if sorteio == 0:
-			sorteio = 1
-		elif sorteio == 1:
-			sorteio = 2
-		elif sorteio == 2:
-			sorteio = 0
 
-func select_card2(text, dinheiro, energia, felicidade, divida):
-	if text_card == text && Input.is_action_just_released("select2"):
-		Global.money += dinheiro
-		Global.energy += energia
-		Global.hapiness += felicidade
-		Global.debt += divida
-		fechou2()
-		$Timer.start()
-		if sorteio == 0:
-			sorteio = 1
-		elif sorteio == 1:
-			sorteio = 2
-		elif sorteio == 2:
-			sorteio = 0
+func select_card1():
+	onClickChoice(0)
 
-func select_card3(text, dinheiro, energia, felicidade, divida):
-	if text_card == text && Input.is_action_just_released("select3"):
-		Global.money += dinheiro
-		Global.energy += energia
-		Global.hapiness += felicidade
-		Global.debt += divida
-		fechou3()
-		$Timer.start()
-		if sorteio == 0:
-			sorteio = 1
-		elif sorteio == 1:
-			sorteio = 2
-		elif sorteio == 2:
-			sorteio = 0
+func select_card2():
+	onClickChoice(1)
+
+func select_card3():
+	onClickChoice(2)
 
 func _ready():
-
-	random_card()
+	def_status(1000, -50, -40, 1000)
+#	numEsc -= 1
+#	clickOnCard()
+	$CARD/card_exemplo1/textbox_card/text_card.percent_visible = 0
+	$CARD/Clicar_card.hide()
+#	random_card()
 
 	#programa pega as medidas do display da tela do dispositivo e ajusta a cena
 	ProjectSettings.get_setting("display/window/size/width")
@@ -210,71 +270,87 @@ func _ready():
 	#configurações para a barra inferior iniciar fechada e o card ainda não seja apertado
 	$barra_inferior/SubirBarra.visible = true
 	$barra_inferior/DescerBarra.visible = false
-	$CARD/Clicar_card.visible = false
+
 
 	#esconde botões desnecessários das escolhas
-	$escolha1/fechar.hide()
-	$escolha2/fechar.hide()
-	$escolha3/fechar.hide()
-	$escolha1/select.hide()
-	$escolha2/select.hide()
-	$escolha3/select.hide()
-
-	#define texto genérico para as cards de escolha
-	var escolha1 = escolhas_txt[0]
-	var escolha2 = escolhas_txt[1]
-	var escolha3 = escolhas_txt[2]
-	$escolha1/Label.text = load_file(escolha1)
-	$escolha2/Label2.text = load_file(escolha2)
-	$escolha3/Label3.text = load_file(escolha3)
-
-#anima o texto do card quando a animação de entrada termina
-func _on_Entrar_Carta_animation_finished(entrar_card):
-	$CARD/card_exemplo1/textbox_card/text_card/AnimationPlayer.play("anim_text")
-	texto = true
-	$CARD/Clicar_card.visible = true
+	hideEsc()
 
 func _process(delta):
 	
-	$CARD/card_exemplo1.texture = fundo[sorteio]
-	$CARD/card_exemplo1/img_card.texture = icon[sorteio]
-	text_card = text_file[sorteio]
-	$CARD/card_exemplo1/textbox_card/text_card.text = load_file(text_card)
+	if Input.is_action_just_pressed("escolha1") || Input.is_action_just_pressed("escolha2") || Input.is_action_just_pressed("escolha3"):
+		$CARD/Clicar_card.hide()
+		$AnimationPlayer.stop()
+	if Input.is_action_just_released("escolha1") || Input.is_action_just_released("escolha2") || Input.is_action_just_released("escolha3"):
+		$CARD/Clicar_card.show()
+#	if numEsc >= 6:
+#		numEsc = 6
+	mesVerify()
 	
-	
+	abasEsc1()
 
-	
+	abasEsc2()
+
+	abasEsc3()
+
+#	$CARD/card_exemplo1.texture = fundo[sorteio]
+#	$CARD/card_exemplo1/img_card.texture = icon[sorteio]
+#	text_card = text_file[sorteio]
+#	$CARD/card_exemplo1/textbox_card/text_card.text = load_file(text_card)
+
 	#abrir a barra inferior
+#	print("principal")
 	if $barra_inferior/SubirBarra.visible == true && $barra_inferior/DescerBarra.visible == false && Input.is_action_just_released("subir_barra"):
 		abrir_barra()
 		
 	#fechar barra inferior
 	elif $barra_inferior/SubirBarra.visible == false && $barra_inferior/DescerBarra.visible == true && Input.is_action_just_released("descer_barra"):
 		fechar_barra()
-		
-		
-		
+
 	#chamar as escolhas quando clica no card
-	if $escolha1.margin_top >= 1090 && Input.is_action_just_released("clicar_card"):
+	if $CARD/card_exemplo1/textbox_card/text_card.percent_visible < 1 && Input.is_action_just_released("clicar_card"):
 		$CARD/card_exemplo1/textbox_card/text_card/AnimationPlayer.stop()
 		$CARD/card_exemplo1/textbox_card/text_card.percent_visible = 1
-		$AnimationPlayer.play("escolhas")
-		$escolha1/botao1.show()
-		$escolha2/botao2.show()
-		$escolha3/botao3.show()
+		print("clicar1")
+	
+	elif $CARD/card_exemplo1/textbox_card/text_card.percent_visible == 1 && Input.is_action_just_released("clicar_card"):
+		if mes[numEsc]['choices'][0]['exists'] == true || mes[numEsc]['choices'][1]['exists'] == true || mes[numEsc]['choices'][2]['exists'] == true:
+			$AnimationPlayer.play("escolhas")
+			hideEsc()
+#			$CARD/Clicar_card.hide()
+			print("clicar2")
+		elif mes[numEsc]['choices'][0]['exists'] == false && mes[numEsc]['choices'][1]['exists'] == false && mes[numEsc]['choices'][2]['exists'] == false:
+			$CARD/SairCard.play("sair_card2")
 		
 		#fecha a barra inferior para que não atrapalhe o comando anterior
 		if $barra_inferior/SubirBarra.visible == false && $barra_inferior/DescerBarra.visible == true:
 			fechar_barra()
-
+	
 	#descer as escolhas caso elas já estejam na tela quando clica no card
 	if $escolha1.margin_top <= 1090 && $escolha1.margin_top <= -500 && Input.is_action_just_released("clicar_card"):
 		$AnimationPlayer.play_backwards("escolhas")
-		$CARD/Clicar_card.scale.y = 1
+#		$CARD/Clicar_card.show()
+#		$CARD/Clicar_card.scale.y = 1
 		
+
 		#desce a barra inferior caso esteja aberta durante o comando anterior
 		if $barra_inferior/SubirBarra.visible == false && $barra_inferior/DescerBarra.visible == true:
 			fechar_barra()
+
+	if Input.is_action_just_released("select1"):
+		onClickChoice(0)
+		fechou1()
+		$Timer.start()
+		numEsc += 1
+	elif Input.is_action_just_released("select2"):
+		onClickChoice(1)
+		fechou2()
+		$Timer.start()
+		numEsc += 1
+	elif Input.is_action_just_released("select3"):
+		onClickChoice(2)
+		fechou3()
+		$Timer.start()
+		numEsc += 1
 
 	#coloca a escolha 1 em foco quando é selecionada
 	escolheu1()
@@ -296,19 +372,29 @@ func _process(delta):
 	if Input.is_action_just_released("fechar") && $escolha3.margin_top <= -500:
 		fechou3()
 
-	select_card1("res://assets/text/text_card1.tres", 100.00, -20, -30, -500.00)
-	select_card2("res://assets/text/text_card1.tres", 200.00, -40, -40, -400.00)
-	select_card3("res://assets/text/text_card1.tres", -300.00, 30, 40, 200)
-	
-	select_card1("res://assets/text/text_card2.tres", -250, 300, -20, -200)
-	select_card2("res://assets/text/text_card2.tres", 200, -40, 30, 70)
-	select_card3("res://assets/text/text_card2.tres", 100, -20, -10, -50)
-	
-	select_card1("res://assets/text/text_card3.tres", 700, -60, 60, -200)
-	select_card2("res://assets/text/text_card3.tres", -500, 70, -30, 30)
-	select_card3("res://assets/text/text_card3.tres", 170, 30, -10, 100)
 
-#func _on_Timer_timeout() -> void:
-#			$AnimationPlayer.play_backwards("escolhas")
-#			$CARD/Clicar_card.scale.y = 1
-#			$Timer.stop()
+#anima o texto do card quando a animação de entrada termina
+func _on_Entrar_Carta_animation_finished(entrar_card):
+	$CARD/card_exemplo1/textbox_card/text_card/AnimationPlayer.play("anim_text")
+	$CARD/Clicar_card.show()
+	clickOnCard()
+
+func _on_SairCard_animation_finished(sair_card2) -> void:
+	clickOnCard()
+	$"CARD/Entrar Carta".play("entrar_card")
+	$CARD/SairCard.stop()
+	$CARD/card_exemplo1/textbox_card/text_card.percent_visible = 0
+	numEsc += 1
+
+func _on_Entrar_Carta_animation_started(entrar_card) -> void:
+	$CARD/Clicar_card.hide()
+	$CARD/card_exemplo1/textbox_card/text_card.percent_visible = 0
+	clickOnCard()
+
+func _on_SairCard_animation_started(sair_card2) -> void:
+	$CARD/Clicar_card.hide()
+
+
+func _on_Timer_timeout() -> void:
+	$AnimationPlayer.play_backwards("escolhas")
+	$Timer.stop()
