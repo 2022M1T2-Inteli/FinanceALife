@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scenes/barra_inferior.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/scripts/UIdoGame.gd" type="Script" id=2]
@@ -1005,6 +1005,10 @@ tracks/27/keys = {
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 0.813915 ) ]
 }
+
+[sub_resource type="Animation" id=16]
+resource_name = "escolhas2"
+length = 0.4
 
 [sub_resource type="Animation" id=11]
 resource_name = "escolheu1"
@@ -2090,6 +2094,7 @@ rect_scale = Vector2( 0.439, 0.439 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 9 )
 anims/escolhas = SubResource( 10 )
+anims/escolhas2 = SubResource( 16 )
 anims/escolheu1 = SubResource( 11 )
 anims/escolheu2 = SubResource( 12 )
 anims/escolheu3 = SubResource( 13 )
