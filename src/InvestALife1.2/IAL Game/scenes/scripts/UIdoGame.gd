@@ -102,6 +102,7 @@ func def_status(Din, Ene, Fel, Div):
 func onClickChoice(Esc):
 	def_status(mes[numEsc]['choices'][Esc]['money'],mes[numEsc]['choices'][Esc]['energy'], mes[numEsc]['choices'][Esc]['hapiness'], mes[numEsc]['choices'][Esc]['debt'])
 	
+	
 func clickOnCard():
 	$CARD/card_exemplo1/textbox_card/text_card.text = mes[numEsc]['cardText']
 	print(numEsc)
@@ -135,6 +136,7 @@ func showEsc():
 	$escolha3/select.show()
 	$escolha3/botao3.hide()
 	$CARD/Clicar_card.hide()
+	$CARD/card_exemplo1/textbox_card/text_card.percent_visible = 0
 
 func hideEsc():
 	$escolha1/Label.hide()
@@ -248,12 +250,18 @@ func fechou3():
 
 func select_card1():
 	onClickChoice(0)
+	$CARD/card_exemplo1/textbox_card/text_card/AnimationPlayer.stop()
+	$CARD/card_exemplo1/textbox_card/text_card.percent_visible = 0
 
 func select_card2():
 	onClickChoice(1)
+	$CARD/card_exemplo1/textbox_card/text_card/AnimationPlayer.stop()
+	$CARD/card_exemplo1/textbox_card/text_card.percent_visible = 0
 
 func select_card3():
 	onClickChoice(2)
+	$CARD/card_exemplo1/textbox_card/text_card/AnimationPlayer.stop()
+	$CARD/card_exemplo1/textbox_card/text_card.percent_visible = 0
 
 func _ready():
 	def_status(1000, -50, -40, 1000)

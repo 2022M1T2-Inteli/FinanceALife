@@ -2009,7 +2009,6 @@ mouse_default_cursor_shape = 2
 
 [node name="Clicar_card" type="TouchScreenButton" parent="CARD"]
 light_mask = 4
-scale = Vector2( 1, 0.902151 )
 normal = ExtResource( 7 )
 pressed = ExtResource( 6 )
 passby_press = true
@@ -2106,6 +2105,7 @@ __meta__ = {
 }
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
 
 [connection signal="animation_finished" from="CARD/Entrar Carta" to="." method="_on_Entrar_Carta_animation_finished"]
 [connection signal="animation_started" from="CARD/Entrar Carta" to="." method="_on_Entrar_Carta_animation_started"]
