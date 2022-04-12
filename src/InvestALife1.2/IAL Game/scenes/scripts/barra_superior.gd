@@ -42,8 +42,8 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	
-	if Global.money >= Global.maxMoney:
-		Global.money = Global.maxMoney
+	if Global.money > Global.maxMoney:
+		Global.maxMoney += 1000.00
 	if Global.debt >= Global.maxDebt:
 		Global.debt = Global.maxDebt
 	if Global.energy >= 100:

@@ -24,6 +24,7 @@ Global="*res://scenes/scripts/Cards.gd"
 
 window/size/width=1080
 window/size/height=1920
+window/size/fullscreen=true
 window/size/test_width=1080
 window/size/test_height=1280
 window/handheld/orientation="portrait"
