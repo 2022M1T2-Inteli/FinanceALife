@@ -9,7 +9,7 @@ var debt = 0.00
 
 var totalSpent = 0.00
 
-var maxMoney := 2000.00
+var maxMoney := 1000.00
 var maxDebt := 1000.00
 
 
@@ -21,7 +21,7 @@ var extrato = "Você gastou R$" + str(totalSpent) + "!\nVocê tem R$"+ str(money
 
 var firstMonthIntroCards = [
 	{
-		"cardText": "Parabéns! Você foi aprovado na faculdade! As aulas começam já no dia X",
+		"cardText": "Parabéns! Você foi aprovado na faculdade! As aulas começam esse mês",
 		"icon": socialIcon, 
 		"choices": [{"exists": false}, {"exists": false}, {"exists": false}]
 	},
@@ -32,17 +32,15 @@ var firstMonthIntroCards = [
 	},
 	{
 		"cardText":
-		"Filho, seu tio disse que pode emprestar o dinheiro para a sua mudança, mas ele disse que vai precisar que você o pague de volta em X meses. Nesse período vamos te dar um pouco de dinheiro por mês, para você se manter lá. Cuidado com o que você gasta.",
-
+		"Filho, seu tio disse que pode emprestar o dinheiro para a sua mudança, mas ele disse que vai precisar que você o pague até o fim do ano.",
 		"icon": socialIcon, 
 		"choices": [{"exists": false}, {"exists": false}, {"exists": false}]
 	},
 	{
-		"cardText": "Comece criando uma conta no banco!",
+		"cardText":
+		"Nesse período vamos te dar um pouco de dinheiro por mês, para você se manter lá. Cuidado com o que você gasta.",
 		"icon": socialIcon, 
-		"choices": [
-			{"exists": false}, {"exists": false}, {"exists": false}
-		]
+		"choices": [{"exists": false}, {"exists": false}, {"exists": false}]
 	},
 	# One choice cards && First month cards
 	{
@@ -51,103 +49,103 @@ var firstMonthIntroCards = [
 		"choices": [
 			{"exists": false},
 			{
-				"choiceText": "Esperar Onibus que demora pra passar.",
-				"money": 0,
-				"energy": -5,
-				"hapiness": -5,
-				"debt": 0,
-				"exists": true
-			},
-			{"exists": false}
-		]
-	},
-	{
-		"cardText": "Que demora...",
-		"icon": socialIcon, 
-		"choices": [
-			{"exists": false},
-			{
-				"choiceText": "Esperar Onibus que demora pra passar.",
-				"money": 0,
-				"energy": -5,
-				"hapiness": -5,
-				"debt": 0,
-				"exists": true
-			},
-			{"exists": false}
-		]
-	},
-	{
-		"cardText": "Esse ônibus não vem?",
-		"icon": socialIcon, 
-		"choices": [
-			{"exists": false},
-			{
-				"choiceText": "Esperar Onibus que demora pra passar.",
-				"money": 0,
-				"energy": -10,
-				"hapiness": -5,
-				"debt": 0,
-				"exists": true
-			},
-			{"exists": false}
-		]
-	},
-	{
-		"cardText": "Quer saber? Vou chamar um uber.",
-		"icon": socialIcon, "choices":
-		[
-			{"exists": false},
-			{
 				"choiceText": "Chamar uber",
-				"money": -150,
-				"energy": 0,
-				"hapiness": 0,
+				"money": -500,
+				"energy": -50,
+				"hapiness": -40,
 				"debt": 0,
 				"exists": true
 			},
 			{"exists": false}
 		]
 	},
-	{
-		"cardText": "Assim eu chego mais rápido.",
-		"icon": socialIcon, 
-		"choices": [{"exists": false}, {"exists": false}, {"exists": false}]
-	},
-	{
-		"cardText": "Nossa, que fome. Preciso comer alguma coisa.",
-		"icon": socialIcon, 
-		"choices":
-		[
-			{"exists": false},
-			{
-				"choiceText": "Pão de queijo da faculdade",
-				"money": -600,
-				"energy": 0,
-				"hapiness": 0,
-				"debt": 0,
-				"exists": true
-			},
-			{"exists": false}
-		]
-	},
-	{
-		"cardText": "Preciso fazer amizade com o pessoal da faculdade.",
-		"icon": socialIcon, 
-		"choices":
-		[
-			{"exists": false},
-			{
-				"choiceText": "Ir para as festas da faculdade.",
-				"money": -250,
-				"energy": -10,
-				"hapiness": +15,
-				"debt": 0,
-				"exists": true
-			},
-			{"exists": false}
-		]
-	},
+#	{
+#		"cardText": "Que demora...",
+#		"icon": socialIcon, 
+#		"choices": [
+#			{"exists": false},
+#			{
+#				"choiceText": "Esperar Onibus que demora pra passar.",
+#				"money": 0,
+#				"energy": -5,
+#				"hapiness": -5,
+#				"debt": 0,
+#				"exists": true
+#			},
+#			{"exists": false}
+#		]
+#	},
+#	{
+#		"cardText": "Esse ônibus não vem?",
+#		"icon": socialIcon, 
+#		"choices": [
+#			{"exists": false},
+#			{
+#				"choiceText": "Esperar Onibus que demora pra passar.",
+#				"money": 0,
+#				"energy": -10,
+#				"hapiness": -5,
+#				"debt": 0,
+#				"exists": true
+#			},
+#			{"exists": false}
+#		]
+#	},
+#	{
+#		"cardText": "Quer saber? Vou chamar um uber.",
+#		"icon": socialIcon, "choices":
+#		[
+#			{"exists": false},
+#			{
+#				"choiceText": "Chamar uber",
+#				"money": -150,
+#				"energy": 0,
+#				"hapiness": 0,
+#				"debt": 0,
+#				"exists": true
+#			},
+#			{"exists": false}
+#		]
+#	},
+#	{
+#		"cardText": "Assim eu chego mais rápido.",
+#		"icon": socialIcon, 
+#		"choices": [{"exists": false}, {"exists": false}, {"exists": false}]
+#	},
+#	{
+#		"cardText": "Nossa, que fome. Preciso comer alguma coisa.",
+#		"icon": socialIcon, 
+#		"choices":
+#		[
+#			{"exists": false},
+#			{
+#				"choiceText": "Pão de queijo da faculdade",
+#				"money": -600,
+#				"energy": 0,
+#				"hapiness": 0,
+#				"debt": 0,
+#				"exists": true
+#			},
+#			{"exists": false}
+#		]
+#	},
+#	{
+#		"cardText": "Preciso fazer amizade com o pessoal da faculdade.",
+#		"icon": socialIcon, 
+#		"choices":
+#		[
+#			{"exists": false},
+#			{
+#				"choiceText": "Ir para as festas da faculdade.",
+#				"money": -250,
+#				"energy": -10,
+#				"hapiness": +15,
+#				"debt": 0,
+#				"exists": true
+#			},
+#			{"exists": false}
+#		]
+#	},
 	{
 		"cardText": "Por que esses lugares são tão caros?",
 		"icon": socialIcon, 
