@@ -73,7 +73,7 @@ var firstMonthIntroCards = [
 	},
 	{
 		"cardText": "Agora vamos ver quanto eu gastei nesse mês.",
-		"icon": socialIcon, 
+		"icon": graphIcon, 
 		"choices":
 		[
 			{"exists": false},
@@ -94,12 +94,12 @@ var secondMonthCards = [
 	# Entry
 	{
 		"cardText": "Gastei de mais! Assim não vou conseguir quitar minha dívida com meu tio!",
-		"icon": socialIcon, 
+		"icon": graphIcon, 
 		"choices": [{"exists": false}, {"exists": false}, {"exists": false}]
 	},
 	{  # Card 1
 		"cardText": "Preciso fazer alguma coisa...",
-		"icon": socialIcon, 
+		"icon": walletIcon, 
 		"choices":
 		[
 			{
@@ -137,7 +137,7 @@ var secondMonthCards = [
 	},
 	{  # Card 2
 		"cardText": "Também gastei de mais com comida na faculdade...",
-		"icon": socialIcon, 
+		"icon": graphIcon, 
 		"choices":
 		[
 			{
@@ -168,12 +168,12 @@ var secondMonthCards = [
 	},
 	{
 		"cardText": "Pronto, isso deve resolver.",
-		"icon": socialIcon, 
+		"icon": walletIcon, 
 		"choices": [{"exists": false}, {"exists": false}, {"exists": false}]
 	},
 	{  # Card 3
 		"cardText": "Mês passado fui a festas todos os sábados...",
-		"icon": socialIcon, "choices":
+		"icon": walletIcon, "choices":
 		[
 			{
 				"choiceText": "Talvez se eu ficar em casa alguns fins de semana...",
@@ -203,17 +203,11 @@ var secondMonthCards = [
 	},
 	{
 		"cardText": "Certo, agora sim ajustei minhas metas nesse mês!",
-		"icon": socialIcon, 
+		"icon": graphIcon, 
 		"choices": [{"exists": false}, {"exists": false}, {"exists": false}]
 	},
 ]
 
-# Shown in case the choice of Second month card is the third one - 2.3
-var fallbackTwoThree = {
-	"cardText": "Certo, agora sim ajustei minhas metas nesse mês!",
-	"icon": socialIcon, 
-	"choices": [{"exists": false}, {"exists": false}, {"exists": false}]
-}
 
 var thirdMonthCards = [
 	# Entry
@@ -322,7 +316,7 @@ var thirdMonthCards = [
 	},
 	{
 		"cardText": "Agora vou checar os gastos do mês...",
-		"icon": socialIcon, 
+		"icon": walletIcon, 
 		"choices": [{"exists": false}, {"exists": false}, {"exists": false}]
 	},
 ]
@@ -331,7 +325,7 @@ var fourthMonthCards = [
 	# Entry
 	{
 		"cardText": "Certo, vamos definir minhas metas para o mês...",
-		"icon": socialIcon, 
+		"icon": graphIcon, 
 		"choices": [{"exists": false}, {"exists": false}, {"exists": false}]
 	},
 	{
@@ -379,30 +373,6 @@ var fourthMonthCards = [
 		]
 	},
 	{
-		"cardText": "Acho que se eu vendesse o meu violão eu conseguiria mais dinheiro...",
-		"icon": socialIcon, 
-		"choices":
-		[
-			{
-				"choiceText": "É, acho que um colega da turma está qurendo comprar um.",
-				"money": 300,
-				"energy": 20,
-				"hapiness": 30,
-				"debt": 0,
-				"exists": true
-			},
-			{
-				"choiceText": "Não, eu gosto muito do meu violão.",
-				"money": -50,
-				"energy": 0,
-				"hapiness": 10,
-				"debt": 0,
-				"exists": true
-				},
-			{"exists": false}
-		]
-	},
-	{
 		"cardText": "Meus pais virão me visitar esse mês...",
 		"icon": socialIcon, 
 		"choices":
@@ -440,7 +410,7 @@ var fourthMonthCards = [
 	},
 	{
 		"cardText": "Agora vamos ver quanto eu consegui economizar dessa vez...",
-		"icon": socialIcon, 
+		"icon": graphIcon, 
 		"choices": [{"exists": false}, {"exists": false}, {"exists": false}]
 	},
 ]
@@ -456,13 +426,13 @@ var fifthMonthCards = [
 	# Entry
 	{
 		"cardText":
-		"Está chegando o dia de quitar a dívida... tenho apenas mais dois meses.\nE por conta da inflação as coisas do mercado estão ainda mais caras...\n\nInflação faz o dinheiro perder o valor com o tempo, já que as coisas ficam mais caras...\n(Investimento é acumular dinheiro de forma que ele ao menos não perca valor)",
-		"icon": socialIcon, 
+		"Está chegando o dia de quitar a dívida, e tenho apenas mais dois meses. Por conta da inflação, o mercado ficou mais caro",
+		"icon": graphIcon, 
 		"choices": [{"exists": false}, {"exists": false}, {"exists": false}]
 	},
 	{
 		"cardText": "Então... agora o que devo comprar no mercado?",
-		"icon": socialIcon, 
+		"icon": walletIcon, 
 		"choices":
 		[
 			{
@@ -512,7 +482,7 @@ var fifthMonthCards = [
 			},
 			{
 				"choiceText":
-				"Calma, eu consigo traçar um caminho pelo mapa! Nossa... 3 ônibus e um trem!",
+				"Calma, eu consigo traçar um caminho pelo mapa! Apenas preciso pegar 3 ônibus e um trem!",
 				"money": -250,
 				"energy": -40,
 				"hapiness": -5,
@@ -520,7 +490,8 @@ var fifthMonthCards = [
 				"exists": true
 			},
 			{
-				"choiceText": "Quer saber... acho que vou ficar em casa mesmo, infelizmente.",
+				"choiceText":
+				"Quer saber... acho que vou ficar em casa mesmo, infelizmente.",
 				"money": 0,
 				"energy": 20,
 				"hapiness": -30,
@@ -531,7 +502,7 @@ var fifthMonthCards = [
 	},
 	{
 		"cardText": "Me falaram que educação financeira é importante para a vida...",
-		"icon": socialIcon, 
+		"icon": graphIcon, 
 		"choices":
 		[
 			{
@@ -566,8 +537,8 @@ var fifthMonthCards = [
 var sixthMonthCards = [
 	# Entry
 	{
-		"cardText": "No final desse mês eu preciso quitar a mnha dívida!",
-		"icon": socialIcon, 
+		"cardText": "No final desse mês eu preciso quitar a minha dívida!",
+		"icon": walletIcon, 
 		"choices":
 		[
 			{
