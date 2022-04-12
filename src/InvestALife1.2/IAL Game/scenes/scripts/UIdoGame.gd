@@ -133,6 +133,15 @@ func clickOnCard():
 		$escolha2/Label2.text = mes[numEsc]['choices'][1]['choiceText']
 	if mes[numEsc]['choices'][2]['exists'] == true:
 		$escolha3/Label3.text = mes[numEsc]['choices'][2]['choiceText']
+		
+	if mes[numEsc]['icon'] == 'COMIDA':
+		$CARD/card_exemplo1.texture = Global.foodBackground
+	elif mes[numEsc]['icon'] == 'LAZER':
+		$CARD/card_exemplo1.texture = Global.funBackground
+	elif mes[numEsc]['icon'] == 'TRANSPORTE':
+		$CARD/card_exemplo1.texture = Global.transportBackground
+	else:
+		$CARD/card_exemplo1.texture = Global.fallbackBackground
 
 #Esconde a mostra alguns elementos para quando a escolha entra em foco
 func showEsc():

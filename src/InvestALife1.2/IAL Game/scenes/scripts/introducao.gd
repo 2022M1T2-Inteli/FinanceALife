@@ -38,6 +38,15 @@ func clickOnCard():
 		print(mes1[numEsc]['choices'][1]['choiceText'])
 		$escolha2/Label2.text = mes1[numEsc]['choices'][1]['choiceText']
 		clicar_card()
+	
+	if mes1[numEsc]['icon'] == 'COMIDA':
+		$CARD/card_exemplo1.texture = Global.foodBackground
+	elif mes1[numEsc]['icon'] == 'LAZER':
+		$CARD/card_exemplo1.texture = Global.funBackground
+	elif mes1[numEsc]['icon'] == 'TRANSPORTE':
+		$CARD/card_exemplo1.texture = Global.transportBackground
+	else:
+		$CARD/card_exemplo1.texture = Global.fallbackBackground
 
 var fundo = [
 	load("res://assets/sprites/fundos_cards/fundo_card1.png"),
@@ -78,7 +87,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	print(numEsc)
 	if numEsc >= numCards:
-		numEsc = 13
+		numEsc = numCards
 
 	if $barra_superior/aba_din.visible == true || $barra_superior/aba_ene.visible == true || $barra_superior/aba_fel.visible == true || $barra_superior/aba_div.visible == true:
 		$CARD/clicar_card.hide()
