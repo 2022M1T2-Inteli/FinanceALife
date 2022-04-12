@@ -9,7 +9,6 @@ var debt = 0.00
 
 var totalSpent = 0.00
 
-var maxMoney := 2000.00
 var maxMoney := 1000.00
 var maxDebt := 1000.00
 
