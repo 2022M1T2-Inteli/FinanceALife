@@ -77,24 +77,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	print(numEsc)
-<<<<<<< HEAD
 	if numEsc >= numCards:
 		numEsc = 13
 
-=======
-	if numEsc >= 7:
-		numEsc = 7
-#	$barra_superior/barra_superior/Nv_dinheiro.value = dinheiro
-#	$barra_superior/barra_superior/Nv_energia.value = energia
-#	$barra_superior/barra_superior/Nv_felicidade.value = felicidde
-#	$barra_superior/barra_superior/Nv_divida.value = divida
-
-#	Global.money = dinheiro
-#	Global.energy = energia
-#	Global.hapiness = felicidde
-#	Global.debt = divida
-	
->>>>>>> 31d70b353bfefbb848137f6ed5090875401a1db8
 	if $barra_superior/aba_din.visible == true || $barra_superior/aba_ene.visible == true || $barra_superior/aba_fel.visible == true || $barra_superior/aba_div.visible == true:
 		$CARD/clicar_card.hide()
 
@@ -138,11 +123,7 @@ func _process(delta: float) -> void:
 	if $escolha2.rect_scale.x >= 5:
 		$CARD/card_exemplo1/textbox_card/text_card.percent_visible = 0
 		
-<<<<<<< HEAD
 	if numEsc == numCards:
-=======
-	if numEsc == 7:
->>>>>>> 31d70b353bfefbb848137f6ed5090875401a1db8
 		get_tree().change_scene("res://scenes/UIdoGame.tscn")
 
 func _on_AnimationPlayer_animation_finished(entrar_card) -> void:
