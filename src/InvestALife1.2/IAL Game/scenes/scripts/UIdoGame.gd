@@ -10,18 +10,22 @@ func mesVerify():
 			if numEsc >= 6:
 				mes = Global.cardsArray3
 				numEsc = 0
+				def_status(1000, 0, 0, 0)
 		elif mes == Global.cardsArray3:
 			if numEsc >= 5:
 				mes =  Global.cardsArray4
 				numEsc = 0
+				def_status(1000, 0, 0, 0)
 		elif mes == Global.cardsArray4:
 			if numEsc >= 6:
 				mes = Global.cardsArray5
 				numEsc = 0
+				def_status(1000, 0, 0, 0)
 		elif mes == Global.cardsArray5:
 			if numEsc >= 4:
 				mes = Global.cardsArray6
 				numEsc = 0
+				def_status(1000, 0, 0, 0)
 		elif mes == Global.cardsArray6:
 			if numEsc >= 2:
 				numEsc = 0
@@ -159,8 +163,8 @@ func abrir_barra():
 
 	#se as escolhas estiverem na tela quando a barra inferior é aberta, as escolhas sairão da tela para não atrapalhar
 	if $escolha1.margin_top <= 1090 && $escolha1.margin_top <= -500 && $escolha1.rect_scale < Vector2(1, 1) && $escolha2.rect_scale < Vector2(1, 1) && $escolha3.rect_scale < Vector2(1, 1):
-		$AnimationPlayer.play_backwards("escolheu1")
-		$AnimationPlayer.play_backwards("escolhas")
+#		$AnimationPlayer.play_backwards("escolheu1")
+		$AnimationPlayer.play("fechar_esc")
 		$escolha1/botao1.hide()
 		$escolha2/botao2.hide()
 		$escolha3/botao3.hide()
@@ -173,7 +177,7 @@ func fechar_barra():
 
 	#se as escolhas estiverem na tela quando a barra inferior é fechada, as escolhas sairão da tela para não atrapalhar
 	if $escolha1.margin_top <= 1090 && $escolha1.margin_top >= -500:
-		$AnimationPlayer.play_backwards("escolhas")
+		$AnimationPlayer.play("fechar_esc")
 
 #função para leitura e mostragem do texto contida no arquivo
 func load_file(file_path):
@@ -199,49 +203,95 @@ func load_file(file_path):
 
 func escolheu1():
 	if Input.is_action_just_released("escolha1"):
-		$escolha1/VBoxContainer/AnimationPlayer.play("abas")
-		$AnimationPlayer.play("escolheu1")
-		$"CARD/Entrar Carta".play_backwards("entrar_card")
-		showEsc()
+		if mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == true && mes[numEsc]['choices'][2]['exists'] == true:
+			$escolha1/VBoxContainer/AnimationPlayer.play("abas")
+			$AnimationPlayer.play("escolheu1")
+			$"CARD/Entrar Carta".play_backwards("entrar_card")
+			showEsc()
+			$barra_superior.hide_all()
+		elif mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == true && mes[numEsc]['choices'][2]['exists'] == false:
+			$escolha1/VBoxContainer/AnimationPlayer.play("abas")
+			$AnimationPlayer.play("escolheu1.2")
+			$"CARD/Entrar Carta".play_backwards("entrar_card")
+			showEsc()
+			$barra_superior.hide_all()
+		elif mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == false && mes[numEsc]['choices'][2]['exists'] == false:
+			$escolha1/VBoxContainer/AnimationPlayer.play("abas")
+			$AnimationPlayer.play("escolheu1.1")
+			$"CARD/Entrar Carta".play_backwards("entrar_card")
+			showEsc()
+			$barra_superior.hide_all()
 
 func fechou1():
-	$escolha1/VBoxContainer/AnimationPlayer.play_backwards("abas")
-	$AnimationPlayer.play_backwards("escolheu1")
-	$"CARD/Entrar Carta".play("entrar_card")
-	hideEsc()
+	if mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == true && mes[numEsc]['choices'][2]['exists'] == true:
+		$escolha1/VBoxContainer/AnimationPlayer.play_backwards("abas")
+		$AnimationPlayer.play_backwards("escolheu1")
+		$"CARD/Entrar Carta".play("entrar_card")
+		hideEsc()
+		$barra_superior.hide_all()
+	elif mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == true && mes[numEsc]['choices'][2]['exists'] == false:
+		$escolha1/VBoxContainer/AnimationPlayer.play_backwards("abas")
+		$AnimationPlayer.play_backwards("escolheu1.2")
+		$"CARD/Entrar Carta".play("entrar_card")
+		hideEsc()
+		$barra_superior.hide_all()
+	elif mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == false && mes[numEsc]['choices'][2]['exists'] == false:
+		$escolha1/VBoxContainer/AnimationPlayer.play_backwards("abas")
+		$AnimationPlayer.play_backwards("escolheu1.1")
+		$"CARD/Entrar Carta".play("entrar_card")
+		hideEsc()
+		$barra_superior.hide_all()
 	if $barra_inferior/SubirBarra.visible == false && $barra_inferior/DescerBarra.visible == true:
 		fechar_barra()
 
 func escolheu2():
 	if Input.is_action_just_released("escolha2"):
-		$escolha2/VBoxContainer/AnimationPlayer.play("abas")
-		$AnimationPlayer.play("escolheu2")
-		$"CARD/Entrar Carta".play_backwards("entrar_card")
-		showEsc()
-
+		if mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == true && mes[numEsc]['choices'][2]['exists'] == true:
+			$escolha1/VBoxContainer/AnimationPlayer.play("abas")
+			$AnimationPlayer.play("escolheu2")
+			$"CARD/Entrar Carta".play_backwards("entrar_card")
+			showEsc()
+			$barra_superior.hide_all()
+		elif mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == true && mes[numEsc]['choices'][2]['exists'] == false:
+			$escolha1/VBoxContainer/AnimationPlayer.play("abas")
+			$AnimationPlayer.play("escolheu2.2")
+			$"CARD/Entrar Carta".play_backwards("entrar_card")
+			showEsc()
+			$barra_superior.hide_all()
 
 func fechou2():
-	$escolha2/VBoxContainer/AnimationPlayer.play_backwards("abas")
-	$AnimationPlayer.play_backwards("escolheu2")
-	$"CARD/Entrar Carta".play("entrar_card")
-	hideEsc()
-
+	if mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == true && mes[numEsc]['choices'][2]['exists'] == true:
+		$escolha1/VBoxContainer/AnimationPlayer.play_backwards("abas")
+		$AnimationPlayer.play_backwards("escolheu2")
+		$"CARD/Entrar Carta".play("entrar_card")
+		hideEsc()
+		$barra_superior.hide_all()
+	elif mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == true && mes[numEsc]['choices'][2]['exists'] == false:
+		$escolha1/VBoxContainer/AnimationPlayer.play_backwards("abas")
+		$AnimationPlayer.play_backwards("escolheu2.2")
+		$"CARD/Entrar Carta".play("entrar_card")
+		hideEsc()
+		$barra_superior.hide_all()
 	#desce a barra inferior caso esteja aberta durante o comando anterior
 	if $barra_inferior/SubirBarra.visible == false && $barra_inferior/DescerBarra.visible == true:
 		fechar_barra()
 
 func escolheu3():
 	if Input.is_action_just_released("escolha3"):
-		$escolha3/VBoxContainer/AnimationPlayer.play("abas")
-		$AnimationPlayer.play("escolheu3")
-		$"CARD/Entrar Carta".play_backwards("entrar_card")
-		showEsc()
+		if mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == true && mes[numEsc]['choices'][2]['exists'] == true:
+			$escolha1/VBoxContainer/AnimationPlayer.play("abas")
+			$AnimationPlayer.play("escolheu3")
+			$"CARD/Entrar Carta".play_backwards("entrar_card")
+			showEsc()
+			$barra_superior.hide_all()
 
 func fechou3():
-	$escolha3/VBoxContainer/AnimationPlayer.play_backwards("abas")
-	$AnimationPlayer.play_backwards("escolheu3")
-	$"CARD/Entrar Carta".play("entrar_card")
-	hideEsc()
+	if mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == true && mes[numEsc]['choices'][2]['exists'] == true:
+		$escolha1/VBoxContainer/AnimationPlayer.play_backwards("abas")
+		$AnimationPlayer.play_backwards("escolheu3")
+		$"CARD/Entrar Carta".play("entrar_card")
+		hideEsc()
+		$barra_superior.hide_all()
 		
 	#desce a barra inferior caso esteja aberta durante o comando anterior
 	if $barra_inferior/SubirBarra.visible == false && $barra_inferior/DescerBarra.visible == true:
@@ -299,6 +349,11 @@ func _process(delta):
 	abasEsc2()
 
 	abasEsc3()
+	
+	if $barra_superior/aba_din.visible == true || $barra_superior/aba_ene.visible == true || $barra_superior/aba_fel.visible == true || $barra_superior/aba_div.visible == true:
+		$CARD/Clicar_card.hide()
+	else:
+		$CARD/Clicar_card.show()
 
 #	$CARD/card_exemplo1.texture = fundo[sorteio]
 #	$CARD/card_exemplo1/img_card.texture = icon[sorteio]
@@ -321,11 +376,16 @@ func _process(delta):
 		print("clicar1")
 	
 	elif $CARD/card_exemplo1/textbox_card/text_card.percent_visible == 1 && Input.is_action_just_released("clicar_card"):
-		if mes[numEsc]['choices'][0]['exists'] == true || mes[numEsc]['choices'][1]['exists'] == true || mes[numEsc]['choices'][2]['exists'] == true:
-			$AnimationPlayer.play("escolhas")
+		if mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == true && mes[numEsc]['choices'][2]['exists'] == true:
+			$AnimationPlayer.play("escolhas3")
 			hideEsc()
 #			$CARD/Clicar_card.hide()
 			print("clicar2")
+		elif mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == true && mes[numEsc]['choices'][2]['exists'] == false:
+			$AnimationPlayer.play("escolhas2")
+			hideEsc()
+		elif mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == false && mes[numEsc]['choices'][2]['exists'] == false:
+			$AnimationPlayer.play("escolhas1")
 		elif mes[numEsc]['choices'][0]['exists'] == false && mes[numEsc]['choices'][1]['exists'] == false && mes[numEsc]['choices'][2]['exists'] == false:
 			$CARD/SairCard.play("sair_card2")
 		
@@ -335,7 +395,7 @@ func _process(delta):
 	
 	#descer as escolhas caso elas já estejam na tela quando clica no card
 	if $escolha1.margin_top <= 1090 && $escolha1.margin_top <= -500 && Input.is_action_just_released("clicar_card"):
-		$AnimationPlayer.play_backwards("escolhas")
+		$AnimationPlayer.play("fechar_esc")
 #		$CARD/Clicar_card.show()
 #		$CARD/Clicar_card.scale.y = 1
 		
@@ -404,5 +464,5 @@ func _on_SairCard_animation_started(sair_card2) -> void:
 
 
 func _on_Timer_timeout() -> void:
-	$AnimationPlayer.play_backwards("escolhas")
+	$AnimationPlayer.play("fechar_esc")
 	$Timer.stop()

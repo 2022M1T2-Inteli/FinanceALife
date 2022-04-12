@@ -10,7 +10,7 @@ var debt = 0.00
 var totalSpent = 0.00
 
 var maxMoney := 2000.00
-var maxDebt := 5000.00
+var maxDebt := 1000.00
 
 
 const socialIcon = "res://assets/sprites/imgs_cards/img_card_exemplo1.png"
@@ -429,15 +429,13 @@ var fourthMonthCards = [
 				"debt": 0,
 				"exists": true
 			},
-			{"exists": false},
-			{
-				"choiceText": "Melhor não... não tenho dinheiro pra isso.",
+			{"choiceText": "Melhor não... não tenho dinheiro pra isso.",
 				"money": -50,
 				"energy": 0,
 				"hapiness": 0,
 				"debt": 0,
-				"exists": true
-			}
+				"exists": true},
+			{"exists": false}
 		]
 	},
 	{
@@ -453,15 +451,13 @@ var fourthMonthCards = [
 				"debt": 0,
 				"exists": true
 			},
-			{"exists": false},
-			{
-				"choiceText": "Não, eu gosto muito do meu violão.",
+			{"choiceText": "Não, eu gosto muito do meu violão.",
 				"money": -50,
 				"energy": 0,
 				"hapiness": 10,
 				"debt": 0,
-				"exists": true
-			}
+				"exists": true},
+			{"exists": false}
 		]
 	},
 	{
@@ -477,7 +473,6 @@ var fourthMonthCards = [
 				"debt": 0,
 				"exists": true
 			},
-			{"exists": false},
 			{
 				"choiceText": "Não, eu gosto muito do meu violão.",
 				"money": -50,
@@ -485,7 +480,8 @@ var fourthMonthCards = [
 				"hapiness": 10,
 				"debt": 0,
 				"exists": true
-			}
+				},
+			{"exists": false}
 		]
 	},
 	{
