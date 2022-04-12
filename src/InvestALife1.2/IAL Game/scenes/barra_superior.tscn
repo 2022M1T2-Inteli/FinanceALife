@@ -12,13 +12,13 @@
 [ext_resource path="res://assets/fonts/Fredoka/Fredoka-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=10]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.454902, 0.854902, 0.247059, 1 )
+bg_color = Color( 0.462745, 0.764706, 0.305882, 1 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.752941, 0.729412, 0.286275, 1 )
 
 [sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.854902, 0.247059, 0.247059, 1 )
+bg_color = Color( 0.788235, 0.27451, 0.27451, 1 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 100
