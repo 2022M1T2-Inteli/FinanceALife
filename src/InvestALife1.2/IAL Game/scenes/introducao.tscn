@@ -786,9 +786,6 @@ anchor_bottom = 1.0
 margin_left = -385.0
 margin_right = 385.0
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="CARD" parent="." instance=ExtResource( 1 )]
 margin_bottom = 581.0

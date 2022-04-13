@@ -31,12 +31,6 @@ var fourthMonthJson = "res://assets/gameData/fourthMonthCards.json"
 var fifthMonthJson = "res://assets/gameData/fifthMonthCards.json"
 var sixthMonthJson = "res://assets/gameData/fourthMonthCards.json"
 
-
-
-var extrato = "Você gastou R$" + str(totalSpent) + "!\nVocê tem R$"+ str(money) + " de dinheiro.\nVocê tem " + str(energy) + " de energia.\nVocê tem " + str(happiness) + " de felicidade.\nVocê tem R$" + str(debt) + " de dívida.\nVocê tem R$" + str(money)
-
-
-
 var firstMonthIntroCards = [
 	{
 		"cardText": "Parabéns! Você foi aprovado na faculdade! As aulas começam esse mês",
@@ -81,23 +75,6 @@ var firstMonthIntroCards = [
 		"cardText": "Por que esses lugares são tão caros?",
 		"icon": socialIcon, 
 		"choices": [{"exists": false}, {"exists": false}, {"exists": false}]
-	},
-	{
-		"cardText": "Agora vamos ver quanto eu gastei nesse mês.",
-		"icon": graphIcon, 
-		"choices":
-		[
-			{"exists": false},
-			{
-				"choiceText": str(extrato),
-				"money": -50,
-				"energy": -10,
-				"happiness": +15,
-				"debt": 0,
-				"exists": true
-			},
-			{"exists": false}
-		]
 	}
 ]
 
@@ -106,13 +83,44 @@ var firstMonthIntroCards = [
 var secondMonthCards = [
   {
 	"month": 2,
+	"cardText": "Gastei de mais! Assim não vou conseguir quitar minha dívida com meu tio!",
+	"icon": "NEGÓCIO",
+	"choices": [
+	  {
+		"choiceText": "",
+		"exists": false,
+		"money": 0.0,
+		"energy": 0,
+		"happiness": 0,
+		"debt": 0.0
+	  },
+	  {
+		"choiceText": "",
+		"exists": false,
+		"money": 0.0,
+		"energy": 0,
+		"happiness": 0,
+		"debt": 0.0
+	  },
+	  {
+		"choiceText": "",
+		"exists": false,
+		"money": 0.0,
+		"energy": 0,
+		"happiness": 0,
+		"debt": 0.0
+	  }
+	]
+  },
+  {
+	"month": 2,
 	"cardText": "Preciso fazer alguma coisa...",
 	"icon": "TRANSPORTE",
 	"choices": [
 	  {
-		"choiceText": "Vou começar a sair mais cedo de casa pra pegar o ônibus que demora pra passar, mas aí  chego direto na faculdade.",
+		"choiceText": "Vou começar a sair mais cedo de casa para pegar o ônibus que demora pra chegar, mas chegarei direto na faculdade.",
 		"exists": true,
-		"money": -90.0,
+		"money": -350.0,
 		"energy": -10,
 		"happiness": -10,
 		"debt": 1000.0
@@ -120,7 +128,7 @@ var secondMonthCards = [
 	  {
 		"choiceText": "Acho que vou de taxi só quando for muito necessário então, tipo em dias de chuva ou quando acordar atrasado.",
 		"exists": true,
-		"money": -100.0,
+		"money": -400.0,
 		"energy": -10,
 		"happiness": 10,
 		"debt": 1000.0
@@ -128,10 +136,41 @@ var secondMonthCards = [
 	  {
 		"choiceText": "Ah...Vou manter como estava no mês passado...",
 		"exists": true,
-		"money": -210.0,
+		"money": -500.0,
 		"energy": -5,
 		"happiness": 0,
 		"debt": 1000.0
+	  }
+	]
+  },
+  {
+	"month": 2,
+	"cardText": "Detesto pegar esse ônibus lotado... acho que essa decisão é melhor mesmo.",
+	"icon": "NEGÓCIO",
+	"choices": [
+	  {
+		"choiceText": "",
+		"exists": false,
+		"money": 0.0,
+		"energy": 0,
+		"happiness": 0,
+		"debt": 0.0
+	  },
+	  {
+		"choiceText": "",
+		"exists": false,
+		"money": 0.0,
+		"energy": 0,
+		"happiness": 0,
+		"debt": 0.0
+	  },
+	  {
+		"choiceText": "",
+		"exists": false,
+		"money": 0.0,
+		"energy": 0,
+		"happiness": 0,
+		"debt": 0.0
 	  }
 	]
   },
@@ -141,7 +180,7 @@ var secondMonthCards = [
 	"icon": "COMIDA",
 	"choices": [
 	  {
-		"choiceText": "Vou começar a trazer algo feito em casa pra comer então.",
+		"choiceText": "Vou começar a trazer algo feito em casa para comer então.",
 		"exists": true,
 		"money": -300.0,
 		"energy": -30,
@@ -151,18 +190,49 @@ var secondMonthCards = [
 	  {
 		"choiceText": "Vou procurar um restaurante perto da faculdade.",
 		"exists": true,
-		"money": -630.0,
-		"energy": 10,
-		"happiness": 5,
+		"money": -650.0,
+		"energy": 20,
+		"happiness": 25,
 		"debt": 1000.0
 	  },
 	  {
 		"choiceText": "Comer? Pra que?",
 		"exists": true,
-		"money": -300.0,
+		"money": 0.0,
 		"energy": -20,
 		"happiness": -20,
 		"debt": 1000.0
+	  }
+	]
+  },
+  {
+	"month": 2,
+	"cardText": "Pronto, isso deve resolver.",
+	"icon": "",
+	"choices": [
+	  {
+		"choiceText": "",
+		"exists": false,
+		"money": 0.0,
+		"energy": 0,
+		"happiness": 0,
+		"debt": 0.0
+	  },
+	  {
+		"choiceText": "",
+		"exists": false,
+		"money": 0.0,
+		"energy": 0,
+		"happiness": 0,
+		"debt": 0.0
+	  },
+	  {
+		"choiceText": "",
+		"exists": false,
+		"money": 0.0,
+		"energy": 0,
+		"happiness": 0,
+		"debt": 0.0
 	  }
 	]
   },
@@ -174,15 +244,15 @@ var secondMonthCards = [
 	  {
 		"choiceText": "Talvez se eu ficar em casa alguns fins de semana...",
 		"exists": true,
-		"money": -100.0,
-		"energy": 20,
+		"money": -150.0,
+		"energy": 30,
 		"happiness": 0,
 		"debt": 1000.0
 	  },
 	  {
 		"choiceText": "A vida é muito curta... Quero é aproveitar!",
 		"exists": true,
-		"money": -200.0,
+		"money": -250.0,
 		"energy": -20,
 		"happiness": 10,
 		"debt": 1000.0
@@ -196,6 +266,37 @@ var secondMonthCards = [
 		"debt": 1000.0
 	  }
 	]
+  },
+  {
+	"month": 2,
+	"cardText": "Certo, agora sim ajustei minhas metas nesse mês",
+	"icon": "",
+	"choices": [
+	  {
+		"choiceText": "",
+		"exists": false,
+		"money": 0.0,
+		"energy": 0,
+		"happiness": 0,
+		"debt": 0.0
+	  },
+	  {
+		"choiceText": "",
+		"exists": false,
+		"money": 0.0,
+		"energy": 0,
+		"happiness": 0,
+		"debt": 0.0
+	  },
+	  {
+		"choiceText": "",
+		"exists": false,
+		"money": 0.0,
+		"energy": 0,
+		"happiness": 0,
+		"debt": 0.0
+	  }
+	]
   }
 ]
 
@@ -204,29 +305,29 @@ var secondMonthCards = [
 var thirdMonthCards = [
   {
 	"month": 3,
-	"cardText": "Esse mês vou começar a separar minhas economias por partes. Vou começar primeiramente pela comida, acho que R$300 é o suficiente. Já peguei o frango, a carne (R$50). Agora qual arroz eu devo escolher? Eu uso em média 5kg.",
-	"icon": "COMIDA",
+	"cardText": "Um novo mês, novas metas!",
+	"icon": "",
 	"choices": [
 	  {
-		"choiceText": "Pacote 1kg – R$6",
-		"exists": true,
-		"money": -80.0,
+		"choiceText": "",
+		"exists": false,
+		"money": 0.0,
 		"energy": 0,
 		"happiness": 0,
 		"debt": 0.0
 	  },
 	  {
-		"choiceText": "Pacote 5kg – R$25,00",
-		"exists": true,
-		"money": -75.0,
+		"choiceText": "",
+		"exists": false,
+		"money": 0.0,
 		"energy": 0,
 		"happiness": 0,
 		"debt": 0.0
 	  },
 	  {
-		"choiceText": "Pacote 500g – R$3,50",
-		"exists": true,
-		"money": -85.0,
+		"choiceText": "",
+		"exists": false,
+		"money": 0.0,
 		"energy": 0,
 		"happiness": 0,
 		"debt": 0.0
@@ -235,29 +336,91 @@ var thirdMonthCards = [
   },
   {
 	"month": 3,
-	"cardText": "Passei pegando algumas frutas, verduras e laticínios (R$40), e esqueci de pegar o feijão, eu uso em média o mesmo de arroz. (5kg)",
+	"cardText": "Preciso ir comprar comida no mercado...",
+	"icon": "",
+	"choices": [
+	  {
+		"choiceText": "",
+		"exists": false,
+		"money": 0.0,
+		"energy": 0,
+		"happiness": 0,
+		"debt": 0.0
+	  },
+	  {
+		"choiceText": "",
+		"exists": false,
+		"money": 0.0,
+		"energy": 0,
+		"happiness": 0,
+		"debt": 0.0
+	  },
+	  {
+		"choiceText": "",
+		"exists": false,
+		"money": 0.0,
+		"energy": 0,
+		"happiness": 0,
+		"debt": 0.0
+	  }
+	]
+  },
+  {
+	"month": 3,
+	"cardText": "Esse mês vou começar pelos alimentos. Já peguei o frango, a carne. Agora qual arroz eu devo escolher?.",
 	"icon": "COMIDA",
 	"choices": [
 	  {
-		"choiceText": "Pacote 1kg – R$8,99",
+		"choiceText": "Pacote 1kg – R$10",
 		"exists": true,
-		"money": -85.0,
+		"money": -400.0,
 		"energy": 0,
 		"happiness": 0,
 		"debt": 0.0
 	  },
 	  {
-		"choiceText": "Pacote 5kg – R$58,99",
+		"choiceText": "Pacote 5kg – R$35",
 		"exists": true,
-		"money": -100.0,
+		"money": -250.0,
 		"energy": 0,
 		"happiness": 0,
 		"debt": 0.0
 	  },
 	  {
-		"choiceText": "Pacote 500g – R$5,00",
+		"choiceText": "Pacote 500g – R$5",
 		"exists": true,
-		"money": -90.0,
+		"money": -350.0,
+		"energy": 0,
+		"happiness": 0,
+		"debt": 0.0
+	  }
+	]
+  },
+  {
+	"month": 3,
+	"cardText": "Passei pegando algumas frutas, verduras e laticínios, e esqueci de pegar o feijão.",
+	"icon": "COMIDA",
+	"choices": [
+	  {
+		"choiceText": "Pacote 1kg – R$9,50",
+		"exists": true,
+		"money": -300.0,
+		"energy": 0,
+		"happiness": 0,
+		"debt": 0.0
+	  },
+	  {
+		"choiceText": "Pacote 5kg – R$35",
+		"exists": true,
+		"money": -250.0,
+		"energy": 0,
+		"happiness": 0,
+		"debt": 0.0
+	  },
+	  {
+		"choiceText": "Pacote 500g – R$5 ",
+		"exists": true,
+		"money": -350.0,
 		"energy": 0,
 		"happiness": 0,
 		"debt": 0.0
@@ -272,7 +435,7 @@ var thirdMonthCards = [
 	  {
 		"choiceText": "Chocolate com guaraná",
 		"exists": true,
-		"money": -50.0,
+		"money": -200.0,
 		"energy": 30,
 		"happiness": 0,
 		"debt": 0.0
@@ -280,9 +443,9 @@ var thirdMonthCards = [
 	  {
 		"choiceText": "Chocolate saboroso",
 		"exists": true,
-		"money": -50.0,
+		"money": -150.0,
 		"energy": 0,
-		"happiness": 0,
+		"happiness": 30,
 		"debt": 0.0
 	  },
 	  {
@@ -325,6 +488,37 @@ var thirdMonthCards = [
 		"debt": 0.0
 	  }
 	]
+  },
+  {
+	"month": 3,
+	"cardText": "Certo, vamos definir minhas metas para o mês...",
+	"icon": "",
+	"choices": [
+	  {
+		"choiceText": "",
+		"exists": false,
+		"money": 0.0,
+		"energy": 0,
+		"happiness": 0,
+		"debt": 0.0
+	  },
+	  {
+		"choiceText": "",
+		"exists": false,
+		"money": 0.0,
+		"energy": 0,
+		"happiness": 0,
+		"debt": 0.0
+	  },
+	  {
+		"choiceText": "",
+		"exists": false,
+		"money": 0.0,
+		"energy": 0,
+		"happiness": 0,
+		"debt": 0.0
+	  }
+	]
   }
 ]
 
@@ -337,19 +531,19 @@ var fourthMonthCards = [
 	"icon": "NEGÓCIO",
 	"choices": [
 	  {
-		"choiceText": "Eu vou, acho que vai ser importante, embora seja meio caro.",
+		"choiceText": "Eu vou, acho que de taxi, para chegar rápido e cedo.",
 		"exists": true,
-		"money": -200.0,
-		"energy": 0,
-		"happiness": 0,
+		"money": -500.0,
+		"energy": 10,
+		"happiness": 10,
 		"debt": 0.0
 	  },
 	  {
-		"choiceText": "Melhor não... Não tenho dinheiro pra isso.",
+		"choiceText": "Melhor sair mais cedo, para pegar o onibus e o trem",
 		"exists": true,
-		"money": 0.0,
-		"energy": 10,
-		"happiness": 10,
+		"money": -350.0,
+		"energy": -20,
+		"happiness": -20,
 		"debt": 0.0
 	  },
 	  {
@@ -364,23 +558,23 @@ var fourthMonthCards = [
   },
   {
 	"month": 4,
-	"cardText": "Acho que se eu vendesse meu violão, eu conseguiria mais dinheiro...",
+	"cardText": "Acho que eu vou comprar um violão, sempre quis aprender um instrumento novo...",
 	"icon": "NEGÓCIO",
 	"choices": [
 	  {
-		"choiceText": "É, acho que um colega da minha turma está querendo comprar um.",
+		"choiceText": "É, acho que um colega da turma está vendendo um violão velho, quem sabe ela não faz um desconto...",
 		"exists": true,
-		"money": 300.0,
-		"energy": 20,
+		"money": -400.0,
+		"energy": 10,
 		"happiness": -30,
 		"debt": 0.0
 	  },
 	  {
-		"choiceText": "Não, eu gosto muito do meu violão.",
+		"choiceText": "Não, eu gosto mesmo é de tudo novo, vou sair para compra.",
 		"exists": true,
-		"money": 0.0,
-		"energy": 0,
-		"happiness": 10,
+		"money": -500.0,
+		"energy": -30,
+		"happiness": 20,
 		"debt": 0.0
 	  },
 	  {
@@ -399,11 +593,11 @@ var fourthMonthCards = [
 	"icon": "LAZER",
 	"choices": [
 	  {
-		"choiceText": "Vou aproveitar pra pedir pra trazerem comida pra alguns dias.",
+		"choiceText": "Vou aproveitar e pedir alguns alimentos para alguns dias. Mas espero que eles não pensem que eu passo fome",
 		"exists": true,
 		"money": 0.0,
 		"energy": 20,
-		"happiness": 10,
+		"happiness": -10,
 		"debt": 0.0
 	  },
 	  {
@@ -417,8 +611,8 @@ var fourthMonthCards = [
 	  {
 		"choiceText": "Acho que não vou pedir nada...",
 		"exists": true,
-		"money": -200.0,
-		"energy": 20,
+		"money": -300.0,
+		"energy": -20,
 		"happiness": -20,
 		"debt": 0.0
 	  }
@@ -426,7 +620,7 @@ var fourthMonthCards = [
   },
   {
 	"month": 4,
-	"cardText": "Agora vamos ver quanto eu consegui economizar dessa vez...",
+	"cardText": "Vai ser bom ter eles por aqui, estou com saudades!",
 	"icon": "",
 	"choices": [
 	  {
@@ -462,69 +656,38 @@ var fourthMonthCards = [
 var fifthMonthCards = [
   {
 	"month": 5,
+	"cardText": "Agora vamos ver quanto eu consegui economizar dessa vez...",
+	"icon": "",
+	"choices": [
+	  {
+		"choiceText": "",
+		"exists": false,
+		"money": 0.0,
+		"energy": 0,
+		"happiness": 0,
+		"debt": 0.0
+	  },
+	  {
+		"choiceText": "",
+		"exists": false,
+		"money": 0.0,
+		"energy": 0,
+		"happiness": 0,
+		"debt": 0.0
+	  },
+	  {
+		"choiceText": "",
+		"exists": false,
+		"money": 0.0,
+		"energy": 0,
+		"happiness": 0,
+		"debt": 0.0
+	  }
+	]
+  },
+  {
+	"month": 5,
 	"cardText": "Está chegando o dia de quitar a dívida, tenho mais dois meses...",
-	"icon": "",
-	"choices": [
-	  {
-		"choiceText": "",
-		"exists": false,
-		"money": 0.0,
-		"energy": 0,
-		"happiness": 0,
-		"debt": 0.0
-	  },
-	  {
-		"choiceText": "",
-		"exists": false,
-		"money": 0.0,
-		"energy": 0,
-		"happiness": 0,
-		"debt": 0.0
-	  },
-	  {
-		"choiceText": "",
-		"exists": false,
-		"money": 0.0,
-		"energy": 0,
-		"happiness": 0,
-		"debt": 0.0
-	  }
-	]
-  },
-  {
-	"month": 5,
-	"cardText": "E por conta da inflação, as coisas do mercado estão mais caras... Inflação faz o dinheiro perder o valor com o tempo,",
-	"icon": "",
-	"choices": [
-	  {
-		"choiceText": "",
-		"exists": false,
-		"money": 0.0,
-		"energy": 0,
-		"happiness": 0,
-		"debt": 0.0
-	  },
-	  {
-		"choiceText": "",
-		"exists": false,
-		"money": 0.0,
-		"energy": 0,
-		"happiness": 0,
-		"debt": 0.0
-	  },
-	  {
-		"choiceText": "",
-		"exists": false,
-		"money": 0.0,
-		"energy": 0,
-		"happiness": 0,
-		"debt": 0.0
-	  }
-	]
-  },
-  {
-	"month": 5,
-	"cardText": "já que faz as coisas ficarem mais caras... (Investimento é acumular dinheiro de forma que ele ao menos não perca valor) ",
 	"icon": "",
 	"choices": [
 	  {
@@ -561,25 +724,56 @@ var fifthMonthCards = [
 	  {
 		"choiceText": "Procurar produtos mais baratos",
 		"exists": true,
-		"money": -250.0,
+		"money": -450.0,
 		"energy": -20,
-		"happiness": -5,
+		"happiness": -30,
 		"debt": 0.0
 	  },
 	  {
 		"choiceText": "Continuar comprando os mesmos",
 		"exists": true,
-		"money": -300.0,
-		"energy": -20,
-		"happiness": -5,
+		"money": -600.0,
+		"energy": -10,
+		"happiness": -20,
 		"debt": 0.0
 	  },
 	  {
 		"choiceText": "Comprar somente o necessário",
 		"exists": true,
-		"money": -200.0,
-		"energy": -20,
-		"happiness": -10,
+		"money": -300.0,
+		"energy": -30,
+		"happiness": -30,
+		"debt": 0.0
+	  }
+	]
+  },
+  {
+	"month": 5,
+	"cardText": "Inflação atrapalha bastante, mas não tem muito o que fazer, só aceitar.",
+	"icon": "",
+	"choices": [
+	  {
+		"choiceText": "",
+		"exists": false,
+		"money": 0.0,
+		"energy": 0,
+		"happiness": 0,
+		"debt": 0.0
+	  },
+	  {
+		"choiceText": "",
+		"exists": false,
+		"money": 0.0,
+		"energy": 0,
+		"happiness": 0,
+		"debt": 0.0
+	  },
+	  {
+		"choiceText": "",
+		"exists": false,
+		"money": 0.0,
+		"energy": 0,
+		"happiness": 0,
 		"debt": 0.0
 	  }
 	]
@@ -590,19 +784,19 @@ var fifthMonthCards = [
 	"icon": "TRANSPORTE",
 	"choices": [
 	  {
-		"choiceText": "Taxi!!",
+		"choiceText": "Ir de taxi",
 		"exists": true,
-		"money": -350.0,
+		"money": -450.0,
 		"energy": -10,
 		"happiness": 15,
 		"debt": 0.0
 	  },
 	  {
-		"choiceText": "Calma...Eu consigo traçar um caminho pelo mapa...Nossa, 3 ônibus...E um trem!",
+		"choiceText": "Calma, eu consigo traçar um caminho pelo mapa! Apenas preciso pegar 3 ônibus e um trem!",
 		"exists": true,
-		"money": -250.0,
+		"money": -350.0,
 		"energy": -40,
-		"happiness": -5,
+		"happiness": -25,
 		"debt": 0.0
 	  },
 	  {
@@ -621,26 +815,26 @@ var fifthMonthCards = [
 	"icon": "NEGÓCIOS",
 	"choices": [
 	  {
-		"choiceText": "Vou comprar uns materiais e cursos para estudar sobre",
+		"choiceText": "Vou comprar uns livros e cursos para estudar sobre...",
 		"exists": true,
 		"money": -400.0,
 		"energy": -10,
-		"happiness": 10,
+		"happiness": 20,
 		"debt": 0.0
 	  },
 	  {
-		"choiceText": "Acho que só uns vídeos na internet devem ajudar",
+		"choiceText": "Acho que vou procurar alguns cursos pela internet...",
 		"exists": true,
-		"money": -100.0,
+		"money": -300.0,
 		"energy": 10,
 		"happiness": -35,
 		"debt": 0.0
 	  },
 	  {
-		"choiceText": "Ouvi dizer que o Banco Bancário lançou um joguinho sobre isso. Vou testar!",
+		"choiceText": "Ouvi dizer que o Banco Brasileiro lançou um joguinho sobre isso. Vou testar!",
 		"exists": true,
 		"money": 0.0,
-		"energy": 5,
+		"energy": 35,
 		"happiness": 35,
 		"debt": 0.0
 	  }
@@ -659,8 +853,8 @@ var sixthMonthCards = [
 	  {
 		"choiceText": "Vou ter que vender meu vídeo game...",
 		"exists": true,
-		"money": 300.0,
-		"energy": -10,
+		"money": 200.0,
+		"energy": 10,
 		"happiness": -30,
 		"debt": 0.0
 	  },
@@ -676,8 +870,8 @@ var sixthMonthCards = [
 		"choiceText": "Ficar sem comer? Acho que dessa vez não tem como escapar",
 		"exists": true,
 		"money": 0.0,
-		"energy": -20,
-		"happiness": -20,
+		"energy": -50,
+		"happiness": -35,
 		"debt": 0.0
 	  }
 	]
@@ -688,7 +882,7 @@ var sixthMonthCards = [
 	"icon": "NEGÓCIOS",
 	"choices": [
 	  {
-		"choiceText": "Cadê aquele chocolate com guaraná??",
+		"choiceText": "Cadê aquele chocolate com guaraná?",
 		"exists": true,
 		"money": 0.0,
 		"energy": 30,
@@ -706,8 +900,8 @@ var sixthMonthCards = [
 	  {
 		"choiceText": "Chamando o taxi para reunir os amigos e estudar agora mesmo!",
 		"exists": true,
-		"money": -300.0,
-		"energy": -20,
+		"money": -400.0,
+		"energy": 20,
 		"happiness": 10,
 		"debt": 0.0
 	  }
@@ -729,8 +923,8 @@ var sixthMonthCards = [
 	  {
 		"choiceText": "Uma última festa, vai...Como nos velhos tempos.",
 		"exists": true,
-		"money": -100.0,
-		"energy": -20,
+		"money": -500.0,
+		"energy": -30,
 		"happiness": 30,
 		"debt": 0.0
 	  },
@@ -738,7 +932,7 @@ var sixthMonthCards = [
 		"choiceText": "Acho que dá pra chamar eles aqui em casa, pedir pra cada um trazer algo, e eu preparo a  comida.",
 		"exists": true,
 		"money": 0.0,
-		"energy": 30,
+		"energy": 25,
 		"happiness": 30,
 		"debt": 0.0
 	  }
@@ -756,6 +950,8 @@ var cardsArray3 = []
 var cardsArray4 = []
 var cardsArray5 = []
 var cardsArray6 = []
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -779,33 +975,18 @@ func _ready():
 	
 	# # Script intended to run the csvConverter python file, which turns data in a spreadsheets into a dictionary with all history of the game
 	# OS.execute("python3", ["csvConverter.py"], true)
-
-#	secondMonthCards = read_json_file(secondMonthJson)
-#	thirdMonthCards = read_json_file(thirdMonthJson)
-#	fourthMonthCards = read_json_file(fourthMonthJson)
-#	fifthMonthCards = read_json_file(fifthMonthJson)
-#	sixthMonthCards = read_json_file(sixthMonthJson)
 	
-	secondMonthCards = read_json_file(secondMonthJson)
-	print(read_json_file(secondMonthJson))
-	
-#	print(read_json_file(secondMonthJson))
-#	print(read_json_file(thirdMonthJson))
-#	print(read_json_file(fourthMonthJson))
-#	print(read_json_file(fifthMonthJson))
-#	print(read_json_file(sixthMonthJson))
-	
-#	print("Couldn't read files.\nUsing pre-defined values")
+	cardsArray2 = read_json_file(secondMonthJson)
+	cardsArray3 = read_json_file(thirdMonthJson)
+	cardsArray4 = read_json_file(fourthMonthJson)
+	cardsArray5 = read_json_file(fifthMonthJson)
+	cardsArray6 = read_json_file(sixthMonthJson)
 
 
 
 func read_json_file(file_path):
 	var file = File.new()
 	file.open(file_path, File.READ)
-#	var content_as_text = file.get_as_text()
-#	var content_as_dictionary = parse_json(content_as_text)
-#
-#	return content_as_dictionary
 	if file.file_exists(file_path):
 		file.open(file_path, file.READ)
 		return parse_json(file.get_as_text())
@@ -813,12 +994,10 @@ func read_json_file(file_path):
 
 
 func _process(delta):
-	money = money
-	energy = energy
-	happiness = happiness 
-	debt = debt
-
-	totalSpent = totalSpent
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+#	money = money
+#	energy = energy
+#	happiness = happiness 
+#	debt = debt
+#
+#	totalSpent = totalSpent
+	pass

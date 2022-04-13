@@ -1,14 +1,6 @@
 [
   {
     "month": 2,
-    "cardText": "TESTANDO",
-    "icon": "COMIDA",
-    "choices": [
-      { "exists": false }, { "exists": false }, { "exists": false }
-    ]
-  },
-  {
-    "month": 2,
     "cardText": "Preciso fazer alguma coisa...",
     "icon": "TRANSPORTE",
     "choices": [

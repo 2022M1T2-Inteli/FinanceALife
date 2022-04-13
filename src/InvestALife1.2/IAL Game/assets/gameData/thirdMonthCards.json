@@ -99,7 +99,7 @@
     "choices": [
       {
         "choiceText": "",
-        "exists": "FALSE",
+        "exists": false,
         "money": 0.0,
         "energy": 0,
         "happiness": 0,

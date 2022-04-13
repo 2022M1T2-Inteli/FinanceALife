@@ -13,22 +13,30 @@ func monthVerify():
 			if numEsc >= len(month)-1:
 				month = Global.cardsArray3
 				numEsc = 0
-				def_status(1000, 0, 0, 0)
+				var resto = Global.money
+				def_status(0, 0, 0, -resto)
+				Global.money = 1000.00
 		elif month == Global.cardsArray3:
 			if numEsc >= len(month)-1:
 				month =  Global.cardsArray4
 				numEsc = 0
-				def_status(1000, 0, 0, 0)
+				var resto = Global.money
+				def_status(0, 0, 0, -resto)
+				Global.money = 1000.00
 		elif month == Global.cardsArray4:
 			if numEsc >= len(month)-1:
 				month = Global.cardsArray5
 				numEsc = 0
-				def_status(1000, 0, 0, 0)
+				var resto = Global.money
+				def_status(0, 0, 0, -resto)
+				Global.money = 1000.00
 		elif month == Global.cardsArray5:
 			if numEsc >= len(month)-1:
 				month = Global.cardsArray6
 				numEsc = 0
-				def_status(1000, 0, 0, 0)
+				var resto = Global.money
+				def_status(0, 0, 0, -resto)
+				Global.money = 1000.00
 		elif month == Global.cardsArray6:
 			if numEsc >= len(month)-1:
 				numEsc = 0
@@ -103,12 +111,16 @@ func abasEsc3():
 		else:
 			$escolha3/VBoxContainer/abaDiv.show()
 
+
+
 #Função que altera os valores das barras de status
 func def_status(Din, Ene, Fel, Div):
 	Global.money += Din
 	Global.energy += Ene
 	Global.happiness += Fel
 	Global.debt += Div
+
+
 
 #Função que altera os valores das barras de status diretatamente sem somatória ou subtração de valores
 func def_status2(Din, Ene, Fel, Div):
@@ -117,10 +129,18 @@ func def_status2(Din, Ene, Fel, Div):
 	Global.happiness = Fel
 	Global.debt = Div
 
+
+
 #Função que define quais os valores que serão utilizados na função def_status
 func onClickChoice(Esc):
-	def_status(month[numEsc]['choices'][Esc]['money'],month[numEsc]['choices'][Esc]['energy'], month[numEsc]['choices'][Esc]['happiness'], month[numEsc]['choices'][Esc]['debt'])
-	
+	def_status(
+		month[numEsc]['choices'][Esc]['money'], 
+		month[numEsc]['choices'][Esc]['energy'], 
+		month[numEsc]['choices'][Esc]['happiness'], 
+		month[numEsc]['choices'][Esc]['debt']
+	)
+
+
 
 #Função que define os textos de cada carta
 func clickOnCard():
