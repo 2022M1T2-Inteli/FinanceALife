@@ -10,7 +10,7 @@ var debt = 0.00
 var totalSpent = 0.00
 
 var maxMoney := 1000.00
-var maxDebt := 1200.00
+var maxDebt := 1000.00
 
 
 const socialIcon = "res://assets/sprites/imgs_cards/img_card_exemplo1.png"
