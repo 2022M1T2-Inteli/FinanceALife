@@ -1,0 +1,126 @@
+[
+  {
+    "month": 4,
+    "cardText": "Meus amigos na faculdade estão me chamando para um evento de negócios...",
+    "icon": "NEGÓCIO",
+    "choices": [
+      {
+        "choiceText": "Eu vou, acho que vai ser importante, embora seja meio caro.",
+        "exists": true,
+        "money": -200.0,
+        "energy": 0,
+        "happiness": 0,
+        "debt": 0.0
+      },
+      {
+        "choiceText": "Melhor não... Não tenho dinheiro pra isso.",
+        "exists": true,
+        "money": 0.0,
+        "energy": 10,
+        "happiness": 10,
+        "debt": 0.0
+      },
+      {
+        "choiceText": "",
+        "exists": false,
+        "money": 0.0,
+        "energy": 0,
+        "happiness": 0,
+        "debt": 0.0
+      }
+    ]
+  },
+  {
+    "month": 4,
+    "cardText": "Acho que se eu vendesse meu violão, eu conseguiria mais dinheiro...",
+    "icon": "NEGÓCIO",
+    "choices": [
+      {
+        "choiceText": "É, acho que um colega da minha turma está querendo comprar um.",
+        "exists": true,
+        "money": 300.0,
+        "energy": 20,
+        "happiness": -30,
+        "debt": 0.0
+      },
+      {
+        "choiceText": "Não, eu gosto muito do meu violão.",
+        "exists": true,
+        "money": 0.0,
+        "energy": 0,
+        "happiness": 10,
+        "debt": 0.0
+      },
+      {
+        "choiceText": "Sim, talvez essa tenha sido a melhor escolha no momento.",
+        "exists": false,
+        "money": 0.0,
+        "energy": 0,
+        "happiness": 0,
+        "debt": 0.0
+      }
+    ]
+  },
+  {
+    "month": 4,
+    "cardText": "Meus pais virão me visitar esse mês...",
+    "icon": "LAZER",
+    "choices": [
+      {
+        "choiceText": "Vou aproveitar pra pedir pra trazerem comida pra alguns dias.",
+        "exists": true,
+        "money": 0.0,
+        "energy": 20,
+        "happiness": 10,
+        "debt": 0.0
+      },
+      {
+        "choiceText": "Vou pedir pra trazerem aquele bolo de chocolate que eu gosto.",
+        "exists": true,
+        "money": 0.0,
+        "energy": 10,
+        "happiness": 20,
+        "debt": 0.0
+      },
+      {
+        "choiceText": "Acho que não vou pedir nada...",
+        "exists": true,
+        "money": -200.0,
+        "energy": 20,
+        "happiness": -20,
+        "debt": 0.0
+      }
+    ]
+  },
+  {
+    "month": 4,
+    "cardText": "Agora vamos ver quanto eu consegui economizar dessa vez...",
+    "icon": "",
+    "choices": [
+      {
+        "choiceText": "",
+        "exists": "FALSE",
+        "money": 0.0,
+        "energy": 0,
+        "happiness": 0,
+        "debt": 0.0
+      },
+      {
+        "choiceText": "",
+        "exists": false,
+        "money": 0.0,
+        "energy": 0,
+        "happiness": 0,
+        "debt": 0.0
+      },
+      {
+        "choiceText": "",
+        "exists": false,
+        "money": 0.0,
+        "energy": 0,
+        "happiness": 0,
+        "debt": 0.0
+      }
+    ]
+  }
+]

@@ -1,10 +1,15 @@
 extends Control
 
-var mes1 = Global.cardsArray1
-var numCards = len(mes1)
+var month1 = Global.cardsArray1
+var numCards = len(month1)
 
 func onClickChoice():
-	def_status(mes1[numEsc]['choices'][1]['money'],mes1[numEsc]['choices'][1]['energy'], mes1[numEsc]['choices'][1]['hapiness'], mes1[numEsc]['choices'][1]['debt'])
+	def_status(
+		month1[numEsc]['choices'][1]['money'],
+		month1[numEsc]['choices'][1]['energy'], 
+		month1[numEsc]['choices'][1]['happiness'], 
+		month1[numEsc]['choices'][1]['debt']
+	)
 
 func load_file(file_path):
 	var file = File.new()
@@ -32,18 +37,18 @@ func clicar_card():
 		$escolha2/botao2.scale.y =1
 
 func clickOnCard():
-	$CARD/card_exemplo1/textbox_card/text_card.text = mes1[numEsc]['cardText']
+	$CARD/card_exemplo1/textbox_card/text_card.text = month1[numEsc]['cardText']
 	
-	if mes1[numEsc]['choices'][1]['exists'] == true and mes1[numEsc]['choices'][0]['exists'] == false and mes1[numEsc]['choices'][2]['exists'] == false:
-		print(mes1[numEsc]['choices'][1]['choiceText'])
-		$escolha2/Label2.text = mes1[numEsc]['choices'][1]['choiceText']
+	if month1[numEsc]['choices'][1]['exists'] == true and month1[numEsc]['choices'][0]['exists'] == false and month1[numEsc]['choices'][2]['exists'] == false:
+		print(month1[numEsc]['choices'][1]['choiceText'])
+		$escolha2/Label2.text = month1[numEsc]['choices'][1]['choiceText']
 		clicar_card()
 	
-	if mes1[numEsc]['icon'] == 'COMIDA':
+	if month1[numEsc]['icon'] == 'COMIDA':
 		$CARD/card_exemplo1.texture = Global.foodBackground
-	elif mes1[numEsc]['icon'] == 'LAZER':
+	elif month1[numEsc]['icon'] == 'LAZER':
 		$CARD/card_exemplo1.texture = Global.funBackground
-	elif mes1[numEsc]['icon'] == 'TRANSPORTE':
+	elif month1[numEsc]['icon'] == 'TRANSPORTE':
 		$CARD/card_exemplo1.texture = Global.transportBackground
 	else:
 		$CARD/card_exemplo1.texture = Global.fallbackBackground
@@ -70,7 +75,7 @@ onready var textCard = 0
 func def_status(Din, Ene, Fel, Div):
 	Global.money += Din
 	Global.energy += Ene
-	Global.hapiness += Fel
+	Global.happiness += Fel
 	Global.debt += Div
 
 func set_Card(numFundo, numText):
@@ -108,9 +113,9 @@ func _process(delta: float) -> void:
 		if $CARD/card_exemplo1/textbox_card/text_card.percent_visible != 1 && Input.is_action_just_released("clicar_card"):
 			$CARD/card_exemplo1/textbox_card/text_card/AnimationPlayer.stop()
 			$CARD/card_exemplo1/textbox_card/text_card.percent_visible = 1
-		elif mes1[numEsc]['choices'][1]['exists'] == true and mes1[numEsc]['choices'][0]['exists'] == false and mes1[numEsc]['choices'][2]['exists'] == false:
-			print(mes1[numEsc]['choices'])
-			$escolha2/Label2.text = mes1[numEsc]['choices'][1]['choiceText']
+		elif month1[numEsc]['choices'][1]['exists'] == true and month1[numEsc]['choices'][0]['exists'] == false and month1[numEsc]['choices'][2]['exists'] == false:
+			print(month1[numEsc]['choices'])
+			$escolha2/Label2.text = month1[numEsc]['choices'][1]['choiceText']
 			clicar_card()
 	
 		elif $CARD/card_exemplo1/textbox_card/text_card.percent_visible == 1 && Input.is_action_just_released("clicar_card") && $escolha2.rect_scale != Vector2(1,1) || $escolha2.margin_left >= 550:

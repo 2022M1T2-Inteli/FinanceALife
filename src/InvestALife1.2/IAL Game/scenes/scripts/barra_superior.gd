@@ -59,8 +59,8 @@ func _process(delta: float) -> void:
 		Global.energy = 100
 		
 	#Evita que o nível de felicidade exceda seu valor máximo
-	if Global.hapiness >= 100:
-		Global.hapiness = 100
+	if Global.happiness >= 100:
+		Global.happiness = 100
 		
 	#Evita que o nível de dinheiro exceda seu valor mínimo
 	if Global.money <= 0:
@@ -75,13 +75,13 @@ func _process(delta: float) -> void:
 		Global.energy = 0
 		
 	#Evita que o nível de felicidade exceda seu valor mínimo
-	if Global.hapiness <= 0:
-		Global.hapiness = 0
+	if Global.happiness <= 0:
+		Global.happiness = 0
 	
 	#Define os valores das barras de status de acordo com suas variáveis referentes no código global
 	$barra_superior/Nv_dinheiro.value = Global.money
 	$barra_superior/Nv_energia.value = Global.energy
-	$barra_superior/Nv_felicidade.value = Global.hapiness
+	$barra_superior/Nv_felicidade.value = Global.happiness
 	$barra_superior/Nv_divida.value = Global.debt
 	
 	
@@ -93,7 +93,7 @@ func _process(delta: float) -> void:
 	$barra_superior/HBoxContainer/Value.text = str("%.2f"%(Global.money))
 	$aba_din/GridContainer/HBoxContainer/NoRS.text = str("%.2f"%(Global.money))
 	$aba_ene/GridContainer/HBoxContainer/NoEN.text = str(Global.energy)
-	$aba_fel/GridContainer/HBoxContainer/NoFEL.text = str(Global.hapiness)
+	$aba_fel/GridContainer/HBoxContainer/NoFEL.text = str(Global.happiness)
 	$aba_div/GridContainer/HBoxContainer/NoDIV.text = str("%.2f"%(Global.debt))
 	
 	#Abre e fecha a aba de dinheiro quando a sua respectiva barra de status é pressionada

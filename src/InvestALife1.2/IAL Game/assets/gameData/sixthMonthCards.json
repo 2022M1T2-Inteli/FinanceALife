@@ -1,0 +1,95 @@
+[
+  {
+    "month": 6,
+    "cardText": "No final do mês eu preciso quitar a minha dívida!",
+    "icon": "NEGÓCIOS",
+    "choices": [
+      {
+        "choiceText": "Vou ter que vender meu vídeo game...",
+        "exists": true,
+        "money": 300.0,
+        "energy": -10,
+        "happiness": -30,
+        "debt": 0.0
+      },
+      {
+        "choiceText": "Acho que falta pouco, eu tenho o suficiente para pagar",
+        "exists": true,
+        "money": 100.0,
+        "energy": -30,
+        "happiness": -10,
+        "debt": 0.0
+      },
+      {
+        "choiceText": "Ficar sem comer? Acho que dessa vez não tem como escapar",
+        "exists": true,
+        "money": 0.0,
+        "energy": -20,
+        "happiness": -20,
+        "debt": 0.0
+      }
+    ]
+  },
+  {
+    "month": 6,
+    "cardText": "Prova?? Verdade esqueci de estudar!",
+    "icon": "NEGÓCIOS",
+    "choices": [
+      {
+        "choiceText": "Cadê aquele chocolate com guaraná??",
+        "exists": true,
+        "money": 0.0,
+        "energy": 30,
+        "happiness": 20,
+        "debt": 0.0
+      },
+      {
+        "choiceText": "Vou confiar no que eu aprendi...eu acho.",
+        "exists": true,
+        "money": 0.0,
+        "energy": -30,
+        "happiness": -20,
+        "debt": 0.0
+      },
+      {
+        "choiceText": "Chamando o taxi para reunir os amigos e estudar agora mesmo!",
+        "exists": true,
+        "money": -300.0,
+        "energy": -20,
+        "happiness": 10,
+        "debt": 0.0
+      }
+    ]
+  },
+  {
+    "month": 6,
+    "cardText": "Meus amigos me convidarem para uma festa neste fim de semana, antes das férias...",
+    "icon": "LAZER",
+    "choices": [
+      {
+        "choiceText": "Acho melhor um passeio no parque? Pelo menos é de graça",
+        "exists": true,
+        "money": 0.0,
+        "energy": -30,
+        "happiness": 20,
+        "debt": 0.0
+      },
+      {
+        "choiceText": "Uma última festa, vai...Como nos velhos tempos.",
+        "exists": true,
+        "money": -100.0,
+        "energy": -20,
+        "happiness": 30,
+        "debt": 0.0
+      },
+      {
+        "choiceText": "Acho que dá pra chamar eles aqui em casa, pedir pra cada um trazer algo, e eu preparo a  comida.",
+        "exists": true,
+        "money": 0.0,
+        "energy": 30,
+        "happiness": 30,
+        "debt": 0.0
+      }
+    ]
+  }
+]

@@ -1,0 +1,126 @@
+[
+  {
+    "month": 3,
+    "cardText": "Esse mês vou começar a separar minhas economias por partes. Vou começar primeiramente pela comida, acho que R$300 é o suficiente. Já peguei o frango, a carne (R$50). Agora qual arroz eu devo escolher? Eu uso em média 5kg.",
+    "icon": "COMIDA",
+    "choices": [
+      {
+        "choiceText": "Pacote 1kg – R$6",
+        "exists": true,
+        "money": -80.0,
+        "energy": 0,
+        "happiness": 0,
+        "debt": 0.0
+      },
+      {
+        "choiceText": "Pacote 5kg – R$25,00",
+        "exists": true,
+        "money": -75.0,
+        "energy": 0,
+        "happiness": 0,
+        "debt": 0.0
+      },
+      {
+        "choiceText": "Pacote 500g – R$3,50",
+        "exists": true,
+        "money": -85.0,
+        "energy": 0,
+        "happiness": 0,
+        "debt": 0.0
+      }
+    ]
+  },
+  {
+    "month": 3,
+    "cardText": "Passei pegando algumas frutas, verduras e laticínios (R$40), e esqueci de pegar o feijão, eu uso em média o mesmo de arroz. (5kg)",
+    "icon": "COMIDA",
+    "choices": [
+      {
+        "choiceText": "Pacote 1kg – R$8,99",
+        "exists": true,
+        "money": -85.0,
+        "energy": 0,
+        "happiness": 0,
+        "debt": 0.0
+      },
+      {
+        "choiceText": "Pacote 5kg – R$58,99",
+        "exists": true,
+        "money": -100.0,
+        "energy": 0,
+        "happiness": 0,
+        "debt": 0.0
+      },
+      {
+        "choiceText": "Pacote 500g – R$5,00",
+        "exists": true,
+        "money": -90.0,
+        "energy": 0,
+        "happiness": 0,
+        "debt": 0.0
+      }
+    ]
+  },
+  {
+    "month": 3,
+    "cardText": "Hum...e um chocolatinho, por que não?",
+    "icon": "COMIDA",
+    "choices": [
+      {
+        "choiceText": "Chocolate com guaraná",
+        "exists": true,
+        "money": -50.0,
+        "energy": 30,
+        "happiness": 0,
+        "debt": 0.0
+      },
+      {
+        "choiceText": "Chocolate saboroso",
+        "exists": true,
+        "money": -50.0,
+        "energy": 0,
+        "happiness": 0,
+        "debt": 0.0
+      },
+      {
+        "choiceText": "Não comprar nenhum",
+        "exists": true,
+        "money": 0.0,
+        "energy": 0,
+        "happiness": 0,
+        "debt": 0.0
+      }
+    ]
+  },
+  {
+    "month": 3,
+    "cardText": "Agora vou ver os gastos do mês...",
+    "icon": "",
+    "choices": [
+      {
+        "choiceText": "",
+        "exists": "FALSE",
+        "money": 0.0,
+        "energy": 0,
+        "happiness": 0,
+        "debt": 0.0
+      },
+      {
+        "choiceText": "",
+        "exists": false,
+        "money": 0.0,
+        "energy": 0,
+        "happiness": 0,
+        "debt": 0.0
+      },
+      {
+        "choiceText": "",
+        "exists": false,
+        "money": 0.0,
+        "energy": 0,
+        "happiness": 0,
+        "debt": 0.0
+      }
+    ]
+  }
+]

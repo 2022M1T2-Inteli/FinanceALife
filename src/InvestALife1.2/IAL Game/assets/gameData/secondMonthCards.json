@@ -1,0 +1,103 @@
+[
+  {
+    "month": 2,
+    "cardText": "TESTANDO",
+    "icon": "COMIDA",
+    "choices": [
+      { "exists": false }, { "exists": false }, { "exists": false }
+    ]
+  },
+  {
+    "month": 2,
+    "cardText": "Preciso fazer alguma coisa...",
+    "icon": "TRANSPORTE",
+    "choices": [
+      {
+        "choiceText": "Vou começar a sair mais cedo de casa pra pegar o ônibus que demora pra passar, mas aí  chego direto na faculdade.",
+        "exists": true,
+        "money": -90.0,
+        "energy": -10,
+        "happiness": -10,
+        "debt": 1000.0
+      },
+      {
+        "choiceText": "Acho que vou de taxi só quando for muito necessário então, tipo em dias de chuva ou quando acordar atrasado.",
+        "exists": true,
+        "money": -100.0,
+        "energy": -10,
+        "happiness": 10,
+        "debt": 1000.0
+      },
+      {
+        "choiceText": "Ah...Vou manter como estava no mês passado...",
+        "exists": true,
+        "money": -210.0,
+        "energy": -5,
+        "happiness": 0,
+        "debt": 1000.0
+      }
+    ]
+  },
+  {
+    "month": 2,
+    "cardText": "Também gastei de mais com comida na faculdade...",
+    "icon": "COMIDA",
+    "choices": [
+      {
+        "choiceText": "Vou começar a trazer algo feito em casa pra comer então.",
+        "exists": true,
+        "money": -300.0,
+        "energy": -30,
+        "happiness": -5,
+        "debt": 1000.0
+      },
+      {
+        "choiceText": "Vou procurar um restaurante perto da faculdade.",
+        "exists": true,
+        "money": -630.0,
+        "energy": 10,
+        "happiness": 5,
+        "debt": 1000.0
+      },
+      {
+        "choiceText": "Comer? Pra que?",
+        "exists": true,
+        "money": -300.0,
+        "energy": -20,
+        "happiness": -20,
+        "debt": 1000.0
+      }
+    ]
+  },
+  {
+    "month": 2,
+    "cardText": "Mês passado fui a festas todos os sábados...",
+    "icon": "LAZER",
+    "choices": [
+      {
+        "choiceText": "Talvez se eu ficar em casa alguns fins de semana...",
+        "exists": true,
+        "money": -100.0,
+        "energy": 20,
+        "happiness": 0,
+        "debt": 1000.0
+      },
+      {
+        "choiceText": "A vida é muito curta... Quero é aproveitar!",
+        "exists": true,
+        "money": -200.0,
+        "energy": -20,
+        "happiness": 10,
+        "debt": 1000.0
+      },
+      {
+        "choiceText": "Acho vida social desnecessária.",
+        "exists": true,
+        "money": 0.0,
+        "energy": 0,
+        "happiness": -30,
+        "debt": 1000.0
+      }
+    ]
+  }
+]

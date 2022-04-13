@@ -1,104 +1,104 @@
 extends Control
 
 #Dfine qual a array utilizada (mês)
-var mes = Global.cardsArray2
+var month = Global.cardsArray2
 
 #Define em qual parte da array coletar as informações (quais as cardas na tela)
 var numEsc = Global.numEsc
 
 #Função que passa de uma array para a outra quando elas acabam (passagem de um mês para o outro)
-func mesVerify():
+func monthVerify():
 	if Input.is_action_just_released("clicar_card"):
-		if mes == Global.cardsArray2:
-			if numEsc >= len(mes)-1:
-				mes = Global.cardsArray3
+		if month == Global.cardsArray2:
+			if numEsc >= len(month)-1:
+				month = Global.cardsArray3
 				numEsc = 0
 				def_status(1000, 0, 0, 0)
-		elif mes == Global.cardsArray3:
-			if numEsc >= len(mes)-1:
-				mes =  Global.cardsArray4
+		elif month == Global.cardsArray3:
+			if numEsc >= len(month)-1:
+				month =  Global.cardsArray4
 				numEsc = 0
 				def_status(1000, 0, 0, 0)
-		elif mes == Global.cardsArray4:
-			if numEsc >= len(mes)-1:
-				mes = Global.cardsArray5
+		elif month == Global.cardsArray4:
+			if numEsc >= len(month)-1:
+				month = Global.cardsArray5
 				numEsc = 0
 				def_status(1000, 0, 0, 0)
-		elif mes == Global.cardsArray5:
-			if numEsc >= len(mes)-1:
-				mes = Global.cardsArray6
+		elif month == Global.cardsArray5:
+			if numEsc >= len(month)-1:
+				month = Global.cardsArray6
 				numEsc = 0
 				def_status(1000, 0, 0, 0)
-		elif mes == Global.cardsArray6:
-			if numEsc >= len(mes)-1:
+		elif month == Global.cardsArray6:
+			if numEsc >= len(month)-1:
 				numEsc = 0
 				get_tree().change_scene("res://scenes/GameOver.tscn")
 
 #Função que habilita as abas de alteração de status da carta de escolha 1 de acordo com os status que ela altera
 func abasEsc1():
-	if mes[numEsc]['choices'][0]['exists'] == true:
-		if mes[numEsc]['choices'][0]['money'] == 0:
+	if month[numEsc]['choices'][0]['exists'] == true:
+		if month[numEsc]['choices'][0]['money'] == 0:
 			$escolha1/VBoxContainer/abaDin.hide()
 		else:
 			$escolha1/VBoxContainer/abaDin.show()
 
-		if mes[numEsc]['choices'][0]['energy'] == 0:
+		if month[numEsc]['choices'][0]['energy'] == 0:
 			$escolha1/VBoxContainer/abaEne.hide()
 		else:
 			$escolha1/VBoxContainer/abaEne.show()
 
-		if mes[numEsc]['choices'][0]['hapiness'] == 0:
+		if month[numEsc]['choices'][0]['happiness'] == 0:
 			$escolha1/VBoxContainer/abaFel.hide()
 		else:
 			$escolha1/VBoxContainer/abaFel.show()
 
-		if mes[numEsc]['choices'][0]['debt'] == 0:
+		if month[numEsc]['choices'][0]['debt'] == 0:
 			$escolha1/VBoxContainer/abaDiv.hide()
 		else:
 			$escolha1/VBoxContainer/abaDiv.show()
 
 #Função que habilita as abas de alteração de status da carta de escolha 2 de acordo com os status que ela altera
 func abasEsc2():
-	if mes[numEsc]['choices'][1]['exists'] == true:
-		if mes[numEsc]['choices'][1]['money'] == 0:
+	if month[numEsc]['choices'][1]['exists'] == true:
+		if month[numEsc]['choices'][1]['money'] == 0:
 			$escolha2/VBoxContainer/abaDin.hide()
 		else:
 			$escolha2/VBoxContainer/abaDin.show()
 
-		if mes[numEsc]['choices'][1]['energy'] == 0:
+		if month[numEsc]['choices'][1]['energy'] == 0:
 			$escolha2/VBoxContainer/abaEne.hide()
 		else:
 			$escolha2/VBoxContainer/abaEne.show()
 
-		if mes[numEsc]['choices'][1]['hapiness'] == 0:
+		if month[numEsc]['choices'][1]['happiness'] == 0:
 			$escolha2/VBoxContainer/abaFel.hide()
 		else:
 			$escolha2/VBoxContainer/abaFel.show()
 
-		if mes[numEsc]['choices'][1]['debt'] == 0:
+		if month[numEsc]['choices'][1]['debt'] == 0:
 			$escolha2/VBoxContainer/abaDiv.hide()
 		else:
 			$escolha2/VBoxContainer/abaDiv.show()
 
 #Função que habilita as abas de alteração de status da carta de escolha 3 de acordo com os status que ela altera
 func abasEsc3():
-	if mes[numEsc]['choices'][2]['exists'] == true:
-		if mes[numEsc]['choices'][2]['money'] == 0:
+	if month[numEsc]['choices'][2]['exists'] == true:
+		if month[numEsc]['choices'][2]['money'] == 0:
 			$escolha3/VBoxContainer/abaDin.hide()
 		else:
 			$escolha3/VBoxContainer/abaDin.show()
 
-		if mes[numEsc]['choices'][2]['energy'] == 0:
+		if month[numEsc]['choices'][2]['energy'] == 0:
 			$escolha3/VBoxContainer/abaEne.hide()
 		else:
 			$escolha3/VBoxContainer/abaEne.show()
 
-		if mes[numEsc]['choices'][2]['hapiness'] == 0:
+		if month[numEsc]['choices'][2]['happiness'] == 0:
 			$escolha3/VBoxContainer/abaFel.hide()
 		else:
 			$escolha3/VBoxContainer/abaFel.show()
 
-		if mes[numEsc]['choices'][2]['debt'] == 0:
+		if month[numEsc]['choices'][2]['debt'] == 0:
 			$escolha3/VBoxContainer/abaDiv.hide()
 		else:
 			$escolha3/VBoxContainer/abaDiv.show()
@@ -107,38 +107,38 @@ func abasEsc3():
 func def_status(Din, Ene, Fel, Div):
 	Global.money += Din
 	Global.energy += Ene
-	Global.hapiness += Fel
+	Global.happiness += Fel
 	Global.debt += Div
 
 #Função que altera os valores das barras de status diretatamente sem somatória ou subtração de valores
 func def_status2(Din, Ene, Fel, Div):
 	Global.money = Din
 	Global.energy = Ene
-	Global.hapiness = Fel
+	Global.happiness = Fel
 	Global.debt = Div
 
 #Função que define quais os valores que serão utilizados na função def_status
 func onClickChoice(Esc):
-	def_status(mes[numEsc]['choices'][Esc]['money'],mes[numEsc]['choices'][Esc]['energy'], mes[numEsc]['choices'][Esc]['hapiness'], mes[numEsc]['choices'][Esc]['debt'])
+	def_status(month[numEsc]['choices'][Esc]['money'],month[numEsc]['choices'][Esc]['energy'], month[numEsc]['choices'][Esc]['happiness'], month[numEsc]['choices'][Esc]['debt'])
 	
 
 #Função que define os textos de cada carta
 func clickOnCard():
-	$CARD/card_exemplo1/textbox_card/text_card.text = mes[numEsc]['cardText']
+	$CARD/card_exemplo1/textbox_card/text_card.text = month[numEsc]['cardText']
 	print(numEsc)
 	
-	if mes[numEsc]['choices'][0]['exists'] == true:
-		$escolha1/Label.text = mes[numEsc]['choices'][0]['choiceText']
-	if mes[numEsc]['choices'][1]['exists'] == true:
-		$escolha2/Label2.text = mes[numEsc]['choices'][1]['choiceText']
-	if mes[numEsc]['choices'][2]['exists'] == true:
-		$escolha3/Label3.text = mes[numEsc]['choices'][2]['choiceText']
+	if month[numEsc]['choices'][0]['exists'] == true:
+		$escolha1/Label.text = month[numEsc]['choices'][0]['choiceText']
+	if month[numEsc]['choices'][1]['exists'] == true:
+		$escolha2/Label2.text = month[numEsc]['choices'][1]['choiceText']
+	if month[numEsc]['choices'][2]['exists'] == true:
+		$escolha3/Label3.text = month[numEsc]['choices'][2]['choiceText']
 		
-	if mes[numEsc]['icon'] == 'COMIDA':
+	if month[numEsc]['icon'] == 'COMIDA':
 		$CARD/card_exemplo1.texture = Global.foodBackground
-	elif mes[numEsc]['icon'] == 'LAZER':
+	elif month[numEsc]['icon'] == 'LAZER':
 		$CARD/card_exemplo1.texture = Global.funBackground
-	elif mes[numEsc]['icon'] == 'TRANSPORTE':
+	elif month[numEsc]['icon'] == 'TRANSPORTE':
 		$CARD/card_exemplo1.texture = Global.transportBackground
 	else:
 		$CARD/card_exemplo1.texture = Global.fallbackBackground
@@ -202,21 +202,21 @@ func fechar_barra():
 #Função para quando a carta 1 é colocada em foco
 func escolheu1():
 	if Input.is_action_just_released("escolha1"):
-		if mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == true && mes[numEsc]['choices'][2]['exists'] == true:
+		if month[numEsc]['choices'][0]['exists'] == true && month[numEsc]['choices'][1]['exists'] == true && month[numEsc]['choices'][2]['exists'] == true:
 			$CARD/Clicar_card.hide()
 			$escolha1/VBoxContainer/AnimationPlayer.play("abas")
 			$AnimationPlayer.play("escolheu1")
 #			$"CARD/Entrar Carta".play_backwards("entrar_card")
 			showEsc()
 			$barra_superior.hide_all()
-		elif mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == true && mes[numEsc]['choices'][2]['exists'] == false:
+		elif month[numEsc]['choices'][0]['exists'] == true && month[numEsc]['choices'][1]['exists'] == true && month[numEsc]['choices'][2]['exists'] == false:
 			$CARD/Clicar_card.hide()
 			$escolha1/VBoxContainer/AnimationPlayer.play("abas")
 			$AnimationPlayer.play("escolheu1.2")
 #			$"CARD/Entrar Carta".play_backwards("entrar_card")
 			showEsc()
 			$barra_superior.hide_all()
-		elif mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == false && mes[numEsc]['choices'][2]['exists'] == false:
+		elif month[numEsc]['choices'][0]['exists'] == true && month[numEsc]['choices'][1]['exists'] == false && month[numEsc]['choices'][2]['exists'] == false:
 			$CARD/Clicar_card.hide()
 			$escolha1/VBoxContainer/AnimationPlayer.play("abas")
 			$AnimationPlayer.play("escolheu1.1")
@@ -226,19 +226,19 @@ func escolheu1():
 
 #Função para quando a carta 1 é tirada de foco
 func fechou1():
-	if mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == true && mes[numEsc]['choices'][2]['exists'] == true:
+	if month[numEsc]['choices'][0]['exists'] == true && month[numEsc]['choices'][1]['exists'] == true && month[numEsc]['choices'][2]['exists'] == true:
 		$escolha1/VBoxContainer/AnimationPlayer.play_backwards("abas")
 		$AnimationPlayer.play_backwards("escolheu1")
 		$"CARD/Entrar Carta".play("entrar_card")
 		hideEsc()
 		$barra_superior.hide_all()
-	elif mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == true && mes[numEsc]['choices'][2]['exists'] == false:
+	elif month[numEsc]['choices'][0]['exists'] == true && month[numEsc]['choices'][1]['exists'] == true && month[numEsc]['choices'][2]['exists'] == false:
 		$escolha1/VBoxContainer/AnimationPlayer.play_backwards("abas")
 		$AnimationPlayer.play_backwards("escolheu1.2")
 		$"CARD/Entrar Carta".play("entrar_card")
 		hideEsc()
 		$barra_superior.hide_all()
-	elif mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == false && mes[numEsc]['choices'][2]['exists'] == false:
+	elif month[numEsc]['choices'][0]['exists'] == true && month[numEsc]['choices'][1]['exists'] == false && month[numEsc]['choices'][2]['exists'] == false:
 		$escolha1/VBoxContainer/AnimationPlayer.play_backwards("abas")
 		$AnimationPlayer.play_backwards("escolheu1.1")
 		$"CARD/Entrar Carta".play("entrar_card")
@@ -251,13 +251,13 @@ func fechou1():
 #Função para quando a carta 2 é colocada em foco
 func escolheu2():
 	if Input.is_action_just_released("escolha2"):
-		if mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == true && mes[numEsc]['choices'][2]['exists'] == true:
+		if month[numEsc]['choices'][0]['exists'] == true && month[numEsc]['choices'][1]['exists'] == true && month[numEsc]['choices'][2]['exists'] == true:
 			$escolha2/VBoxContainer/AnimationPlayer.play("abas")
 			$AnimationPlayer.play("escolheu2")
 #			$"CARD/Entrar Carta".play_backwards("entrar_card")
 			showEsc()
 			$barra_superior.hide_all()
-		elif mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == true && mes[numEsc]['choices'][2]['exists'] == false:
+		elif month[numEsc]['choices'][0]['exists'] == true && month[numEsc]['choices'][1]['exists'] == true && month[numEsc]['choices'][2]['exists'] == false:
 			$escolha2/VBoxContainer/AnimationPlayer.play("abas")
 			$AnimationPlayer.play("escolheu2.2")
 #			$"CARD/Entrar Carta".play_backwards("entrar_card")
@@ -266,13 +266,13 @@ func escolheu2():
 
 #Função para quando a carta 2 é tirada de foco
 func fechou2():
-	if mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == true && mes[numEsc]['choices'][2]['exists'] == true:
+	if month[numEsc]['choices'][0]['exists'] == true && month[numEsc]['choices'][1]['exists'] == true && month[numEsc]['choices'][2]['exists'] == true:
 		$escolha2/VBoxContainer/AnimationPlayer.play_backwards("abas")
 		$AnimationPlayer.play_backwards("escolheu2")
 		$"CARD/Entrar Carta".play("entrar_card")
 		hideEsc()
 		$barra_superior.hide_all()
-	elif mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == true && mes[numEsc]['choices'][2]['exists'] == false:
+	elif month[numEsc]['choices'][0]['exists'] == true && month[numEsc]['choices'][1]['exists'] == true && month[numEsc]['choices'][2]['exists'] == false:
 		$escolha2/VBoxContainer/AnimationPlayer.play_backwards("abas")
 		$AnimationPlayer.play_backwards("escolheu2.2")
 		$"CARD/Entrar Carta".play("entrar_card")
@@ -285,7 +285,7 @@ func fechou2():
 #Função para quando a carta 3 é colocada em foco
 func escolheu3():
 	if Input.is_action_just_released("escolha3"):
-		if mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == true && mes[numEsc]['choices'][2]['exists'] == true:
+		if month[numEsc]['choices'][0]['exists'] == true && month[numEsc]['choices'][1]['exists'] == true && month[numEsc]['choices'][2]['exists'] == true:
 			$escolha3/VBoxContainer/AnimationPlayer.play("abas")
 			$AnimationPlayer.play("escolheu3")
 #			$"CARD/Entrar Carta".play_backwards("entrar_card")
@@ -294,7 +294,7 @@ func escolheu3():
 
 #Função para quando a carta 3 é colocada em foco
 func fechou3():
-	if mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == true && mes[numEsc]['choices'][2]['exists'] == true:
+	if month[numEsc]['choices'][0]['exists'] == true && month[numEsc]['choices'][1]['exists'] == true && month[numEsc]['choices'][2]['exists'] == true:
 		$escolha3/VBoxContainer/AnimationPlayer.play_backwards("abas")
 		$AnimationPlayer.play_backwards("escolheu3")
 		$"CARD/Entrar Carta".play("entrar_card")
@@ -350,7 +350,7 @@ func _process(delta):
 		$CARD.hide()
 	
 	#Game Over caso um dos status chege a 0
-	if Global.money == 0 || Global.energy == 0 || Global.hapiness == 0:
+	if Global.money == 0 || Global.energy == 0 || Global.happiness == 0:
 		get_tree().change_scene("res://scenes/GameOver.tscn")
 	
 	#Evita algumas falhas com alguns botões
@@ -360,7 +360,7 @@ func _process(delta):
 	if Input.is_action_just_released("escolha1") || Input.is_action_just_released("escolha2") || Input.is_action_just_released("escolha3"):
 		$CARD/Clicar_card.show()
 
-	mesVerify()
+	monthVerify()
 	
 	abasEsc1()
 
@@ -392,23 +392,23 @@ func _process(delta):
 	elif $CARD/card_exemplo1/textbox_card/text_card.percent_visible == 1 && Input.is_action_just_released("clicar_card"):
 		
 		#Define o comportamento para quanto existem 3 escolhas
-		if mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == true && mes[numEsc]['choices'][2]['exists'] == true:
+		if month[numEsc]['choices'][0]['exists'] == true && month[numEsc]['choices'][1]['exists'] == true && month[numEsc]['choices'][2]['exists'] == true:
 			$AnimationPlayer.play("escolhas3")
 			hideEsc()
 #			$CARD/Clicar_card.hide()
 			print("clicar2")
 			
 		#Define o comportamento para quanto existem 2 escolhas
-		elif mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == true && mes[numEsc]['choices'][2]['exists'] == false:
+		elif month[numEsc]['choices'][0]['exists'] == true && month[numEsc]['choices'][1]['exists'] == true && month[numEsc]['choices'][2]['exists'] == false:
 			$AnimationPlayer.play("escolhas2")
 			hideEsc()
 			
 		#Define o comportamento para quanto existe apenas uma escolha
-		elif mes[numEsc]['choices'][0]['exists'] == true && mes[numEsc]['choices'][1]['exists'] == false && mes[numEsc]['choices'][2]['exists'] == false:
+		elif month[numEsc]['choices'][0]['exists'] == true && month[numEsc]['choices'][1]['exists'] == false && month[numEsc]['choices'][2]['exists'] == false:
 			$AnimationPlayer.play("escolhas1")
 			
-		#Passa para a próxima carta quando a mesma não possui escolhas
-		elif mes[numEsc]['choices'][0]['exists'] == false && mes[numEsc]['choices'][1]['exists'] == false && mes[numEsc]['choices'][2]['exists'] == false:
+		#Passa para a próxima carta quando a monthma não possui escolhas
+		elif month[numEsc]['choices'][0]['exists'] == false && month[numEsc]['choices'][1]['exists'] == false && month[numEsc]['choices'][2]['exists'] == false:
 			$CARD/SairCard.play("sair_card2")
 		
 		#Fecha a barra inferior para que não atrapalhe os comandos anteriores
