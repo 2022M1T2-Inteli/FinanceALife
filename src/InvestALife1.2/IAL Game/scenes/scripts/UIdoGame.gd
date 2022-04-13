@@ -13,22 +13,30 @@ func mesVerify():
 			if numEsc >= len(mes)-1:
 				mes = Global.cardsArray3
 				numEsc = 0
-				def_status(1000, 0, 0, 0)
+				var resto = Global.money
+				def_status(0, 0, 0, -resto)
+				Global.money = 1000.00
 		elif mes == Global.cardsArray3:
 			if numEsc >= len(mes)-1:
 				mes =  Global.cardsArray4
 				numEsc = 0
-				def_status(1000, 0, 0, 0)
+				var resto = Global.money
+				def_status(0, 0, 0, -resto)
+				Global.money = 1000.00
 		elif mes == Global.cardsArray4:
 			if numEsc >= len(mes)-1:
 				mes = Global.cardsArray5
 				numEsc = 0
-				def_status(1000, 0, 0, 0)
+				var resto = Global.money
+				def_status(0, 0, 0, -resto)
+				Global.money = 1000.00
 		elif mes == Global.cardsArray5:
 			if numEsc >= len(mes)-1:
 				mes = Global.cardsArray6
 				numEsc = 0
-				def_status(1000, 0, 0, 0)
+				var resto = Global.money
+				def_status(0, 0, 0, -resto)
+				Global.money = 1000.00
 		elif mes == Global.cardsArray6:
 			if numEsc >= len(mes)-1:
 				numEsc = 0
