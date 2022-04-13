@@ -7,7 +7,7 @@ var energy = 100
 var hapiness = 100 
 var debt = 0.00
 
-var totalSpent = 0.00
+var totalSpent = 1000.00 - money
 
 var maxMoney := 1000.00
 var maxDebt := 1000.00
@@ -94,12 +94,12 @@ var secondMonthCards = [
 	# Entry
 	{
 		"cardText": "Gastei de mais! Assim não vou conseguir quitar minha dívida com meu tio!",
-		"icon": graphIcon, 
+		"icon": "LAZER", 
 		"choices": [{"exists": false}, {"exists": false}, {"exists": false}]
 	},
 	{  # Card 1
 		"cardText": "Preciso fazer alguma coisa...",
-		"icon": walletIcon, 
+		"icon": "COMIDA", 
 		"choices":
 		[
 			{
@@ -132,7 +132,7 @@ var secondMonthCards = [
 	},
 	{
 		"cardText": "Detesto pegar esse ônibus lotado... acho que essa decisão é melhor mesmo.",
-		"icon": socialIcon, 
+		"icon": "TEANSPORTE", 
 		"choices": [{"exists": false}, {"exists": false}, {"exists": false}]
 	},
 	{  # Card 2
@@ -362,13 +362,14 @@ var fourthMonthCards = [
 				"hapiness": -30,
 				"debt": 0,
 				"exists": true
-			},
+				},
 			{"choiceText": "Não, eu gosto mesmo é de tudo novo, vou sair para compra.",
 				"money": -500,
 				"energy": -30,
 				"hapiness": 20,
 				"debt": 0,
-				"exists": true},
+				"exists": true
+				},
 			{"exists": false}
 		]
 	},
