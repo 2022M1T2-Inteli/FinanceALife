@@ -460,37 +460,6 @@ var thirdMonthCards = [
   },
   {
 	"month": 3,
-	"cardText": "Agora vou ver os gastos do mês...",
-	"icon": "",
-	"choices": [
-	  {
-		"choiceText": "",
-		"exists": false,
-		"money": 0.0,
-		"energy": 0,
-		"happiness": 0,
-		"debt": 0.0
-	  },
-	  {
-		"choiceText": "",
-		"exists": false,
-		"money": 0.0,
-		"energy": 0,
-		"happiness": 0,
-		"debt": 0.0
-	  },
-	  {
-		"choiceText": "",
-		"exists": false,
-		"money": 0.0,
-		"energy": 0,
-		"happiness": 0,
-		"debt": 0.0
-	  }
-	]
-  },
-  {
-	"month": 3,
 	"cardText": "Certo, vamos definir minhas metas para o mês...",
 	"icon": "",
 	"choices": [
