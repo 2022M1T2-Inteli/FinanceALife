@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/fonts/Fredoka/Fredoka-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/sprites/new_mail.png" type="Texture" id=2]
 [ext_resource path="res://scenes/scripts/inicializador.gd" type="Script" id=3]
+[ext_resource path="res://assets/QRCodeItchIO.png" type="Texture" id=4]
 
 [sub_resource type="StyleBoxFlat" id=14]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
@@ -92,6 +93,11 @@ custom_colors/font_color_hover = Color( 0.972549, 1, 0.0980392, 1 )
 custom_colors/font_color_pressed = Color( 0.937255, 0.156863, 0.156863, 1 )
 custom_fonts/font = SubResource( 19 )
 text = "Sair"
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1511, 1505 )
+scale = Vector2( 0.209, 0.209 )
+texture = ExtResource( 4 )
 
 [connection signal="pressed" from="HBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="HBoxContainer/sair" to="." method="_on_sair_pressed"]
