@@ -76,7 +76,7 @@ Encontre o index.html na pasta executáveis e execute-o como uma página WEB (at
 Para abrir este projeto você necessita das seguintes ferramentas:
 
 - <a href="https://godotengine.org/download">GODOT</a>
-- <a href="https://www.google.com/chrome/index.html">Chrome</a> - para rodar no web browser
+- <a href="https://github.com/">Git & Github</a>
 
 ## 📋 Licença/License
 
