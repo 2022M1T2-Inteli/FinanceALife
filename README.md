@@ -29,19 +29,16 @@ May the force be with you!
 <br>
 
 ## 🛠 Estrutura de pastas
-
-
-    📦Projeto 4
-<br>
-    &emsp;📎 Documentos<br>
-          &emsp;&emsp;|-->antigos<br>
-          &emsp;&emsp;Modelo GDD.docx<br>
-💻executáveis<br>
-  &emsp;📁|-->HTML<br>
-📷imagens<br>
-💾src<br>
-📄readme.md<br>
-📜licença.txt <br>
+    
+- Raiz<br><br>
+| --> documentos<br>
+  &emsp;| --> antigos<br>
+  &emsp;|  Modelo GDD.docx<br>
+| --> executáveis<br>
+  &emsp;| --> html<br>
+| --> imagens<br>
+| --> src<br>
+| readme.md<br>
 
 <br>
 A pasta raiz contem dois arquivos que devem ser alterados:
